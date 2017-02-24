@@ -4,6 +4,11 @@ language: node_js
 
 node_js: stable
 
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
 before_install:
   - echo '' > .npmrc
 
@@ -14,19 +19,20 @@ install:
 before_script:
   - bower install
 
+script: gulp
+
 after_script:
-  - gulp
   - cd ./dist
   - git init
   - git config user.name "PandoraBox Cat"
   - git config user.email "cat@pandorabox.org.cn"
   - git add .
   - git commit -m "PandoraBox Cat push some files"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" HEAD:master
 
 branches:
   only:
-    - master
+    - develop
 
 env:
   global:

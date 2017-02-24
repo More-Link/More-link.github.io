@@ -1,3 +1,5 @@
+sudo: false
+
 language: node_js
 
 node_js: stable
@@ -9,12 +11,13 @@ install:
   - npm install -g bower gulp
   - npm install
 
-after_install:
+before_script:
   - bower install
 
 after_script:
   - gulp
   - cd ./dist
+  - git init
   - git config user.name "PandoraBox Cat"
   - git config user.email "cat@pandorabox.org.cn"
   - git add .

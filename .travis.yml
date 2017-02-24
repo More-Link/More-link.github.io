@@ -1,0 +1,30 @@
+language: node_js
+
+node_js: stable
+
+before_install:
+  - echo '' > .npmrc
+
+install:
+  - npm install -g bower gulp
+  - npm install
+
+after_install:
+  - bower install
+
+after_script:
+  - gulp
+  - cd ./dist
+  - git config user.name "PandoraBox Cat"
+  - git config user.email "cat@pandorabox.org.cn"
+  - git add .
+  - git commit -m "PandoraBox Cat push some files"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+
+branches:
+  only:
+    - master
+
+env:
+  global:
+    - GH_REF: github.com/More-Link/More-link.github.io.git

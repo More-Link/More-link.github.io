@@ -9,131 +9,98 @@
         "cover": "pro_pbr_c1_cover.jpg",
         "comp": "pro_pbr_c1_comp.png"
       },
-      "summary": "EN:PBR-C1 4G无线路由器采用MTK MT7628解决方案，使用基于OpenWrt自主深度开发的PandoraBox操作系统，兼容移动、联通、电信三家运营商主流的4G/3G上网卡，可将4G/3G信号转化为无线WI-FI，让你在户外旅途中随时随地乐享无线WIFI。在已提供有线网络的宾馆、家庭、办公室，直接插上网线即将有线网络转化为WI-FI，无需设置即实现WI-FI上网。它内置标准的5200mAh移动电源，保证产品长时间高效工作，同时可给普通智能手机充电，外出办公、旅行再也不用为没电而担心。特有的电量显示按键，轻按此键即可了解电池的剩余电量。支持宾馆、家庭、4G/3G路由三种模式，可智能识别并自动切换到对应模式。在出差办公、户外旅行时4G301都能为您提供高速的无线接入。是商务人士出差旅行必备神器。",
+      "summary": "PBR-C1 is a mobile wifi router (Pocket Router), match up with our PandoraBox OS., which is deeply developing based on OpenWrt. On this board, it can be not only used as a wifi router, but also can be matched with the LTE/3G modules, make it transfer single from 4G/3G to WI-FI, let you enjoy and share your WiFi in every places.",
       "features": [
-        "EN:4G/3G无线路由器：兼容最新技术的4G上网卡，向下可更好的兼容主流3G上网卡。可将4G/3G信号转化为WI-FI，随时随地连接WI-FI上网。",
-        "EN:有线网络转化为WI-FI：在已提供有线网络的宾馆、家庭、办公室，插上网线即将有线网络转化为WI-FI，实现多人多设备WI-FI上网",
-        "EN:5200mAh移动电源：内置标准5200mAh移动电源，不损害手机、Ipad电池，可给普通智能手机充电2-3次"
+        "4G/3G Wireless Router: Matched up with 4G/3G SIM card, transfers signal from 4G/3G to WiFi, enjoy and share WiFi in every places. ",
+        "Transfers Wired to Wireless: Connect the Internet cable to the WAN port of PBR-C1, it can be used as a traditional router no matter in Hotel, Home or Office... ",
+        "5200mAh Power Bank: Embedded a 5200mAh battery and power protection circuits, it can be charged 2-3 times for cellphone , MP3 player and so on."
       ],
       "params": {
         "hardware": {
           "IEEE Standard": [
-            "EN:网络标准IEEE 802.11b、IEEE 802.11g、IEEE 802.11n、IEEE 802.3u"
+            "IEEE Standard: 802.11b、IEEE 802.11g、IEEE 802.11n、IEEE 802.3u"
           ],
           "CPU": [
-            "EN:MTK MT7628解决方案,主频高达580MHz"
+            "CPU:MT7628 (580 MHz)"
           ],
           "Flash": [],
           "USB Port": [
-            "EN:1 * USB 2.0（给外部设备充电）",
-            "EN:1 * Micro USB（供电输入）"
+            "USB:1 * USB 2.0（Charger output）",
+            "Micro USB:1 * Micro USB（Charger input）"
           ],
           "RAM": [],
           "WAN": [],
           "LAN": [],
           "WiFi": [],
           "LTE": [
-            "EN:内置高增益天线 2*LTE天线"
+            "LTE/3G Module: Embedded Stamp hole connection for LTE/3G Module"
           ],
           "Wireless Speed": [
-            "EN:无线传输速率300Mbps"
+            "Data Rate:300Mbps"
           ],
           "Antenna": [
-            "EN:内置高增益天线2*WIFI天线"
+            "Antenna(s):Internal Antenna(s)"
           ],
           "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [
-            "1 * TF card slot"
+            "TF-card Slot: 1 * TF card slot"
           ],
           "SIM Card Slot": [
-            "1 * Micro SIM slot"
+            "SIM Slot:1 * Micro SIM slot"
           ],
           "Battery": [
-            "电源输入：(VAC）100-240V；50Hz",
-            "输出：(VDC) 5V，2A",
-            "电池容量5200mAh"
+            "Power Input: (VAC）100-240V；50Hz",
+            "Power Output: (VDC) 5V，2A",
+            "Battery Capacity: 5200mAh"
           ],
           "NFC": [],
           "I2S / PCM": [],
           "UART": [],
           "Button": [
-            "按钮开关按键",
-            "Reset按键",
-            "电量显示按键"
+            "Buttons: On/Off, Reset, Power",
           ],
           "Size": [
-            "尺寸ＴＢＤ"
+            "Size: 110mm * 58mm* 13.5mm"
           ],
           "hard_others": [
-            "1 * RJ-45 10/100Mbps",
-            "指示灯1 * WIFI指示灯 1 * 4G指示灯　4 * 电量指示灯"
+            "WAN/LAN: 1 * RJ-45 10/100Mbps (WAN / LAN)",
+            "LED Light(s): 1 * WiFi, 1 * 4G,　4 * Power"
           ]
         },
         "network": {
-          "3G / LTE": [
-            "内置高增益天线 2*LTE天线",
-            "Four-Baad TDD-LTE B38/B39/B40/B41",
-            "Dual-Baad FDD-LTE B1/B3",
-            "Dual-Baad TD-SCDMA B34/B39",
-            "Siagle-Baad UMTS/HSDPA/HSPA+ B1",
-            "Dual-Baad GSM 900/1800 MHz",
-            "TDD-LTE/FDD-LTE- Upliak up to 50Mbps,- Dowaliak up to 100Mbps",
-            "TD-HSDPA/HSUPA- Upliak up to 2.2 Mbps,-Dowaliak up to 2.8 Mbps",
-            "TD-SCDMA- Upliak up to 128Kbps,- Dowaliak up to 384Kbps",
-            "HSPA+- Upliak up to 11 Mbps,- Dowaliak up to 42 Mbps",
-            "UMTS- Upliak/Dowaliak up to 384Kbps"
-          ]
         },
         "software": {
-          "Operating System": [
-            "基本功能修改网络模式、SSID、广播、信道、信道带宽"
-          ],
+          "Operating System": [],
           "Priority Control": [],
           "File Server Functionality": [],
-          "VPN": [
-            "VPN穿透支持"
-          ],
+          "VPN": [],
           "Firewall / Security": [
-            "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全"
+            "Security: WPA-PSK, WPA2-PSK, WPA&WPA2-PSK"
           ],
           "Port Fowarding / DMZ / uPNP": [
-            "虚拟服务器端口转发",
-            "DMZ主机"
+            "Port Fowarding: Supported",
+            "DMZ: Supported"
           ],
           "soft_others": [
-            "WAN接入方式:3G/4G、PPPOE、DHCP、Static",
-            "工作模式:家庭、酒店、3G/4G、WISP",
-            "DHCP设置:DHCP服务器 客户端列表 静态地址分配",
-            "安全设置客户端过滤",
-            "远程WEB管理",
-            "Mac地址过滤",
-            "URL过滤"
+            "WAN Type: 3G/4G, PPPoE, DHCP, Static",
+            "Work Mode: Router, AP, WISP",
+            "DHCP: Server, Client, DHCP Client List, Address Reservation",
+            "Firewall Security: Dos, SPI Firewall, IP Address Filter, MAC Address Filter, Domain Filter, IP and MAC Address Binding",
+            "URL Filter: Supported",
+            "DDNS: Supported",
+            "MAC Clone: Supported",
+            "NTP Synchronize: Supported",
+            "Web Firmware Upgrade: Supported"
           ]
         },
         "others": {
           "temperature": [
-            "温度工作温度：0℃ 到 40℃ 存储温度：-40℃ 到 70℃",
-            "湿度工作湿度：10% 到 90%RH 不凝结 存储湿度：5% 到 90%RH 不凝结"
-          ],
-          "SSID": [
-            "出厂默认设置SSID:Tenda+MAC地址后6位"
-          ],
-          "accessories": [
-            "包装配件4G301*1 《快速安装指南》*1 网线 *1 USB线 *1 保修卡 *1"
-          ],
-          "thirdparty": [
-            "第三方认证FCC/CE/RoHS/WEEE"
-          ],
-          "associated": [
-            "相关联产品4G300、4G302、3G189E、3G-W6"
-          ],
-          "password": [
-            "无线密码：无"
-          ],
-          "accesstype": [
-            "默认接入方式：DHCP"
+            "Operating Temperature: 0℃ ~ 40℃ ",
+            "Storage Temperature: -40℃ ~ 70℃ ",
+            "Operating Humidity: 10% ~ 90%RH (Non-condensing) ",
+            "Storage Humidity: 10% ~ 90%RH (Non-condensing) "
           ]
         }
       }
@@ -147,11 +114,11 @@
         "cover": "pro_pbr_m1_cover.jpg",
         "comp": "pro_pbr_m1_comp.png"
       },
-      "summary": "EN:PBR-M1是一款支持IEEE 802.11 a/b/g/n/ac同步双频智能路由器, 支持2x2 MIMO技术，最大理论传输速率可达1200Mbps，是一般家用路由器的4倍，由于提供5G这个环境比较干净的频段，因此除了可以很好的满足传统覆盖传输要求外，还能提供无线视频传输、无线视频监控、无线文件共享等智能路由器的新颖需求。高精度实时时钟,蜂鸣器(RTC)等。",
+      "summary": "PBR-M1 is an advanced wired & wireless router, which is support IEEE 802.11 a/b/g/n/ac. It’s a duel band wireless (2.4GHz & 5GHz) router, supports 2x2 MIMO, the maximum theoretical wireless speed can be up to 1200Mbps. It’s about 4 times of the traditional routers. PBR-M1 designed with SATA socket, RTC and TF-card slot… Users can not only use it as a traditional router, but also can enjoy and share videos, pictures and files… Match up with PandoraBox OS. and applications, it can become a high performance management terminal and an intelligent center device.",
       "features": [
-        "EN:基于OpenWrt自主深度开发的PandoraBox操作系统，配以阿里智能ALink平台, 极大地扩展了路由器的功能和应用. M1插入移动硬盘等存储设备后可以实现NAS功能、视频、图片等文件远程上传、下载、共享；电脑连接上M1后可以更好地享受私有云功能，搭建属于自己的更加安全的云服务器。另外，软件为硬盘保护做了专门设计，实现对硬盘工作状态的掌控和保护。",
-        "EN:配合丰富的插件可以实现视频监控、视频共享、脱机下载、离线下载等智能路由器的全新功能",
-        "EN:有线方面支持四个千兆LAN口。支持一个USB3.0接口，一个ESATA+USB2.0；USB3.0接口的设备提供高达1.5A的电流，智能手机、平板电脑提供标准1A充电电流。可以在充电的同时把移动设备中的各种文件共享或备份到路由器所接的硬盘内。软件为硬盘保护做了专门设计，实现对硬盘工作状态的掌控和保护。"
+        "PBR-M1 designed with all gigabit WAN/LAN ports, with variety of connectors, such as: USB3.0, SATA, eSATA+USB2.0, TF-card slot... Users can DIY it as a NAS, private cloud, management terminal or other multi-function equipment",
+        "Matched up with PandoraBox OS., make it more stable, more effective and easier setup",
+        "Matched up with the Applications (Router APP.), it can become a high performance management terminal and an intelligent center device. "
       ],
       "params": {
         "hardware": {
@@ -270,7 +237,7 @@
         "cover": "pro_pbr_m2_cover.jpg",
         "comp": "pro_pbr_m2_comp.png"
       },
-      "summary": "EN:PBR-M2是一款支持IEEE 802.11 a/b/g/n/ac同步双频智能路由器, 支持2x2 MIMO技术，最大理论传输速率可达1200Mbps，是一般家用路由器的倍，由于提供5G这个环境比较干净的频段，因此除了可以很好的满足传统覆盖传输要求外，还能提供无线视频传输、无线视频监控、无线文件共享等智能路由器的新颖需求，硬件上添加了无线放大器，环形LED灯，档次更显高端，另可通过按钮控制开和关，设计更人性化。",
+      "summary": "PBR-M2 is an advanced wired & wireless router, which is support IEEE 802.11 a/b/g/n/ac. It’s a duel band wireless (2.4GHz & 5GHz) router, supports 2x2 MIMO, the maximum theoretical wireless speed can be up to 1200Mbps. It’s about 4 times of the traditional routers. Increase a touch panel to control the power lights and duel band signal-amplifier, WiFi signal can be transmited stronger and farther. Moreover, PBR-M2 designed with a USB3.0 socket, means it can support high effective files transfer. With USB2.0, TF-card socket users can not only use it as a traditional router, but also can enjoy and share videos, pictures, files… Match up with PandoraBox OS. and applications, it can become a high performance management terminal and an intelligent center device. ",
       "features": [
         "EN:基于OpenWrt自主深度开发的PandoraBox操作系统，配以阿里智能ALink平台，极大地扩展了路由器的功能和应用：M2在2.4G和5G的功率方面，在硬件上也做了改善，分别添加了一组PA(俗称'无线放大器')，大大加强了无线覆盖范围。有线方面支持四个千兆LAN口。支持一个USB3.0接口，支持DLNA。",
         "EN:配合丰富的插件可以实现视频监控、视频共享、脱机下载、离线下载等智能路由器的全新功能。",
@@ -391,7 +358,7 @@
         "cover": "pro_pbr_w1_cover.jpg",
         "comp": "pro_pbr_w1_comp.png"
       },
-      "summary": "PEN:BR-W1高性能无线路由器采用MTK(联发科) MT7688KN解决方案，其优点就是成本低；且功耗低，将主芯片的温度降到最低。 搭载由More-Link团队优化后的PandoraBox系统，性能更加稳定，性价比更加高。",
+      "summary": "PBR-W1 is a high cost performance wired & wireless router, which is support IEEE 802.11 a/b/g/n. It’s a single band wireless (2.4GHz) router, the maximum theoretical wireless speed can be up to 300Mbps. Match up with PandoraBox OS., it can become a high cost performance gateway device.",
       "features": [
         "EN:采用QFN的封装，性能更稳定，整体功耗降低",
         "EN:全新的wifi模块，硬件上解决了wifi抗干扰差的问题",
@@ -506,7 +473,7 @@
         "cover": "pro_pbr_w3_cover.jpg",
         "comp": "pro_pbr_w3_comp.png"
       },
-      "summary": "EN:PBR-W3高性能无线路由器采用MTK(联发科) MT7628AN解决方案，强劲的MTK7628芯片配上高增益信号天线，再以波束成形技术，将信号向你所处的空间位置进行发送，获得更强的连接能力。三位一体，从根本上提升覆盖和穿墙能力。基于OpenWrt深度开发的PandoraBox操作系统，优化了openwrt的不足之处，配合丰富的插件可以实现视频监控、视频共享、脱机下载、离线下载、远程开关机、多拨、广告过滤等智能路由器的全新功能。人性化的交互界面设计，使上网设置更加轻松快捷。",
+      "summary": "PBR-W3 is a high cost performance wired & wireless router, which is support IEEE 802.11 a/b/g/n/ac. It’s a duel band wireless (2.4GHz & 5GHz) router, supports 2x2 MIMO, the maximum theoretical wireless speed can be up to 1200Mbps. It’s about 4 times of the traditional routers. PBR-W3 designed with USB2.0 socket, users can not only use it as a traditional router, but also can enjoy and share videos, pictures and files… Match up with PandoraBox OS. and applications, it can become a high performance management terminal and an intelligent center device. ",
       "features": [
         "EN:新一代双频MIMO 2*2阵列黄铜天线，配以4天线单元，镀金天线接驳，大幅度增强无线信号的稳定性及穿透力，增大覆盖范围。",
         "EN:有线方面支持两个百兆LAN口。支持一个USB接口，可以为一般USB接口的设备提供高达1A的电流，智能手机、平板电脑提供标准500mA充电电流。",

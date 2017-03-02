@@ -59,7 +59,7 @@
           "I2S / PCM": [],
           "UART": [],
           "Button": [
-            "Buttons: On/Off, Reset, Power",
+            "Buttons: On/Off, Reset, Power"
           ],
           "Size": [
             "Size: 110mm * 58mm* 13.5mm"

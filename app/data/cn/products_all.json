@@ -1,5 +1,6 @@
 {
-  "finished": [
+  "finished": [ ],
+  "unfinished": [
     {
       "id": "f_0",
       "type": "PBR-C1",
@@ -612,6 +613,5 @@
         }
       }
     }
-  ],
-  "unfinished": []
+  ]
 }

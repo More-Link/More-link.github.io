@@ -63,8 +63,8 @@ define(['util'],(util)=>{
 	            language: 'cn',
                 attribute: 'index',
                 hash: '',
-                href: '/index.html',
-                path: '/'
+                href: '/index-cn.html',
+                path: '/index-cn.html'
             },
             product: {
                 static: false,
@@ -120,7 +120,7 @@ define(['util'],(util)=>{
 		    }
 	    }
     };
-    
+
 	var currentRoute = null,currentRouteMatched = false;
     var matchCurrentPath = function (force) {
     	//非强制型的更改
@@ -148,12 +148,12 @@ define(['util'],(util)=>{
 	    targetRoute !== null && (currentRouteMatched = true);
     	return targetRoute;
     };
-	
+
 	window.addEventListener('popstate',function(e){
 		//popstate状态下重启路由更新
 		matchCurrentPath(true);
 	})
-    
+
 
     //返回接口
     return {
@@ -193,7 +193,7 @@ define(['util'],(util)=>{
                 console.info('Match Route Should Be An Object!  [&{route}]');
                 flag = window.location.pathname == route;
             }
-            
+
             return flag;
         },
         getCurrentRoute: function () {

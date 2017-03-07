@@ -42,7 +42,9 @@ gulp.task('scripts',['data'], () => {
   return gulp.src(['app/scripts/**/*.js'])
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
-    .pipe($.babel())
+    .pipe($.babel({
+      presets: ['es2015']
+    }))
     .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe(gulp.dest('dist/scripts'))
@@ -123,7 +125,7 @@ gulp.task('serve', () => {
       'app/images/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);
-	
+
     gulp.watch('app/styles/**/**/**/*.scss', ['styles']);
     gulp.watch('app/data/**/*.json', ['data']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);

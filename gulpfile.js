@@ -45,6 +45,7 @@ gulp.task('scripts',['data'], () => {
     .pipe($.babel({
       presets: ['es2015']
     }))
+    .pipe($.wait(500))
     .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe(gulp.dest('dist/scripts'))
@@ -98,7 +99,8 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*',
-    '!app/*.html'
+    '!app/*.html',
+    '!app/scripts/**/*.js'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));

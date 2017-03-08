@@ -5,7 +5,7 @@ define(['jquery','util','i18n/switch_reload','translate','i18n/config','cf/file_
     function ($,util,switch_reload,Translate,config,file_url,site_config) {
     //设置注册语言版本
     var langDic = {
-            'en': 'EN',
+            'en': 'English',
             'cn': '中文'
         };
     var translator = null,translatorName = 'morelink';

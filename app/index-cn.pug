@@ -1,0 +1,84 @@
+extends ./layout/index
+
+block title
+  title MORELINK官方网站
+
+block content
+  -
+    var LANG = 'zh-cn';
+    var recommends = [
+      {
+        href: '/product.html?type=&id=c1',
+        img: '/images/img/index/img_product_c1.png',
+        title: "PBR-C1 移动（便携）无线路由器",
+        summery: "采用MT7628AN解决方案，可带4G/3G模块，真正以路由器方案实现的移动路由器！"
+      }, {
+        href: '/product.html?type=&id=m1',
+        img: '/images/img/index/img_product_m1.png',
+        title: "PBR-M1 全千兆多接口有线&无线路由器",
+        summery: "采用MT7621AN解决方案，2.4GHz & 5GHz双频无线传输，带无线信号放大器，带触摸Home键、USB3.0、USB2.0 及 TF卡槽。"
+      }, {
+        href: '/product.html?type=&id=m2',
+        img: '/images/img/index/img_product_m2.png',
+        title: "PBR-M2全千兆大功率有线&无线路由器",
+        summery: "采用MT7621AN解决方案，2.4GHz & 5GHz双频无线传输，带无线信号放大器，带触摸Home键、USB3.0、USB2.0 及 TF卡槽。"
+      }, {
+        href: '/product.html?type=&id=w1',
+        img: '/images/img/index/img_product_w1.png',
+        title: "PBR-W3高性价比双频路由器",
+        summery: "采用MT7628AN解决方案，2.4GHz & 5GHz双频无线传输，搭载PandoraBox系统，使其更稳定、更高效、性价比更高！"
+      }, {
+        href: '/product.html?type=&id=w3',
+        img: '/images/img/index/img_product_w3.png',
+        title: "PBR-W1高性价比有线&无线路由器",
+        summery: "采用MT7688KN解决方案，2.4GHz单频无线传输，低成本、低功耗，搭载PandoraBox系统，使其更稳定、更高效、性价比更高！"
+      }
+    ];
+  //- banner begin
+  .banner_container
+    #swiper_banner.swiper-container
+      .swiper-wrapper
+        // slide item
+        .swiper-slide(style="background-image: url('images/img/index/img_banner.jpg')")
+          .banner_content_wraper
+            .banner_content_box
+              h1.content_title More and More
+              article.content_summary
+                p  Link the world
+              a.check_more(href='/solution.html?type=MediaTek/MT7628&id=1481376751020') 点击查看更多详情
+  //- banner end
+  //- new pros recommend begin
+  .pros_recommend_container
+    h1.recommend_header 新品推荐
+    #pro_swiper_recommend.pro_recommend_swiper_container
+      .swiper-wrapper
+        - for (var i = 0; i < recommends.length; i++)
+          +recommend_item(recommends[i])
+      .recommend_shadow_left
+        .swiper-button-prev
+      .recommend_shadow_right
+        .swiper-button-next
+  //- new pros recommend end
+  //- video swiper begin
+  .video_recommend_container
+    .center_arrow_down
+    h1.recommend_header
+      | MORE
+      em LINK
+      br
+      | 成就科技进步
+    #video_swiper_recommend.video_recommend_swiper_container
+      .swiper-wrapper
+        .swiper-slide
+          .video_box(style="background-image: url('images/img/index/img_video.png')")
+            //- span.video_play_btn
+            //- iframe(height='498', width='510', src='http://player.youku.com/embed/XMTg1Mzk2Mzg1Ng==', frameborder='0', allowfullscreen='allowfullscreen')
+  //- video swiper end
+  //- Footer begin
+  footer.container-fluid.footer_container
+    #footer_box.footer_box
+  //- Footer end
+  //- build:js scripts/plugins.js
+  //- endbuild
+  //- build:js scripts/main.js
+  //- endbuild

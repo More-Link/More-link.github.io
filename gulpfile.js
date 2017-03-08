@@ -76,11 +76,13 @@ gulp.task('lint:test', () => {
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
-  return gulp.src('app/*.html')
+  return gulp.src('app/*.{html,pug}')
+    .pipe($.if(/\.pug$/, $.pug()))
     .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+    // .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('.tmp'))
     .pipe(gulp.dest('dist'));
 });
 
@@ -110,7 +112,7 @@ gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 gulp.task('clean:tmp', del.bind(null, ['.tmp']));
 
 gulp.task('serve', () => {
-  runSequence(['clean:tmp', 'wiredep'], ['styles', 'scripts', 'bowerFiles', 'fonts'], () => {
+  runSequence(['clean:tmp', 'wiredep'], ['html', 'styles', 'scripts', 'bowerFiles', 'fonts'], () => {
     browserSync.init({
       notify: false,
       port: 9000,
@@ -124,10 +126,13 @@ gulp.task('serve', () => {
 
     gulp.watch([
       'app/*.html',
+      'app/*.pug',
+      'app/layout/*.pug',
       'app/images/**/*',
       '.tmp/fonts/**/*'
     ]).on('change', reload);
 
+    gulp.watch('app/**/*.pug', ['html']);
     gulp.watch('app/styles/**/**/**/*.scss', ['styles']);
     gulp.watch('app/data/**/*.json', ['data']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);

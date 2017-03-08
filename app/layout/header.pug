@@ -1,0 +1,53 @@
+mixin menu
+  -
+    var DATA = {
+      en: {
+        current: 'English',
+        home: 'HOME',
+        product: 'PRODUCT',
+        solution: 'SOLUTION',
+        about: 'COMPANY',
+        contact: 'CONTACT'
+      },
+      cn: {
+        current: '中文',
+        home: '首页',
+        product: '产品',
+        solution: '解决方案',
+        about: '公司介绍',
+        contact: '联系我们'
+      }
+    };
+    var data = (LANG == 'zh-cn' ? DATA.cn : DATA.en);
+
+  //- header begin
+  header.container-fluid.header_container
+    .header_box
+      .mobile_back_holder
+      .logo_box
+        a(href='')
+          img(src='images/icon/icon_logo.png', alt='')
+      span.nav_control_btn(for='nav_main')
+        i.menu_bar
+      nav#main_nav_box.main_nav_box
+        li
+          a(href='/')= data.home
+        li
+          span.nav_control.nav_level_tag= data.product
+        li
+          span.nav_control.nav_level_tag= data.solution
+        li
+          a(href='/about.html')= data.about
+        li.nav_contact
+          a(href='/about.html#contact_us')= data.contact
+        li.nav_language
+          span.language_switcher= data.current
+          ul.lang_switch_options
+            li(value='en', text='Engish') Engish
+            li(value='cn', text='中文') 中文
+    .laptop_product_nav_container
+      #product_laptop_menu_box.product_nav_box
+      //- 解决方案start
+      #product_recommend_menu_box.product_nav_box
+      //- 解决方案end
+  //- header end

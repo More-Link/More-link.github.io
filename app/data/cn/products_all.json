@@ -2,7 +2,7 @@
   "finished": [ ],
   "unfinished": [
     {
-      "id": "f_0",
+      "id": "c1",
       "type": "PBR-C1",
       "path": "",
       "name": "PBR-C1 4G无线路由器",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "f_1",
+      "id": "m1",
       "type": "PBR-M1",
       "path": "",
       "name": "PBR-M1 全千兆大功率无线路由器",
@@ -263,7 +263,7 @@
       }
     },
     {
-      "id": "f_3",
+      "id": "m2",
       "type": "PBR-M2",
       "path": "",
       "name": "PBR-M2 全千兆大功率无线路由器",
@@ -384,7 +384,7 @@
       }
     },
     {
-      "id": "f_4",
+      "id": "w1",
       "type": "PBR-W1",
       "path": "",
       "name": "PBR-W1高性能无线路由器",
@@ -499,7 +499,7 @@
       }
     },
     {
-      "id": "f_5",
+      "id": "w3",
       "type": "PBR-W3",
       "path": "",
       "name": "PBR-W3高性能无线路由器",

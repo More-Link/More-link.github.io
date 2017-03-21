@@ -19,7 +19,9 @@ install:
 before_script:
   - bower install
 
-script: gulp
+script:
+  - gulp
+  - gulp styles
 
 after_script:
   - cd ./dist

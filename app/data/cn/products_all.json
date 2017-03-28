@@ -32,7 +32,7 @@
           "RAM": [],
           "WAN": [],
           "LAN": [],
-          "WiFi": [],
+          "Frequency": [],
           "LTE": [
             "内置高增益天线 2*LTE天线"
           ],
@@ -42,7 +42,6 @@
           "Antenna": [
             "内置高增益天线2*WIFI天线"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [
@@ -56,17 +55,16 @@
             "输出：(VDC) 5V，2A",
             "电池容量5200mAh"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "按钮开关按键",
             "Reset按键",
             "电量显示按键"
           ],
-          "Size": [
-            "尺寸ＴＢＤ"
-          ],
+          "Size": [],
           "hard_others": [
             "1 * RJ-45 10/100Mbps",
             "指示灯1 * WIFI指示灯 1 * 4G指示灯　4 * 电量指示灯"
@@ -90,11 +88,6 @@
         "software": {
           "Operating System": [
             "基本功能修改网络模式、SSID、广播、信道、信道带宽"
-          ],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [
-            "VPN穿透支持"
           ],
           "Firewall / Security": [
             "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全"
@@ -177,7 +170,9 @@
           "LAN": [
             "4*10/100/1000Mbps LAN port(Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "工作频段 2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "无线速率最大支持1200Mbps"
@@ -185,7 +180,6 @@
           "Antenna": [
             "天线 2 * 5dBi 全向天线"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [
             "1*eSATA 接口",
@@ -199,15 +193,15 @@
           "Battery": [
             "电源输入DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Reset/WPS按钮"
           ],
           "Size": [],
           "hard_others": [
-            "工作频段 2.4GHz/5.8GHz",
             "LED灯 2.4G,5G,SY1,SY2,POWER",
             "工作信道 2.4GHz的信道：1-13 5.8GHz的信道：149,153,157,161,165",
             "1* RTC蜂鸣器"
@@ -221,11 +215,6 @@
             "网络接入方式PPPoE拨号、动态IP、静态IP",
             "工作模式为Router和AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [
-            "DHCP功能(Server, Client, DHCP Client List, Address Reservation)"
-          ],
-          "VPN": [],
           "Firewall / Security": [
             "防火墙(IP Address Filter/MAC Address Filter/ Domain Filter)"
           ],
@@ -301,7 +290,9 @@
           "LAN": [
             "4*10/100/1000Mbps LAN port(Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "工作频段 2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "无线速率最大支持1200Mbps"
@@ -309,7 +300,6 @@
           "Antenna": [
             "天线 4 * 5dBi 全向天线"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [
@@ -319,16 +309,16 @@
           "Battery": [
             "电源输入DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Reset/WPS按钮；触摸按钮",
             "LED灯按钮开关"
           ],
           "Size": [],
           "hard_others": [
-            "工作频段 2.4GHz/5.8GHz",
             "LED灯 2.4G,5G,SY1,SY2,POWER",
             "工作信道 2.4GHz的信道：1-13 5.8GHz的信道：149,153,157,161,165",
             "外置大功率PA"
@@ -342,11 +332,6 @@
             "网络接入方式PPPoE拨号、动态IP、静态IP",
             "工作模式为Router和AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [
-            "DHCP功能(Server, Client, DHCP Client List, Address Reservation)"
-          ],
-          "VPN": [],
           "Firewall / Security": [
             "防火墙(IP Address Filter/MAC Address Filter/ Domain Filter)"
           ],
@@ -423,15 +408,15 @@
           "LAN": [
             "4 * RJ-45 10/100Mbps LAN port(Auto MDI/MDIX)"
           ],
-          "WiFi": [
-            "外置高增益天线 1*WIFI天线"
+          "Frequency": [
+            "外置高增益天线 1*WIFI天线",
+            "工作频段 2.4GHz"
           ],
           "LTE": [],
           "Wireless Speed": [
             "无线传输速率150Mbps"
           ],
           "Antenna": [],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [],
@@ -439,9 +424,10 @@
           "Battery": [
             "电源输入DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Reset按键"
           ],
@@ -459,9 +445,6 @@
             "网络接入方式PPPoE拨号、动态IP、静态IP",
             "路由功能，中继功能"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [],
           "Firewall / Security": [
             "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全",
             "DHCP设置DHCP服务器 客户端列表 静态地址分配",
@@ -537,7 +520,9 @@
           "LAN": [
             "2 * RJ-45 10/100Mbps LAN port(Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "工作频段 2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "无线传输速率Max 1200Mbps"
@@ -545,7 +530,6 @@
           "Antenna": [
             "2*WIFI / 4*WIFI外置高增益天线"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [],
@@ -553,9 +537,10 @@
           "Battery": [
             "电源输入：小于12V"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Reset/WPS按键"
           ],
@@ -571,11 +556,6 @@
           "Operating System": [
             "网络接入方式PPPoE拨号、动态IP、静态IP",
             "路由功能，中继功能"
-          ],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [
-            "VPN穿透支持"
           ],
           "Firewall / Security": [
             "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全",

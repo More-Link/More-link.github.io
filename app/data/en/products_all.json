@@ -24,15 +24,23 @@
           "CPU": [
             "CPU: MT7628 (580 MHz)"
           ],
-          "Flash": [],
+          "Flash": [
+            "ROM: 128Mbit"
+          ],
           "USB Port": [
             "USB: 1 * USB 2.0（Charger output）",
             "Micro USB: 1 * Micro USB（Charger input）"
           ],
-          "RAM": [],
-          "WAN": [],
+          "RAM": [
+            "RAM: DDR2 128MByte"
+          ],
+          "WAN": [
+            "WAN: 1 * 10/100/1000Mbps(AutoMDI/MDIX)"
+          ],
           "LAN": [],
-          "WiFi": [],
+          "Frequency": [
+              "2.4GHz"
+          ],
           "LTE": [
             "LTE/3G Module: Embedded Stamp hole connection for LTE/3G Module"
           ],
@@ -42,7 +50,6 @@
           "Antenna": [
             "Antenna(s): Internal Antenna(s)"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [
@@ -56,9 +63,10 @@
             "Power Output: (VDC) 5V，2A",
             "Battery Capacity: 5200mAh"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Buttons: On/Off, Reset, Power"
           ],
@@ -71,12 +79,15 @@
           ]
         },
         "network": {
+          "3G / LTE": [
+              "Supported"
+          ]
         },
         "software": {
-          "Operating System": [],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [],
+          "Operating System": [
+            "WAN Type: PPPoE, DHCP, Static",
+            "Work Mode: Router, AP"
+          ],
           "Firewall / Security": [
             "Security: WPA-PSK, WPA2-PSK, WPA&WPA2-PSK"
           ],
@@ -145,7 +156,9 @@
           "LAN": [
             "LAN: 4 * 10/100/1000Mbps (Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "Data Rate: 300Mbps + 867Mbps"
@@ -153,7 +166,6 @@
           "Antenna": [
             "Antennas: 2 * 5dBi"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [
             "SATA: 1 * SATA",
@@ -167,7 +179,6 @@
           "Battery": [
             "Power Input: DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [
             "I2S: 1 * I2S",
             "I2C: 1 * I2C"
@@ -182,7 +193,6 @@
             "Size: 160mm * 103mm * 19mm"
           ],
           "hard_others": [
-            "Frequency: 2.4GHz & 5.8GHz",
             "LED Lights: 2.4G , 5G , SY1 , SY2 , POWER",
             "RTC: 1 * RTC",
             "Buzzer: 1 * Buzzer"
@@ -196,11 +206,6 @@
             "WAN Type: PPPoE, DHCP, Static",
             "Work Mode: Router, AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [
-            "DHCP: Server, Client, DHCP Client List, Address Reservation"
-          ],
-          "VPN": [],
           "Firewall / Security": [
             "Firewall Security: IP Address Filter, MAC Address Filter, Domain Filter"
           ],
@@ -273,7 +278,9 @@
           "LAN": [
             "LAN: 4 * 10/100/1000Mbps (Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "Data Rate: 300Mbps + 867Mbps"
@@ -281,7 +288,6 @@
           "Antenna": [
             "Antennas: 4 * 5dBi"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [
@@ -291,16 +297,18 @@
           "Battery": [
             "Power Input: DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Button: Reset/WPS",
             "LED Touch Panel"
           ],
-          "Size": [],
+          "Size": [
+            "Size: 170mm * 113.5mm * 23mm"
+          ],
           "hard_others": [
-            "Frequency: 2.4GHz & 5.8GHz",
             "LED Lights: 2.4G, 5G, SY1, SY2, POWER",
             "Signal-amplifier: 2.4GHz, 5.8GHz"
           ]
@@ -313,11 +321,6 @@
             "WAN Type: PPPoE, DHCP, Static",
             "Work Mode: Router, AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [
-            "DHCP: Server, Client, DHCP Client List, Address Reservation"
-          ],
-          "VPN": [],
           "Firewall / Security": [
             "Firewall Security: IP Address Filter, MAC Address Filter, Domain Filter"
           ],
@@ -377,11 +380,11 @@
             "CPU: MT7688KN (580MHz)"
           ],
           "Flash": [
-            "ROM: 32Mbit"
+            "ROM: SPIFlash, 32Mbit"
           ],
           "USB Port": [],
           "RAM": [
-            "RAM: DDR1 8MByte"
+            "RAM: DDR1 8MByte(Optional)"
           ],
           "WAN": [
             "WAN: 1 * 10/100Mbps (Auto MDI/MDIX)"
@@ -389,13 +392,14 @@
           "LAN": [
             "LAN: 4 * 10/100Mbps (Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "2.4GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "Data Rate: 150Mbps"
           ],
           "Antenna": [],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [],
@@ -403,9 +407,10 @@
           "Battery": [
             "Power Input: DC 12V/2A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Button: Reset"
           ],
@@ -413,7 +418,6 @@
           "Size: 107mm * 76mm * 18mm"
           ],
           "hard_others": [
-            "Frequency: 2.4GHz",
             "LED Lights: 2.4G, INTERNET, WAN, LAN, POWER"
           ]
         },
@@ -425,9 +429,6 @@
             "WAN Type: PPPoE, DHCP, Static",
             "Work Mode: Router, AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [],
           "Firewall / Security": [
             "Security: WPA-PSK、WPA2-PSK、WPA&WPA2-PSK"
           ],
@@ -497,7 +498,9 @@
           "LAN": [
             "LAN: 2 * RJ-45 10/100Mbps (Auto MDI/MDIX)"
           ],
-          "WiFi": [],
+          "Frequency": [
+              "2.4GHz & 5GHz"
+          ],
           "LTE": [],
           "Wireless Speed": [
             "Data Rate: 300Mbps + 867Mbps"
@@ -505,7 +508,6 @@
           "Antenna": [
             "Antennas: 2 * 3dBi"
           ],
-          "Wireless Power": [],
           "Wireless Repeater": [],
           "SATA Port": [],
           "TF-Card Slot": [],
@@ -513,13 +515,16 @@
           "Battery": [
             "Power Input：DC 12V/1A"
           ],
-          "NFC": [],
           "I2S / PCM": [],
-          "UART": [],
+          "UART": [
+            "UART: 1 * UART"
+          ],
           "Button": [
             "Button: Reset/WPS"
           ],
-          "Size": [],
+          "Size": [
+            "Size: 118mm * 85mm * 17.5mm"
+          ],
           "hard_others": [
             "LED Lights: 2.4G, 5.8G, INTERNET, WAN, LAN, POWER"
           ]
@@ -532,9 +537,6 @@
             "WAN Type: PPPoE, DHCP, Static",
             "Work Mode: Router, AP"
           ],
-          "Priority Control": [],
-          "File Server Functionality": [],
-          "VPN": [],
           "Firewall / Security": [
             "Security: WPA-PSK、WPA2-PSK、WPA&WPA2-PSK"
            ],

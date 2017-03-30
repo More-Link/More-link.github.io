@@ -123,10 +123,10 @@ define(['cf/site_config'],(site_config)=>({
             }
         },
         footer: {
-            navTitle: 'Navigation',
+            navTitle: 'NAVIGATION',
             sell: `<h5 class="column_title">CONTACT US</h5>
                 <div class="contact_area">
-                  <span>BUSINESS COOPERATION</span>
+                  <span><b>BUSINESS COOPERATION</b></span>
                   <!--<span>(010)231238490</span>-->
                   <span>Oversea001@more-link.com.hk</span>
                   <span>More-Link Technology Co., Ltd</span>

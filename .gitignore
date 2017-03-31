@@ -3,5 +3,4 @@
 /Documents
 /dist
 /.tmp
-data/*/products_all.json
-data/*/solutions_all.json
+/app/data/*/*_all.json

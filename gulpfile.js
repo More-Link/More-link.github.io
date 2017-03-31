@@ -36,11 +36,22 @@ gulp.task('lib',function () {
 const glob = require('glob');
 const fs = require('fs');
 gulp.task('data:pre', () => {
-    let filelist = glob.sync(`${__dirname}/app/data/{product,solution}s/*/*`);
+    const DEFAULT_LANG = ['cn', 'en'];
+    const DEFAULT_OBJ = {
+        products: {
+            finished: [ ],
+            unfinished: [ ]
+        },
+        solutions: {
+            hardware: [ ],
+            software: [ ]
+        }
+    };
+    const filelist = glob.sync(`${__dirname}/app/data/{product,solution}s/*/*`);
     let obj = { };
     let promiseList = [ ];
 
-    filelist.map((filepath) => {
+    filelist.forEach((filepath) => {
         let ref = filepath.match(/([\w_-]+)[\\\/]([\w_-]+)[\\\/]([\w_-]+)$/);
         let model = ref[1];
         let type = ref[2];
@@ -57,6 +68,29 @@ gulp.task('data:pre', () => {
         let jsonList = glob.sync(`${filepath}/*.json`).map(require);
         obj[lang][model][type] = jsonList;
     });
+    // 自动填充缺失的结构
+    let ref;
+    for(let i in DEFAULT_LANG) {
+        let lang = DEFAULT_LANG[i];
+        ref = obj[lang];
+        if (ref == null) {
+            obj[lang] = DEFAULT_OBJ;
+            continue;
+        }
+        for(let model in DEFAULT_OBJ) {
+            ref = obj[lang][model];
+            if (ref == null) {
+                obj[lang][model] = DEFAULT_OBJ[model];
+                continue;
+            }
+            for(let type in DEFAULT_OBJ[model]) {
+                ref = obj[lang][model][type];
+                if (ref == null) {
+                    obj[lang][model][type] = DEFAULT_OBJ[model][type];
+                }
+            }
+        }
+    }
     for(let lang in obj) { for(let model in obj[lang]) {
         let targetPath = `${__dirname}/app/data/${lang}`;
         if(!fs.existsSync(targetPath)) {

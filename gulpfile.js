@@ -33,8 +33,46 @@ gulp.task('lib',function () {
         .pipe(gulp.dest('dist/lib'));
 });
 
-gulp.task('data',()=>{
-  return gulp.src('app/data/**/*.json')
+const glob = require('glob');
+const fs = require('fs');
+gulp.task('data:pre', () => {
+    let filelist = glob.sync(`${__dirname}/app/data/{product,solution}s/*/*`);
+    let obj = { };
+    let promiseList = [ ];
+
+    filelist.map((filepath) => {
+        let ref = filepath.match(/([\w_-]+)[\\\/]([\w_-]+)[\\\/]([\w_-]+)$/);
+        let model = ref[1];
+        let type = ref[2];
+        let lang = ref[3];
+        if (obj[lang] == null) {
+            obj[lang] = { };
+        }
+        if (obj[lang][model] == null) {
+            obj[lang][model] = { };
+        }
+        if (obj[lang][model][type] == null) {
+            obj[lang][model][type] = [ ];
+        }
+        let jsonList = glob.sync(`${filepath}/*.json`).map(require);
+        obj[lang][model][type] = jsonList;
+    });
+    for(let lang in obj) { for(let model in obj[lang]) {
+        let targetPath = `${__dirname}/app/data/${lang}`;
+        if(!fs.existsSync(targetPath)) {
+            fs.mkdirSync(targetPath);
+        }
+        promiseList.push(new Promise((resolve) => {
+            let targetFilePath = `${targetPath}/${model}_all.json`;
+            let data = JSON.stringify(obj[lang][model]);
+            fs.writeFile(targetFilePath, data, resolve);
+        }));
+    }}
+    return Promise.all(promiseList);
+});
+
+gulp.task('data', ['data:pre'], () => {
+  return gulp.src(['app/data/**/*.json', '!app/data/{product,solution}s'])
       .pipe(gulp.dest('dist/data'));
 })
 

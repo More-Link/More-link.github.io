@@ -1,0 +1,131 @@
+{
+    "id": "c1",
+    "type": "PBR-C1",
+    "path": "",
+    "name": "PBR-C1 4G无线路由器",
+    "image": {
+        "cover": "pro_pbr_c1_cover.jpg",
+        "comp": "pro_pbr_c1_comp.png"
+    },
+    "summary": "PBR-C1 4G无线路由器采用MTK MT7628解决方案，使用基于OpenWrt自主深度开发的PandoraBox操作系统，兼容移动、联通、电信三家运营商主流的4G/3G上网卡，可将4G/3G信号转化为无线WI-FI，让你在户外旅途中随时随地乐享无线WIFI。在已提供有线网络的宾馆、家庭、办公室，直接插上网线即将有线网络转化为WI-FI，无需设置即实现WI-FI上网。它内置标准的5200mAh移动电源，保证产品长时间高效工作，同时可给普通智能手机充电，外出办公、旅行再也不用为没电而担心。特有的电量显示按键，轻按此键即可了解电池的剩余电量。支持宾馆、家庭、4G/3G路由三种模式，可智能识别并自动切换到对应模式。在出差办公、户外旅行时4G301都能为您提供高速的无线接入。是商务人士出差旅行必备神器。",
+    "features": [
+        "4G/3G无线路由器：兼容最新技术的4G上网卡，向下可更好的兼容主流3G上网卡。可将4G/3G信号转化为WI-FI，随时随地连接WI-FI上网。",
+        "有线网络转化为WI-FI：在已提供有线网络的宾馆、家庭、办公室，插上网线即将有线网络转化为WI-FI，实现多人多设备WI-FI上网",
+        "5200mAh移动电源：内置标准5200mAh移动电源，不损害手机、Ipad电池，可给普通智能手机充电2-3次"
+    ],
+    "params": {
+        "hardware": {
+            "IEEE Standard": [
+                "网络标准IEEE 802.11b、IEEE 802.11g、IEEE 802.11n、IEEE 802.3u"
+            ],
+            "CPU": [
+                "MTK MT7628解决方案,主频高达580MHz"
+            ],
+            "Flash": [],
+            "USB Port": [
+                "1 * USB 2.0（给外部设备充电）",
+                "1 * Micro USB（供电输入）"
+            ],
+            "RAM": [],
+            "WAN": [],
+            "LAN": [],
+            "Frequency": [],
+            "LTE": [
+                "内置高增益天线 2*LTE天线"
+            ],
+            "Wireless Speed": [
+                "无线传输速率300Mbps"
+            ],
+            "Antenna": [
+                "内置高增益天线2*WIFI天线"
+            ],
+            "Wireless Repeater": [],
+            "SATA Port": [],
+            "TF-Card Slot": [
+                "1 * TF card slot"
+            ],
+            "SIM Card Slot": [
+                "1 * Micro SIM slot"
+            ],
+            "Battery": [
+                "电源输入：(VAC）100-240V；50Hz",
+                "输出：(VDC) 5V，2A",
+                "电池容量5200mAh"
+            ],
+            "I2S / PCM": [],
+            "UART": [
+                "UART: 1 * UART"
+            ],
+            "Button": [
+                "按钮开关按键",
+                "Reset按键",
+                "电量显示按键"
+            ],
+            "Size": [],
+            "hard_others": [
+                "1 * RJ-45 10/100Mbps",
+                "指示灯1 * WIFI指示灯 1 * 4G指示灯　4 * 电量指示灯"
+            ]
+        },
+        "network": {
+            "3G / LTE": [
+                "内置高增益天线 2*LTE天线",
+                "Four-Baad TDD-LTE B38/B39/B40/B41",
+                "Dual-Baad FDD-LTE B1/B3",
+                "Dual-Baad TD-SCDMA B34/B39",
+                "Siagle-Baad UMTS/HSDPA/HSPA+ B1",
+                "Dual-Baad GSM 900/1800 MHz",
+                "TDD-LTE/FDD-LTE- Upliak up to 50Mbps,- Dowaliak up to 100Mbps",
+                "TD-HSDPA/HSUPA- Upliak up to 2.2 Mbps,-Dowaliak up to 2.8 Mbps",
+                "TD-SCDMA- Upliak up to 128Kbps,- Dowaliak up to 384Kbps",
+                "HSPA+- Upliak up to 11 Mbps,- Dowaliak up to 42 Mbps",
+                "UMTS- Upliak/Dowaliak up to 384Kbps"
+            ]
+        },
+        "software": {
+            "Operating System": [
+                "基本功能修改网络模式、SSID、广播、信道、信道带宽"
+            ],
+            "Firewall / Security": [
+                "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全"
+            ],
+            "Port Fowarding / DMZ / uPNP": [
+                "虚拟服务器端口转发",
+                "DMZ主机"
+            ],
+            "soft_others": [
+                "WAN接入方式:3G/4G、PPPOE、DHCP、Static",
+                "工作模式:家庭、酒店、3G/4G、WISP",
+                "DHCP设置:DHCP服务器 客户端列表 静态地址分配",
+                "安全设置客户端过滤",
+                "远程WEB管理",
+                "Mac地址过滤",
+                "URL过滤"
+            ]
+        },
+        "others": {
+            "temperature": [
+                "温度工作温度：0℃ 到 40℃ 存储温度：-40℃ 到 70℃",
+                "湿度工作湿度：10% 到 90%RH 不凝结 存储湿度：5% 到 90%RH 不凝结"
+            ],
+            "SSID": [
+                "出厂默认设置SSID:Tenda+MAC地址后6位"
+            ],
+            "accessories": [
+                "包装配件4G301*1 《快速安装指南》*1 网线 *1 USB线 *1 保修卡 *1"
+            ],
+            "thirdparty": [
+                "第三方认证FCC/CE/RoHS/WEEE"
+            ],
+            "associated": [
+                "相关联产品4G300、4G302、3G189E、3G-W6"
+            ],
+            "password": [
+                "无线密码：无"
+            ],
+            "accesstype": [
+                "默认接入方式：DHCP"
+            ]
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "w1",
+  "type": "PBR-W1",
+  "path": "",
+  "name": "PBR-W1",
+  "image": {
+    "cover": "pro_pbr_w1_cover.jpg",
+    "comp": "pro_pbr_w1_comp.png"
+  },
+  "summary": "PBR-W1 is a high cost performance wired & wireless router, which is supported IEEE 802.11 a/b/g/n. It's a single band wireless (2.4GHz) router, the maximum theoretical wireless speed can be up to 300Mbps. Matched up with PandoraBox OS., it can become a high cost performance gateway device.",
+  "features": [
+    "PBR-W1 designed with QFN package, more stable and low power dissipation.",
+    "New WiFi module, solve anti-interference from hardware.",
+    "Removed the HWNAT, added a hardware encryption and speed-up module.",
+    "Refurbishment Process is available, it can be updated firmware easily.",
+    "Supported Repeater function."
+  ],
+  "params": {
+    "hardware": {
+      "IEEE Standard": [
+        "IEEE Standard: 802.11 b/g/n"
+      ],
+      "CPU": [
+        "CPU: MT7688KN (580MHz)"
+      ],
+      "Flash": [
+        "ROM: SPIFlash, 32Mbit"
+      ],
+      "USB Port": [],
+      "RAM": [
+        "RAM: DDR1 8MByte(Optional)"
+      ],
+      "WAN": [
+        "WAN: 1 * 10/100Mbps (Auto MDI/MDIX)"
+      ],
+      "LAN": [
+        "LAN: 4 * 10/100Mbps (Auto MDI/MDIX)"
+      ],
+      "Frequency": [
+          "2.4GHz"
+      ],
+      "LTE": [],
+      "Wireless Speed": [
+        "Data Rate: 150Mbps"
+      ],
+      "Antenna": [],
+      "Wireless Repeater": [],
+      "SATA Port": [],
+      "TF-Card Slot": [],
+      "SIM Card Slot": [],
+      "Battery": [
+        "Power Input: DC 12V/2A"
+      ],
+      "I2S / PCM": [],
+      "UART": [
+        "UART: 1 * UART"
+      ],
+      "Button": [
+        "Button: Reset"
+      ],
+      "Size": [
+      "Size: 107mm * 76mm * 18mm"
+      ],
+      "hard_others": [
+        "LED Lights: 2.4G, INTERNET, WAN, LAN, POWER"
+      ]
+    },
+    "network": {
+      "3G / LTE": []
+    },
+    "software": {
+      "Operating System": [
+        "WAN Type: PPPoE, DHCP, Static",
+        "Work Mode: Router, AP"
+      ],
+      "Firewall / Security": [
+        "Security: WPA-PSK、WPA2-PSK、WPA&WPA2-PSK"
+      ],
+      "Port Fowarding / DMZ / uPNP": [
+        "Port Fowarding: Supported"
+      ],
+      "soft_others": [
+        "QOS: Supported",
+        "DDNS: Supported",
+        "MAC Clone: Supported",
+        "Easy Setup: Supported"
+      ]
+    },
+    "others": {
+      "temperature": [
+        "Operating Temperature: 0℃ ~ 40℃ ",
+        "Storage Temperature: -40℃ ~ 70℃ ",
+        "Operating Humidity: 10% ~ 90%RH (Non-condensing) ",
+        "Storage Humidity: 5% ~ 90%RH (Non-condensing) "
+      ],
+      "SSID": [],
+      "accessories": [],
+      "thirdparty": [],
+      "associated": [],
+      "password": [],
+      "accesstype": []
+    }
+  }
+}

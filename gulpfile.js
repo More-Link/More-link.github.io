@@ -36,7 +36,7 @@ gulp.task('lib',function () {
 const glob = require('glob');
 const fs = require('fs');
 gulp.task('data:pre', () => {
-    const DEFAULT_LANG = ['cn', 'en'];
+    const DEFAULT_LANG = ['default', 'cn', 'en'];
     const DEFAULT_OBJ = {
         products: {
             finished: [ ],
@@ -48,6 +48,7 @@ gulp.task('data:pre', () => {
         }
     };
     const filelist = glob.sync(`${__dirname}/app/data/{product,solution}s/*/*`);
+    const _ = require('lodash');
     let obj = { };
     let promiseList = [ ];
 
@@ -91,7 +92,13 @@ gulp.task('data:pre', () => {
             }
         }
     }
+    // 合并默认值
+    for (let lang in obj) {
+        if(lang == 'default') continue;
+        obj[lang] = _.merge(obj[lang], obj.default);
+    }
     for(let lang in obj) { for(let model in obj[lang]) {
+        if(lang == 'default') continue;
         let targetPath = `${__dirname}/app/data/${lang}`;
         if(!fs.existsSync(targetPath)) {
             fs.mkdirSync(targetPath);

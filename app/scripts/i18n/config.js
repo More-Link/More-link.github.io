@@ -81,8 +81,8 @@ define(['cf/site_config'],(site_config)=>({
                 title:'PRODUCT',
                 back_btn: 'Back',
                 classify: {
-                    finished: 'Finished',
-                    unfinished: 'Unfinished'
+                    finished: 'ODM Product',
+                    unfinished: 'SKD Product'
                 }
             },
             solution: {

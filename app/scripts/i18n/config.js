@@ -126,11 +126,16 @@ define(['cf/site_config'],(site_config)=>({
             navTitle: 'NAVIGATION',
             sell: `<h5 class="column_title">CONTACT US</h5>
                 <div class="contact_area">
-                  <span><b>BUSINESS COOPERATION</b></span>
+                  <span><b>Business Cooperation</b></span>
                   <!--<span>(010)231238490</span>-->
-                  <span>Oversea001@more-link.com.hk</span>
-                  <span>More-Link Technology Co., Ltd</span>
-                  <span>Address:No.612, W1-A, Shenzhen Software Park, High-tech South 4th Road, Nanshan, Shenzhen, Guangdong, China</span>
+                  <span>
+                    <b>E-mai: </b>
+                    Oversea001@more-link.com.hk
+                  </span>
+                  <span>
+                    <b>Address: </b>
+                    No.612, W1-A, Shenzhen Software Park, High-tech South 4th Road, Nanshan, Shenzhen, Guangdong, China
+                  </span>
                 </div>`,
             weChat: {
                 codeImage: 'images/img/index/img_code.jpg',

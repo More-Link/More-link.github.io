@@ -1,4 +1,5 @@
-// generated on 2016-12-05 using generator-webapp 2.3.2
+'use strict';
+
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
@@ -97,6 +98,17 @@ gulp.task('data:pre', () => {
         if(lang == 'default') continue;
         obj[lang] = _.merge(obj[lang], obj.default);
     }
+    for (let lang in obj) { for (let model in obj[lang]) {
+      let arr = [ ];
+      let _obj = { };
+      for (let type in obj[lang][model]) { arr.push(type) };
+      arr = require('lodash').sortBy(arr);
+      for (let type in arr) {
+          type = arr[type];
+          _obj[type] = obj[lang][model][type];
+      }
+      obj[lang][model] = _obj;
+    }}
     for(let lang in obj) { for(let model in obj[lang]) {
         if(lang == 'default') continue;
         let targetPath = `${__dirname}/app/data/${lang}`;

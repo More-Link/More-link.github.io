@@ -1,8 +1,7 @@
 {
   "id": "1481376751020",
   "path": "MediaTek",
-  "image": "",
   "name": "MT7628",
   "summary":["The MT7628 router-on-a-chip includes an 802.11n MAC and baseband, a 2.4GHz radio and FEM, a 575/580MHz MIPS® 24K™ CPU core, a 5-port 10/100 fast Ethernet switch. The MT7628 includes everything needed to build an AP router from a single chip. The embedded high performance CPU can process advanced applications effortlessly, such as routing, security and VoIP. The MT7628 also includes a selection of interfaces to support a variety of applications, such as a USB port for accessing external storage.",
-  "We started to develop MT7628 solution since 2012, successively developed PBR-W1, PBR-W3, PBR-W3-2，PBR-C1, MLN-W3, MLN-C1…"]
+  "We started to develop MT7628 solution since 2012, successively developed PBR-W1, PBR-W3, PBR-W3-2, PBR-C1, MLN-W3, MLN-C1…"]
 }

@@ -156,13 +156,21 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
               }
               count = 1;
             }
+
+            let summary_content = (typeof _data[0].summary_short !== "undefined" && _data[0].summary_short !== null) ? _data[0].summary_short[0] : _data[0].summary[0];
+            let summary_content_box = (_data[0].image == null || _data[0].image == '') ? `<p class="col-md-12">${summary_content}</p>` : `
+                <img class="col-md-4" src="/images/img/solute/${_data[0].image}" style="max-width:150px;margin-bottom:10px;">
+                <p class="col-md-8">${summary_content}</p>
+            `;
             return `<span class="summary_content_box">
                           <h3>${firstShow}</h3>
                           <ul class="params_list">
 	                         ${plist}
                           </ul>
                         </span>
-                        <a class="solution_content_summary" href="${i18n_controller.route()['solution'].path}?type=${_data[0].path}&id=${_data[0].id}">${_data[0].summary[0]}</a>`;
+                        <a class="solution_content_summary row" href="${i18n_controller.route()['solution'].path}?type=${_data[0].path}&id=${_data[0].id}">
+                            ${summary_content_box}
+                        </a>`;
           } else {
             _data = proData[id];
             for (var p in _data.params) {
@@ -188,7 +196,14 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
         var solData = i18n_controller.translateJSONGetter('solutions_all')[classify],    //software的所有对象
           index=getIndex(id,solData);
 
-        $('.solution_content_summary').html(`${solData[index].summary[0]}`).attr({'href':`${i18n_controller.route()['solution'].path}?type=${solData[index].path}&id=${solData[index].id}`});
+
+        let summary_content = (typeof solData[index].summary_short !== "undefined" && solData[index].summary_short !== null) ? solData[index].summary_short[0] : solData[index].summary[0];
+        $('.solution_content_summary').html((solData[index].image == null || solData[index].image == '') ? `
+            <p class="col-md-12">${summary_content}</p>
+        ` : `
+            <img class="col-md-4" src="/images/img/solute/${solData[index].image}" style="max-width:150px;margin-bottom:10px;">
+            <p class="col-md-8">${summary_content}</p>
+        `).attr({'href':`${i18n_controller.route()['solution'].path}?type=${solData[index].path}&id=${solData[index].id}`});
       }
 
       //通过id得到对象index

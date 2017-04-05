@@ -25,7 +25,7 @@ mixin menu
     .header_box
       .mobile_back_holder
       .logo_box
-        a(href='')
+        a(href='/')
           img(src='images/icon/icon_logo.png', alt='')
       span.nav_control_btn(for='nav_main')
         i.menu_bar
@@ -39,7 +39,7 @@ mixin menu
         li
           a(href='/about.html')= data.about
         li.nav_contact
-          a(href='/about.html#contact_us')= data.contact
+          a(href='#')= data.contact
         li.nav_language
           span.language_switcher= data.current
           ul.lang_switch_options

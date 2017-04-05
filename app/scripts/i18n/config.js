@@ -25,7 +25,7 @@ define(['cf/site_config'],(site_config)=>({
                 }
             },
             about: '公司介绍',
-            contact: '联系我们'
+            contact: '当前语言'
         },
         //各个页面转换
         page: {
@@ -94,7 +94,7 @@ define(['cf/site_config'],(site_config)=>({
                 }
             },
             about: 'COMPANY',
-            contact: 'CONTACT'
+            contact: 'LANGUAGE'
         },
         page: {
             solution: {

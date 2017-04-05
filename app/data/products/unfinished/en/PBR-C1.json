@@ -16,7 +16,7 @@
   "params": {
     "hardware": {
       "IEEE Standard": [
-        "IEEE Standard: 802.11b、IEEE 802.11g、IEEE 802.11n、IEEE 802.3u"
+        "IEEE Standard: 802.11b, IEEE 802.11g, IEEE 802.11n, IEEE 802.3u"
       ],
       "CPU": [
         "CPU: MT7628 (580 MHz)"
@@ -32,7 +32,7 @@
         "RAM: DDR2 128MByte"
       ],
       "WAN": [
-        "WAN: 1 * 10/100/1000Mbps(AutoMDI/MDIX)"
+        "WAN: 1 * 10/100 Mbps(AutoMDI/MDIX)"
       ],
       "LAN": [],
       "Frequency": [
@@ -57,7 +57,7 @@
       ],
       "Battery": [
         "Power Input: (VAC）100-240V；50Hz",
-        "Power Output: (VDC) 5V，2A",
+        "Power Output: (VDC) 5V, 2A",
         "Battery Capacity: 5200mAh"
       ],
       "I2S / PCM": [],

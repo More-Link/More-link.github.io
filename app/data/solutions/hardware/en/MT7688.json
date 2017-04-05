@@ -1,7 +1,6 @@
 {
   "id": "1481376766614",
   "path": "MediaTek",
-  "image": "",
   "name": "MT7688",
   "summary":[" MT7688 family integrates a 1T1R 802.11n Wi-Fi radio, a 580MHz MIPS® 24K™ CPU, 1-port fast Ethernet PHY, USB2.0 host, PCIe, SD-XC, I2S/PCM and multiple slow IOs. MT7688 provides two operation modes – IoT gateway mode and IoT device mode. In IoT gateway mode, the PCI Express interface can connect to 802.11ac chipset for 11ac dual-band concurrent gateway. The high performance USB2.0 allows MT7688 to add 3G/LTE modem support or add a H.264 ISP for wireless IP camera. For the IoT device mode, MT7688 supports eMMC, SD-XC and USB 2.0. MT7688 can support the WiFi high quality audio via 192Kbps/24bits I2S interface and VoIP application through PCM. In IoT device mode, it further supports PWM, SPI slave, 3rd UART and more GPIOs. For IoT gateway, it can connect to touch panel and BLE, Zigbee/Z-Wave and sub-1G RF for smart home control.",
   "We started to develop MT7688 solution since 2014, successively developed PBR-W1…"]

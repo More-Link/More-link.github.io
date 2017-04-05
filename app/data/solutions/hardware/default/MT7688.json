@@ -1,6 +1,7 @@
 {
   "id": "1481376766614",
   "path": "MediaTek",
+  "image": "sol_MT7688_comp.png",
   "name": "MT7688",
   "summary":[" MT7688系列集成了1T1R 802.11n标准的Wi-Fi收音机, 580MHz的MIPS 24KEc™处理器, 1端口快速以太网PHY, USB2.0主机, 支持PCIe, SD-XC, I2S / PCM和多慢的IO。MT7688提供了两种操作模式——IoT网关模式和物联网设备模式。在物联网网关模式下, PCI Express接口可连接的802.11ac芯片组11AC双频并发网关。高性能的USB 2.0可让MT7688新增3G / LTE调制解调器支持或添加的H.264的ISP为无线IP摄像头。对于物联网设备模式, MT7688支持的eMMC, SD-XC和USB 2.0。MT7688可以支持通过192Kbps的/ 24位I2S接口和VoIP的无线高品质音频应用程序通过PCM。在物联网的设备形态中, 还支持PWM, SPI从机, 第3 UART和更多的GPIO。对于物联网网关, 它可以连接到触摸面板和BLE, 紫蜂/ Z-Wave和子1G射频智能家庭控制。",
   "我司于2014年开始正式开发MT7688方案, 并先后开发出：PBR-W1……"]

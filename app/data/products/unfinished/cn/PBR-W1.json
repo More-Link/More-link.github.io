@@ -7,12 +7,12 @@
     "cover": "pro_pbr_w1_cover.jpg",
     "comp": "pro_pbr_w1_comp.png"
   },
-  "summary": "PBR-W1高性能无线路由器采用MTK(联发科) MT7688KN解决方案，其优点就是成本低；且功耗低，将主芯片的温度降到最低。 搭载由More-Link团队优化后的PandoraBox系统，性能更加稳定，性价比更加高。",
+  "summary": "PBR-W1高性能无线路由器采用MTK(联发科) MT7688KN解决方案, 其优点就是成本低；且功耗低, 将主芯片的温度降到最低。 搭载由More-Link团队优化后的PandoraBox系统, 性能更加稳定, 性价比更加高。",
   "features": [
-    "采用QFN的封装，性能更稳定，整体功耗降低",
-    "全新的wifi模块，硬件上解决了wifi抗干扰差的问题",
-    "去掉了不实用的HWNAT，增加了硬件加密加速模块",
-    "提供'刷机模式'，用户可轻松更新固件",
+    "采用QFN的封装, 性能更稳定, 整体功耗降低",
+    "全新的wifi模块, 硬件上解决了wifi抗干扰差的问题",
+    "去掉了不实用的HWNAT, 增加了硬件加密加速模块",
+    "提供'刷机模式', 用户可轻松更新固件",
     "支持WEP,WPA,WPA2等安全加密模式",
     "自带中继功能"
   ],
@@ -73,7 +73,7 @@
     "software": {
       "Operating System": [
         "网络接入方式PPPoE拨号、动态IP、静态IP",
-        "路由功能，中继功能"
+        "路由功能, 中继功能"
       ],
       "Firewall / Security": [
         "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全",
@@ -84,7 +84,7 @@
         "虚拟服务器端口转发 DMZ主机"
       ],
       "soft_others": [
-        "QOS限速，DDNS,系统管理设置，mac地址克隆"
+        "QOS限速, DDNS,系统管理设置, mac地址克隆"
       ]
     },
     "others": {

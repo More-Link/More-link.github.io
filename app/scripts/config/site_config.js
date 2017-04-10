@@ -51,9 +51,9 @@ define(['util'],(util)=>{
                 static: true,
 	            language: 'en',
                 attribute: 'contact',
-                hash: '#contact_us',
-                href: '/about-en.html#contact_us',
-                path: '/about-en.html'
+                hash: '',
+                href: '#',
+                path: ''
             }
         },
         cn: {
@@ -102,9 +102,9 @@ define(['util'],(util)=>{
                 static: true,
                 language: 'cn',
                 attribute: 'contact',
-                hash: '#contact_us',
-                href: '/about.html#contact_us',
-                path: '/about.html'
+                hash: '',
+                href: '#',
+                path: ''
             }
         }
     };

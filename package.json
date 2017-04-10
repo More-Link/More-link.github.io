@@ -58,5 +58,8 @@
     "more-link"
   ],
   "author": "Arylo <arylo.open@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }

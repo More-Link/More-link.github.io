@@ -7,7 +7,6 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
 
-
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
@@ -93,22 +92,26 @@ gulp.task('data:pre', () => {
             }
         }
     }
+
     // 合并默认值
     for (let lang in obj) {
-        if(lang == 'default') continue;
-        obj[lang] = _.merge(obj[lang], obj.default);
+        if(lang == 'default')
+            continue;
+        obj[lang] = _.defaultsDeep(obj[lang], obj.default);
     }
+
     for (let lang in obj) { for (let model in obj[lang]) {
-      let arr = [ ];
-      let _obj = { };
-      for (let type in obj[lang][model]) { arr.push(type) };
-      arr = require('lodash').sortBy(arr);
-      for (let type in arr) {
+        let arr = [ ];
+        let _obj = { };
+        for (let type in obj[lang][model]) { arr.push(type) };
+        arr = require('lodash').sortBy(arr);
+        for (let type in arr) {
           type = arr[type];
           _obj[type] = obj[lang][model][type];
       }
-      obj[lang][model] = _obj;
+        obj[lang][model] = _obj;
     }}
+
     for(let lang in obj) { for(let model in obj[lang]) {
         if(lang == 'default') continue;
         let targetPath = `${__dirname}/app/data/${lang}`;

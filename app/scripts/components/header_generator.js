@@ -12,7 +12,6 @@ define(['jquery','util','part/templates','cf/site_config','i18n/controller','i18
     //生成header头部主导航
     $('#main_nav_box').empty().html(i18n_controller.translator.nodeString(templates.header.main));
     navBox.product = $('#nav_products');
-    navBox.product = $('#nav_products');
     navBox.solution = $('#nav_solutions');
     //事件初始化
     nav_controller.bindEvents();

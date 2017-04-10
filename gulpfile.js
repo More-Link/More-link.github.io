@@ -75,14 +75,12 @@ gulp.task('data:pre', () => {
         let lang = DEFAULT_LANG[i];
         ref = obj[lang];
         if (ref == null) {
-            console.log(lang)
             obj[lang] = DEFAULT_OBJ;
             continue;
         }
         for(let model in DEFAULT_OBJ) {
             ref = obj[lang][model];
             if (ref == null) {
-                console.log(model)
                 obj[lang][model] = DEFAULT_OBJ[model];
                 continue;
             }

@@ -4,4 +4,4 @@
 /dist
 /.tmp
 /app/data/*/*_all.json
-.idea/website.iml
+/.idea

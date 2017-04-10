@@ -157,7 +157,7 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
               count = 1;
             }
 
-            let summary_content = (typeof _data[0].summary_short !== "undefined" && _data[0].summary_short !== null) ? _data[0].summary_short[0] : _data[0].summary[0];
+            let summary_content = (typeof _data[0].summary_short !== 'undefined' && _data[0].summary_short !== null) ? _data[0].summary_short[0] : _data[0].summary[0];
             let summary_content_box = (_data[0].image == null || _data[0].image == '') ? `<p class="col-md-12">${summary_content}</p>` : `
                 <img class="col-md-4" src="/images/img/solute/${_data[0].image}" style="max-width:150px;margin-bottom:10px;">
                 <p class="col-md-8">${summary_content}</p>
@@ -176,6 +176,7 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
             for (var p in _data.params) {
               plist += i18nConfig.page.product.param[p] ? `<li>${i18nConfig.page.product.param[p]}</li>` : '';
             }
+
             return `<a href="${i18n_controller.route()['product'].path}?type=${_data.path}&id=${_data.id}" class="summary_content_box">
                           <h3>${_data.name}</h3>
                           <ul class="params_list">
@@ -186,8 +187,6 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
                           <img src="${file_url.filePath(i18n_controller.getLanguage()).pro_img + _data.image.comp}" alt="${_data.name}">
                         </a>`;
           }
-
-
         });
       }
 
@@ -197,7 +196,7 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
           index=getIndex(id,solData);
 
 
-        let summary_content = (typeof solData[index].summary_short !== "undefined" && solData[index].summary_short !== null) ? solData[index].summary_short[0] : solData[index].summary[0];
+        let summary_content = (typeof solData[index].summary_short !== 'undefined' && solData[index].summary_short !== null) ? solData[index].summary_short[0] : solData[index].summary[0];
         $('.solution_content_summary').html((solData[index].image == null || solData[index].image == '') ? `
             <p class="col-md-12">${summary_content}</p>
         ` : `

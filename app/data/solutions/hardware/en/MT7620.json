@@ -2,6 +2,5 @@
   "id": "1481376759760",
   "path": "MediaTek",
   "name": "MT7620",
-  "summary":["The MT7620 router-on-a-chip includes an 802.11n MAC baseband, a 2.4GHz radio and FEM, a 580MHZ MIPS® 24K™ CPU, a 5-port 10/100 switch and two RGMII. The MT7620 includes everything needed to build an AP router from a single chip. The embedded high performance CPU can process advanced applications effortlessly, such as routing, security and VoIP. The MT7620 also includes a selection of interfaces to support a variety of applications, such as a USB port for accessing external storage.",
-  "We started to develop MT7620 solution since 2012, successively developed PBR-Y1, PBR-Y1S…"]
+  "summary":["The MT7620 router-on-a-chip includes an 802.11n MAC baseband, a 2.4GHz radio and FEM, a 580MHZ MIPS® 24K™ CPU, a 5-port 10/100 switch and two RGMII. The MT7620 includes everything needed to build an AP router from a single chip. The embedded high performance CPU can process advanced applications effortlessly, such as routing, security and VoIP. The MT7620 also includes a selection of interfaces to support a variety of applications, such as a USB port for accessing external storage.We started to develop MT7620 solution since 2012, successively developed PBR-Y1, PBR-Y1S…"]
 }

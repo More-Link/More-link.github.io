@@ -129,7 +129,7 @@ define(['cf/site_config'],(site_config)=>({
                   <span><b>Business Cooperation</b></span>
                   <!--<span>(010)231238490</span>-->
                   <span>
-                    <b>E-mai: </b>
+                    <b>E-mail: </b>
                     Oversea001@more-link.com.hk
                   </span>
                   <span>

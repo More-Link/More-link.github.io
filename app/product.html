@@ -207,5 +207,12 @@
 
 
 <script data-main="scripts/main.js" src="lib/requirejs/require.js"></script>
+<script>
+(function () {
+  setTimeout(function(){
+    $('.prama_body_wrap>.row>div').filter(function(){return $('.pro_body', this)[0].innerText == '';}).remove();
+      }, 1000)
+    })();
+</script>
 </body>
 </html>

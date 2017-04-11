@@ -169,14 +169,13 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
                           </ul>
                         </span>
                         <a class="solution_content_summary row" href="${i18n_controller.route()['solution'].path}?type=${_data[0].path}&id=${_data[0].id}">
-                            ${summary_content_box}
+                        ${summary_content_box}
                         </a>`;
                     } else {
                         _data = proData[id];
                         //for (var p in _data.params) {
                         //    plist += i18nConfig.page.product.param[p] ? `<li>${i18nConfig.page.product.param[p]}</li>` : '';
                         //}
-
                         //Object.keys()，该方法返回一个数组传入对象，返回属性名
                         Object.keys(_data.groups).forEach(function (val) {
                             plist+= `<li>${val}</li> `

@@ -127,5 +127,11 @@
                 "默认接入方式：DHCP"
             ]
         }
+    },
+    "groups":{
+        "Slim Design":"",
+        "4G/3G module stamp hole connector":"",
+        "Household Wi-Fi Router":"",
+        "PandoraBox OS":""
     }
 }

@@ -109,5 +109,10 @@
         "默认接入方式：DHCP"
       ]
     }
+  },
+  "groups":{
+    "Mini Design with 4 LAN ports":"",
+    "High cost performance household Wi-Fi router":"",
+    "PandoraBox OS":""
   }
 }

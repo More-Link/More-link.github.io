@@ -85,7 +85,10 @@ block content
     #video_swiper_recommend.video_recommend_swiper_container
       .swiper-wrapper
         .swiper-slide
-          .video_box(style="background-image: url('images/img/index/img_video.png')")
+          .video_box
+            iframe(height=498 width=510 src='http://player.youku.com/embed/XMjY5OTIzMTQwMA==' frameborder=0
+              allowfullscreen='allowfullscreen'
+            )
             //- span.video_play_btn
             //- iframe(height='498', width='510', src='http://player.youku.com/embed/XMTg1Mzk2Mzg1Ng==', frameborder='0', allowfullscreen='allowfullscreen')
   //- video swiper end

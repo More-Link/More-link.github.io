@@ -113,5 +113,12 @@
         "Storage Humidity: 10% ~ 90%RH (Non-condensing) "
       ]
     }
+  },
+  "groups":{
+    "Slim Design":"",
+    "4G/3G Wireless Router":"",
+    "Household Wi-Fi Router":"",
+    "PandoraBox OS":"",
+    "5200mAh Power Bank":""
   }
 }

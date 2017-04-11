@@ -100,5 +100,10 @@
       "password": [],
       "accesstype": []
     }
+  },
+  "groups":{
+    "Mini Design with 4 LAN ports":"",
+    "High cost performance":"",
+    "PandoraBox OS":""
   }
 }

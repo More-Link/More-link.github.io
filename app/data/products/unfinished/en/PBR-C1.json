@@ -113,5 +113,11 @@
         "Storage Humidity: 10% ~ 90%RH (Non-condensing) "
       ]
     }
+  },
+  "groups":{
+    "Slim Design":"",
+    "4G/3G module stamp hole connector":"",
+    "Household Wi-Fi Router":"",
+    "PandoraBox OS":""
   }
 }

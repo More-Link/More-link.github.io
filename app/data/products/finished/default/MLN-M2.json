@@ -111,5 +111,13 @@
       "password": [],
       "accesstype": []
     }
+  },
+  "groups":{
+    "Slim Design":"",
+    "All gigabit WAN/LAN ports":"",
+    "Dual band signal-amplifier":"",
+    "Touch Panel Switch":"",
+    "USB3.0 & USB2.0":"",
+    "PandoraBox OS":""
   }
 }

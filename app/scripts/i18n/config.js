@@ -70,7 +70,7 @@ define(['cf/site_config'],(site_config)=>({
                   </span>
                   <span>
                     <b>邮箱地址: </b>
-                    contact.cn@morelink.com
+                    Oversea001@more-link.com.hk
                   </span>
                   </span>
                   <span>

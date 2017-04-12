@@ -63,14 +63,16 @@ define(['cf/site_config'],(site_config)=>({
             navTitle: '导航',
             sell: `<h5 class="column_title">中国区域</h5>
                 <div class="contact_area">
-                  <span>中国商务</span>
                   <span>
-                    <b>联系方式: </b>
-                    (+86)130-0883-6312
+                  <b>商务合作</b>
                   </span>
+                  <!--<span>-->
+                    <!--<b>联系方式: </b>-->
+                    <!--(+86)130-0883-6312-->
+                  <!--</span>-->
                   <span>
                     <b>邮箱地址: </b>
-                    Oversea001@more-link.com.hk
+                    oversea001@more-link.com.hk
                   </span>
                   </span>
                   <span>
@@ -141,7 +143,7 @@ define(['cf/site_config'],(site_config)=>({
                   <!--<span>(010)231238490</span>-->
                   <span>
                     <b>E-mail: </b>
-                    Oversea001@more-link.com.hk
+                    oversea001@more-link.com.hk
                   </span>
                   <span>
                     <b>Address: </b>

@@ -33,7 +33,7 @@ define(['jquery','util','cf/site_config','part/templates','i18n/config','i18n/co
                     footerNavData.foot_products.push({
                         type_name: levelMap[type],
                         type: type,
-                        list: data[type].slice(0,3)
+                        list: data[type].slice(0,5)
                     });
                 }
                 gc++;

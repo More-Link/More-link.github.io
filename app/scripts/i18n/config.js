@@ -63,8 +63,8 @@ define(['cf/site_config'],(site_config)=>({
             navTitle: '导航',
             sell: `<h5 class="column_title">中国区域</h5>
                 <div class="contact_area">
-                  <span>销售中国</span>
-                  <span>(010)231238490</span>
+                  <span>中国商务</span>
+                  <span>(+86)130-0883-6312</span>
                   <span>contact.cn@morelink.com</span>
                 </div>`,
             weChat: {

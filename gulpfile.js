@@ -51,7 +51,6 @@ gulp.task('data:pre', () => {
     const _ = require('lodash');
     let obj = { };
     let promiseList = [ ];
-    console.log('111');
 
     filelist.forEach((filepath) => {
         let ref = filepath.match(/([\w_-]+)[\\\/]([\w_-]+)[\\\/]([\w_-]+)$/);

@@ -64,8 +64,19 @@ define(['cf/site_config'],(site_config)=>({
             sell: `<h5 class="column_title">中国区域</h5>
                 <div class="contact_area">
                   <span>中国商务</span>
-                  <span>(+86)130-0883-6312</span>
-                  <span>contact.cn@morelink.com</span>
+                  <span>
+                    <b>联系方式: </b>
+                    (+86)130-0883-6312
+                  </span>
+                  <span>
+                    <b>邮箱地址: </b>
+                    contact.cn@morelink.com
+                  </span>
+                  </span>
+                  <span>
+                    <b>公司地址: </b>
+                    中国广东省深圳市南山区高新南四道深圳软件园W1-A六层612
+                  </span>
                 </div>`,
             weChat: {
                 codeImage: 'images/img/index/img_code.jpg',

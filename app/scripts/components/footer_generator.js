@@ -45,7 +45,7 @@ define(['jquery','util','cf/site_config','part/templates','i18n/config','i18n/co
                         footerNavData.foot_solutions.push({
                             type_name: levelMap[st],
                             type: st,
-                            list: sdata[st].slice(0,3)
+                            list: sdata[st].slice(0,4)
                         });
                     }
                     sgc++;

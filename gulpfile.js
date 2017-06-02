@@ -14,14 +14,14 @@ var dev = true;
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())
-    .pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
       includePaths: ['.']
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
-    .pipe($.sourcemaps.write())
+    // .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
       .pipe(gulp.dest('app/styles'))
       .pipe(gulp.dest('dist/styles'))
@@ -135,12 +135,12 @@ gulp.task('data', ['data:pre'], () => {
 gulp.task('scripts',['data'], () => {
   return gulp.src(['app/scripts/**/*.js'])
     .pipe($.plumber())
-    .pipe($.sourcemaps.init())
+    // .pipe($.sourcemaps.init())
     .pipe($.babel({
       presets: ['es2015']
     }))
     .pipe($.wait(500))
-    .pipe($.sourcemaps.write('.'))
+    // .pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe(gulp.dest('dist/scripts'))
     .pipe(reload({stream: true})).on('end', function () {

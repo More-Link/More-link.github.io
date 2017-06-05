@@ -85,9 +85,11 @@ block content
     #video_swiper_recommend.video_recommend_swiper_container
       .swiper-wrapper
         .swiper-slide
-          .video_box
-            embed(height=518 width=1121 src='http://player.youku.com/embed/XMjY5OTIzMTQwMA=='
+          .video_box(style="overflow-y: hidden;")
+            embed(
+              src='http://player.youku.com/embed/XMjY5OTIzMTQwMA=='
               allowfullscreen='allowfullscreen'
+              style="display: initial; height: 100%;width: 100%;"
             )
             //- span.video_play_btn
             //- iframe(height='498', width='510', src='http://player.youku.com/embed/XMTg1Mzk2Mzg1Ng==', frameborder='0', allowfullscreen='allowfullscreen')

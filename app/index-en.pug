@@ -94,9 +94,14 @@ block content
     #video_swiper_recommend.video_recommend_swiper_container
       .swiper-wrapper
         .swiper-slide
-          .video_box
+          .video_box(style="overflow-y: hidden;")
             //- <span class="video_play_btn"></span>
-            iframe(height='498', width='510', src='https://www.youtube.com/embed/2Z1QJrK_mZw?list=PLSApfIbLzCfq7UXHBEW_Dak2EnEfjxMzE', frameborder='0', allowfullscreen='allowfullscreen', style='display:initial;')
+            iframe(
+              src='https://www.youtube.com/embed/2Z1QJrK_mZw?list=PLSApfIbLzCfq7UXHBEW_Dak2EnEfjxMzE'
+              frameborder='0'
+              allowfullscreen='allowfullscreen'
+              style="display: initial; height: 100%;width: 100%;"
+            )
           //- <h5 class="video_title">More and More<br>Link the world</h5>
         //-
           <div class="swiper-slide">

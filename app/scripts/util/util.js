@@ -122,7 +122,7 @@ define(['jquery','handlebars','cf/file_url'],($,Handlebars,url)=>{
             var len = count < gather.length ? count : gather.length;
             for (var k = 0; k < len; k++) {
                 //筛选出不等于某一id的数据
-                if (exceptID && gather[k].id == exceptID){
+                if (exceptID && gather[k] && gather[k].id == exceptID){
                     len == count ? len ++ : len;
                     continue;
                 } else {

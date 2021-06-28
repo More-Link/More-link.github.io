@@ -1,0 +1,123 @@
+{
+  "id": "mln-m2",
+  "type": "MLN-M2",
+  "path": "",
+  "name": "MLN-M2",
+  "image": {
+    "cover": "pro_pbr_m2_cover.jpg",
+    "comp": "pro_pbr_m2_cop.png"
+  },
+  "summary": "MLN-M2 is an advanced wired & wireless router, which is supported IEEE 802.11 a/b/g/n/ac. It's a duel band wireless (2.4GHz & 5GHz) router, supported 2x2 MIMO, the maximum theoretical wireless speed can be up to 1167Mbps. It's about 4 times of the traditional router's. This board even with a touch panel to control the power lights and duel band signal-amplifier, WiFi signal can be transmited stronger and farther. Moreover, MLN-M2 designed with a USB3.0 port, means it can support high effective files transfer. With USB2.0, TF-card slot users can not only use it as a traditional router, but also can enjoy and share videos, pictures, files… Matched up with PandoraBox OS. and applications, it can become a high performance management terminal and an intelligent center device. ",
+  "features": [
+    "MLN-M2 designed with all gigabit WAN/LAN ports. With duel band signal-amplifier, WiFi signal can be transmited stronger and farther. ",
+    "With a touch panel, users can control the power lights easily by touch the \"Home Switch\" on the above of case.",
+    "With variety of connectors, such as: USB3.0, USB2.0, TF-Card slots, matched up with PandoraBox OS., to be set up easily or you can make it become a high performance management terminal and an intelligent center device."
+  ],
+  "params": {
+    "hardware": {
+      "IEEE Standard": [
+        "IEEE Standard: 802.11n, IEEE 802.11g, 802.11b,IEEE802.11ac , IEEE802.11a, IEEE 802.3,IEEE 802.3u"
+      ],
+      "CPU": [
+        "CPU: MT7621A (Dual-core, 880MHz)"
+      ],
+      "Flash": [
+        "ROM:SPI FLASH 128/256Mbit (Max 512Mbit)"
+      ],
+      "USB Port": [
+        "USB: 1 * USB 3.0",
+        "     1 * USB 2.0"
+      ],
+      "RAM": [
+        "RAM: DDR3 256/512MByte (Max 512MByte)"
+      ],
+      "WAN": [
+        "WAN: 1 * 10/100/1000Mbps (Auto MDI/MDIX)"
+      ],
+      "LAN": [
+        "LAN: 4 * 10/100/1000Mbps (Auto MDI/MDIX)"
+      ],
+      "Frequency": [
+          "2.4GHz & 5GHz"
+      ],
+      "LTE": [],
+      "Wireless Speed": [
+        "Data Rate: 300Mbps + 867Mbps"
+      ],
+      "Antenna": [
+        "Antennas: 4 * 5dBi"
+      ],
+      "Wireless Repeater": [],
+      "SATA Port": [],
+      "TF-Card Slot": [
+        "TF-Card: 1 * TF-Card Slot"
+      ],
+      "SIM Card Slot": [],
+      "Battery": [
+        "Power Input: DC 12V/2A"
+      ],
+      "I2S / PCM": [],
+      "UART": [
+        "UART: 1 * UART"
+      ],
+      "Button": [
+        "Button: Reset/WPS",
+        "LED Touch Panel"
+      ],
+      "Size": [
+        "Size: 170mm * 113.5mm * 23mm"
+      ],
+      "hard_others": [
+        "LED Lights: 2.4G, 5G, SY1, SY2, POWER",
+        "Signal-amplifier: 2.4GHz, 5.8GHz"
+      ]
+    },
+    "network": {
+      "3G / LTE": []
+    },
+    "software": {
+      "Operating System": [
+        "WAN Type: PPPoE, DHCP, Static",
+        "Work Mode: Router, AP"
+      ],
+      "Firewall / Security": [
+        "Firewall Security: IP Address Filter, MAC Address Filter, Domain Filter"
+      ],
+      "Port Fowarding / DMZ / uPNP": [
+        "Port Fowarding: Virtual Server, Port Triggering, UPnP, DMZ"
+      ],
+      "soft_others": [
+        "DDNS: Support",
+        "QoS: Support",
+        "Static Route: Support",
+        "System log: Support",
+        "Mac Clone: Support",
+        "NTP Synchronize: Support",
+        "Web Firmware Upgrade: Support",
+        "Easy Setup: Supported"
+      ]
+    },
+    "others": {
+      "temperature": [
+        "Operating Temperature：0℃ ~ 40℃",
+        "Storage Temperature: -40℃ ~ 70℃",
+        "Operating Humidity：10% ~ 90%RH (Non-condensing)",
+        "Storage Humidity: 10% ~ 90%RH (Non-condensing)"
+      ],
+      "SSID": [],
+      "accessories": [],
+      "thirdparty": [],
+      "associated": [],
+      "password": [],
+      "accesstype": []
+    }
+  },
+  "groups":{
+    "Slim Design":"",
+    "All gigabit WAN/LAN ports":"",
+    "Dual band signal-amplifier":"",
+    "Touch Panel Switch":"",
+    "USB3.0 & USB2.0":"",
+    "PandoraBox OS":""
+  }
+}

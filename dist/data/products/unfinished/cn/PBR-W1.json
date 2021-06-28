@@ -1,0 +1,118 @@
+{
+  "id": "w1",
+  "type": "PBR-W1",
+  "path": "",
+  "name": "PBR-W1",
+  "image": {
+    "cover": "pro_pbr_w1_cover.jpg",
+    "comp": "pro_pbr_w1_comp.png"
+  },
+  "summary": "PBR-W1高性能无线路由器采用MTK(联发科) MT7688KN解决方案, 其优点就是成本低；且功耗低, 将主芯片的温度降到最低。 搭载由More-Link团队优化后的PandoraBox系统, 性能更加稳定, 性价比更加高。",
+  "features": [
+    "采用QFN的封装, 性能更稳定, 整体功耗降低",
+    "全新的wifi模块, 硬件上解决了wifi抗干扰差的问题",
+    "去掉了不实用的HWNAT, 增加了硬件加密加速模块",
+    "提供'刷机模式', 用户可轻松更新固件",
+    "支持WEP,WPA,WPA2等安全加密模式",
+    "自带中继功能"
+  ],
+  "params": {
+    "hardware": {
+      "IEEE Standard": [
+        "协议模式为IEEE 802.11 b/g/n",
+        "网络标准IEEE 802.11b/g/n"
+      ],
+      "CPU": [
+        "MTK MT7688KN解决方案,主频高达580MHz"
+      ],
+      "Flash": [
+        "Flash大小为4MB"
+      ],
+      "USB Port": [],
+      "RAM": [
+        "内存内置DDR1 8MB"
+      ],
+      "WAN": [
+        "1 * RJ-45 10/100Mbps WAN port(Auto MDI/MDIX)"
+      ],
+      "LAN": [
+        "4 * RJ-45 10/100Mbps LAN port(Auto MDI/MDIX)"
+      ],
+      "Frequency": [
+        "外置高增益天线 1*WIFI天线",
+        "工作频段 2.4GHz"
+      ],
+      "LTE": [],
+      "Wireless Speed": [
+        "无线传输速率150Mbps"
+      ],
+      "Antenna": [],
+      "Wireless Repeater": [],
+      "SATA Port": [],
+      "TF-Card Slot": [],
+      "SIM Card Slot": [],
+      "Battery": [
+        "电源输入DC 12V/2A"
+      ],
+      "I2S / PCM": [],
+      "UART": [
+        "UART: 1 * UART"
+      ],
+      "Button": [
+        "Reset按键"
+      ],
+      "Size": [],
+      "hard_others": [
+        "适中的RF功率消耗",
+        "指示灯 2.4G,INTERNET,WAN,LAN,POWER"
+      ]
+    },
+    "network": {
+      "3G / LTE": []
+    },
+    "software": {
+      "Operating System": [
+        "网络接入方式PPPoE拨号、动态IP、静态IP",
+        "路由功能, 中继功能"
+      ],
+      "Firewall / Security": [
+        "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全",
+        "DHCP设置DHCP服务器 客户端列表 静态地址分配",
+        "安全设置客户端过滤 Mac地址过滤 URL过滤 远程WEB管理"
+      ],
+      "Port Fowarding / DMZ / uPNP": [
+        "虚拟服务器端口转发 DMZ主机"
+      ],
+      "soft_others": [
+        "QOS限速, DDNS,系统管理设置, mac地址克隆"
+      ]
+    },
+    "others": {
+      "temperature": [
+        "温度工作温度：0℃ 到 40℃ 存储温度：-40℃ 到 70℃",
+        "湿度工作湿度：10% 到 90%RH 不凝结 存储湿度：5% 到 90%RH 不凝结"
+      ],
+      "SSID": [
+        "出厂默认设置SSID:PandoraBox+MAC地址后6位"
+      ],
+      "accessories": [
+        "包装配件 PBR-W1*1 《快速安装指南》*1 网线 *1 保修卡 *1"
+      ],
+      "thirdparty": [
+        "第三方认证FCC/CE/RoHS/WEEE"
+      ],
+      "associated": [],
+      "password": [
+        "无线密码：无"
+      ],
+      "accesstype": [
+        "默认接入方式：DHCP"
+      ]
+    }
+  },
+  "groups":{
+    "Mini Design with 4 LAN ports":"",
+    "High cost performance":"",
+    "PandoraBox OS":""
+  }
+}

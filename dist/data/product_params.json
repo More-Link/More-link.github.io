@@ -1,0 +1,31 @@
+{
+  "hardware": [
+    "IEEE Standard",
+    "CPU",
+    "Flash",
+    "USB Port",
+    "RAM",
+    "WAN",
+    "LAN",
+    "Frequency",
+    "Wireless Speed",
+    "Antenna",
+    "Wireless Repeater",
+    "SATA Port",
+    "TF-Card Slot",
+    "SIM Card Slot",
+    "Battery",
+    "I2S / PCM",
+    "UART",
+    "Button",
+    "Size"
+  ],
+  "network": [
+    "3G / LTE"
+  ],
+  "software": [
+    "Operating System",
+    "Firewall / Security",
+    "Port Fowarding / DMZ / uPNP"
+  ]
+}

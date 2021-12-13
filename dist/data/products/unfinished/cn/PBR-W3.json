@@ -1,0 +1,117 @@
+{
+  "id": "w3",
+  "type": "PBR-W3",
+  "path": "",
+  "name": "PBR-W3",
+  "image": {
+    "cover": "pro_pbr_w3_cover.jpg",
+    "comp": "pro_pbr_w3_comp.png"
+  },
+  "summary": "PBR-W3高性能无线路由器采用MTK(联发科) MT7628AN解决方案, 强劲的MTK7628芯片配上高增益信号天线, 再以波束成形技术, 将信号向你所处的空间位置进行发送, 获得更强的连接能力。三位一体, 从根本上提升覆盖和穿墙能力。基于OpenWrt深度开发的PandoraBox操作系统, 优化了openwrt的不足之处, 配合丰富的插件可以实现视频监控、视频共享、脱机下载、离线下载、远程开关机、多拨、广告过滤等智能路由器的全新功能。人性化的交互界面设计, 使上网设置更加轻松快捷。",
+  "features": [
+    "新一代双频MIMO 2*2阵列黄铜天线, 配以4天线单元, 镀金天线接驳, 大幅度增强无线信号的稳定性及穿透力, 增大覆盖范围。",
+    "有线方面支持两个百兆LAN口。支持一个USB接口, 可以为一般USB接口的设备提供高达1A的电流, 智能手机、平板电脑提供标准500mA充电电流。",
+    "支持无线中继功能, 只需简单几步, 就可以成为主路由的中继器, 让信号遍布每个角落。",
+    "从你连接网络的那一刻起, 它将自动为你开启防火墙。无论是恶意攻击还是闲人蹭网, 统统逃不过PBR-W3的“安全过滤”。"
+  ],
+  "params": {
+    "hardware": {
+      "IEEE Standard": [
+        "网络标准IEEE 802.11b、IEEE 802.11g、IEEE 802.11n、IEEE 802.11a,IEEE802.11ac"
+      ],
+      "CPU": [
+        "MTK MT7628AN解决方案,主频高达580MHz"
+      ],
+      "Flash": [
+        "Flash大小为16MB"
+      ],
+      "USB Port": [
+        "1 * USB 2.0 port "
+      ],
+      "RAM": [
+        "内存DDR2 128MB"
+      ],
+      "WAN": [
+        "1 * RJ-45 10/100Mbps WAN port(Auto MDI/MDIX)"
+      ],
+      "LAN": [
+        "2 * RJ-45 10/100Mbps LAN port(Auto MDI/MDIX)"
+      ],
+      "Frequency": [
+          "工作频段 2.4GHz & 5GHz"
+      ],
+      "LTE": [],
+      "Wireless Speed": [
+        "无线传输速率Max 1200Mbps"
+      ],
+      "Antenna": [
+        "2*WIFI / 4*WIFI外置高增益天线"
+      ],
+      "Wireless Repeater": [],
+      "SATA Port": [],
+      "TF-Card Slot": [],
+      "SIM Card Slot": [],
+      "Battery": [
+        "电源输入：小于12V"
+      ],
+      "I2S / PCM": [],
+      "UART": [
+        "UART: 1 * UART"
+      ],
+      "Button": [
+        "Reset/WPS按键"
+      ],
+      "Size": [],
+      "hard_others": [
+        "指示灯 2.4G, 5.8G,INTERNET,WAN,LAN,POWER"
+      ]
+    },
+    "network": {
+      "3G / LTE": []
+    },
+    "software": {
+      "Operating System": [
+        "网络接入方式PPPoE拨号、动态IP、静态IP",
+        "路由功能, 中继功能"
+      ],
+      "Firewall / Security": [
+        "无线安全支持WPA-PSK、WPA2-PSK、WPA&WPA2-PSK混合等多种加密与安全",
+        "DHCP设置DHCP服务器 客户端列表 静态地址分配",
+        "安全设置客户端过滤 Mac地址过滤 URL过滤 远程WEB管理"
+      ],
+      "Port Fowarding / DMZ / uPNP": [
+        "虚拟服务器端口转发 DMZ主机"
+      ],
+      "soft_others": [
+        "QOS限速, DDNS,系统日志, mac地址克隆"
+      ]
+    },
+    "others": {
+      "temperature": [
+        "温度工作温度：0℃ 到 40℃ 存储温度：-40℃ 到 70℃",
+        "湿度工作湿度：10% 到 90%RH 不凝结 存储湿度：5% 到 90%RH 不凝结"
+      ],
+      "SSID": [
+        "出厂默认设置SSID:PandoraBox+MAC地址后6位"
+      ],
+      "accessories": [
+        "包装配件PBR-W3*1 《快速安装指南》*1 网线 *1 保修卡 *1"
+      ],
+      "thirdparty": [
+        "第三方认证FCC/CE/RoHS/WEEE"
+      ],
+      "associated": [],
+      "password": [
+        "无线密码：无"
+      ],
+      "accesstype": [
+        "默认接入方式：DHCP"
+      ]
+    }
+  },
+  "groups":{
+    "Dual band (2.4GHz & 5GHz)":"",
+    "High cost performance":"",
+    "PandoraBox OS":""
+  }
+}

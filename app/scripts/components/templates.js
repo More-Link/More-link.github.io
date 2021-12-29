@@ -99,6 +99,8 @@ define(['cf/site_config','cf/file_url','i18n/controller','i18n/config'],
         </div>
         <div class="footer_box_bottom">
           COPYRIGHT &COPY; 2016 <a i18n-morelink="route.site_url|href">MORELINK.COM</a> ALL RIGHTS RESERVED
+          <br/>
+          <a href="https://beian.miit.gov.cn" target="_blank">粤ICP备18105148号</a>
         </div>`,
         product: function () {
             return `{{#each foot_products}}

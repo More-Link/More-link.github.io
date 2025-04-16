@@ -1,5 +1,3 @@
-'use strict';
-
 const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
@@ -7,10 +5,18 @@ const del = require('del');
 const wiredep = require('wiredep').stream;
 const runSequence = require('run-sequence');
 
-const $ = gulpLoadPlugins();
+const $ = gulpLoadPlugins({
+  postRequireTransforms: {
+    'sass': function (Sass) {
+      const sass = require('sass');
+      return Sass(sass);
+    },
+  },
+});
 const reload = browserSync.reload;
 
-var dev = true;
+let dev = !process.env.CI;
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
     .pipe($.plumber())

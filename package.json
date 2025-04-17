@@ -1,4 +1,23 @@
 {
+  
+  "name": "more_link_website",
+  "version": "1.0.0",
+  "description": "more_link_website",
+  "main": "gulpfile.js",
+  "author": "Arylo <arylo.open@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/More-Link/More-link.github.io.git"
+  },
+  "keywords": [
+    "official",
+    "site",
+    "more-link"
+  ],
+  "scripts": {
+    "build": "gulp build && gulp styles",
+    "start": "gulp serve"
+  },
   "engines": {
     "node": ">=4"
   },
@@ -46,25 +65,8 @@
       ]
     }
   },
-  "name": "more_link_website",
-  "version": "1.0.0",
-  "description": "more_link_website",
-  "main": "gulpfile.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/More-Link/More-link.github.io.git"
-  },
-  "keywords": [
-    "official",
-    "site",
-    "more-link"
-  ],
-  "scripts": {
-    "build": "gulp build && gulp styles"
-  },
-  "author": "Arylo <arylo.open@gmail.com>",
-  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4"
-  }
+  },
+  "license": "MIT"
 }

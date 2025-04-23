@@ -1,8 +1,0 @@
-{
-  "id": "1481376556212",
-  "path": "MediaTek",
-  "name": "MT7621",
-  "summary": [
-    "The MT7621 router-on-a-chip includes a 880 MHz MIPS® 1004Kc™ CPU dual-core, a 5-port 10/100/1000 switch/PHY and one RGMII. The embedded high performance CPU can process advanced applications effortlessly, such as routing, security and VoIP. The MT7621 also includes a selection of interfaces to support a variety ofapplications, such as a USB port for accessing external storage.We started to develop MT7621 solution since 2015, successively developed PBR-M1, PBR-M2, MLN-M1, MLNM2…"
-  ]
-}

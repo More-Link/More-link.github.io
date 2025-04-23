@@ -1,5 +1,4 @@
 {
-  
   "name": "more_link_website",
   "version": "1.0.0",
   "description": "more_link_website",
@@ -19,7 +18,7 @@
     "start": "gulp serve"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=20"
   },
   "devDependencies": {
     "babel-core": "^6.4.0",
@@ -28,6 +27,7 @@
     "bower": "^1.8.12",
     "browser-sync": "^2.2.1",
     "del": "^2.2.0",
+    "glob": "^11.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-babel": "^6.1.1",
@@ -50,6 +50,7 @@
     "gulp-wait": "0.0.2",
     "run-sequence": "^1.2.2",
     "sass": "^1.36.0",
+    "vite": "^6.3.2",
     "wiredep": "^4.0.0"
   },
   "eslintConfig": {

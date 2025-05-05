@@ -10,3 +10,8 @@ mixin recommend_item(obj)
     h3.recommend_title= obj.title
     article.recommend_summery= obj.summery
     a.check_more.no_arrow&attributes(hrefAttributes)= more_title
+
+mixin banner_video_loop()
+  video#banner_video(autoplay height="100%" muted loop)
+    source(src="ray-logo-1080p.mp4" type="video/mp4")
+  link(rel="stylesheet" href="styles/banner.css")

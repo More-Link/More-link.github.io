@@ -46,30 +46,7 @@ block content
     ];
   //- banner begin
   .banner_container
-    #swiper_banner.swiper-container
-      .swiper-wrapper
-        //- slide item
-        .swiper-slide(style="background-image: url('images/img/index/img_banner.jpg')")
-          .banner_content_wraper
-            .banner_content_box
-              h1.content_title More and More
-              article.content_summary
-                p  Link the world
-              a.check_more(href='/solution.html?type=MediaTek/MT7628&id=1481376751020') View More
-        //-
-          <div class="swiper-slide" style="background-image: url('images/img/index/img_product1.png')">
-          <div class="banner_content_wraper">
-          <div class="banner_content_box">
-          <h1 class="content_title">EN: PCB电路解决方案</h1>
-          <article class="content_summary">
-          <p>EN: MT7621内置强大的MIPS® 1004KEc™双核CPU（工作频率均为880MHz），集成了联发科技全球领先的网络及存储硬件加速器，支持HNAT、HQOS、SAMBA及VPN等功能，可满足高端路由器市场、802.11ac千兆高速网络以及高清视频下载备份的需求。</p>
-          <p>EN: MT7621内置强大的MIPS® 1004KEc™双核CPU（工作频率均为880MHz），集成了联发科技全球领先的网络及存储硬件加速器...</p>
-          </article>
-          <a href="/" class="check_more">EN: 点击查看更多详情</a>
-          </div>
-          </div>
-          </div>
-      //- <div class="swiper-pagination"></div>
+    +banner_video_loop()
   //- banner end
   //- new pros recommend begin
   .pros_recommend_container

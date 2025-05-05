@@ -51,16 +51,7 @@ block content
     ];
   //- banner begin
   .banner_container
-    #swiper_banner.swiper-container
-      .swiper-wrapper
-        // slide item
-        .swiper-slide(style="background-image: url('images/img/index/img_banner.jpg')")
-          .banner_content_wraper
-            .banner_content_box
-              h1.content_title More and More
-              article.content_summary
-                p  Link the world
-              a.check_more(href='/solution.html?type=MediaTek/MT7628&id=1481376751020') 点击查看更多详情
+    +banner_video_loop()
   //- banner end
   //- new pros recommend begin
   .pros_recommend_container

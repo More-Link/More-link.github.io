@@ -1,0 +1,5 @@
+.banner_container:has(#banner_video) {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}

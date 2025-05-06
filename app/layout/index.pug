@@ -15,3 +15,23 @@ mixin banner_video_loop()
   video#banner_video(autoplay height="100%" muted loop)
     source(src="ray-logo-1080p.mp4" type="video/mp4")
   link(rel="stylesheet" href="styles/banner.css")
+
+mixin features()
+  .features
+    .feature
+      .card-group
+        .card.cdn-p2p
+          .card-content
+            .image-container
+              img(src="images/icon/ic_cdn_p2p.png")
+          .card-footer CDN + P2P
+        .card.pcdn
+          a(href="pcdn")
+            .card-content
+              .image-container
+                img(src="images/icon/ic_pcdn.png")
+            .card-footer PCDN
+    link(rel="stylesheet" href="styles/feature.css")
+
+block post-content
+  script(src="scripts/page/page_index.js")

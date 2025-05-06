@@ -53,38 +53,7 @@ block content
   .banner_container
     +banner_video_loop()
   //- banner end
-  //- new pros recommend begin
-  .pros_recommend_container
-    h1.recommend_header 新品推荐
-    #pro_swiper_recommend.pro_recommend_swiper_container
-      .swiper-wrapper
-        - for (var i = 0; i < recommends.length; i++)
-          +recommend_item(recommends[i])
-      .recommend_shadow_left
-        .swiper-button-prev
-      .recommend_shadow_right
-        .swiper-button-next
-  //- new pros recommend end
-  //- video swiper begin
-  .video_recommend_container
-    .center_arrow_down
-    h1.recommend_header
-      | MORE
-      em LINK
-      br
-      | 成就科技进步
-    #video_swiper_recommend.video_recommend_swiper_container
-      .swiper-wrapper
-        .swiper-slide
-          .video_box(style="overflow-y: hidden;")
-            embed(
-              src='http://player.youku.com/embed/XMjY5OTIzMTQwMA=='
-              allowfullscreen='allowfullscreen'
-              style="display: initial; height: 100%;width: 100%;"
-            )
-            //- span.video_play_btn
-            //- iframe(height='498', width='510', src='http://player.youku.com/embed/XMTg1Mzk2Mzg1Ng==', frameborder='0', allowfullscreen='allowfullscreen')
-  //- video swiper end
+  +features()
   //- Footer begin
   footer.container-fluid.footer_container
     #footer_box.footer_box

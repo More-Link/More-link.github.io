@@ -48,55 +48,7 @@ block content
   .banner_container
     +banner_video_loop()
   //- banner end
-  //- new pros recommend begin
-  .pros_recommend_container
-    h1.recommend_header NEW PRODUCTS
-    #pro_swiper_recommend.pro_recommend_swiper_container
-      .swiper-wrapper
-        - for (var i = 0; i < recommends.length; i++)
-          +recommend_item(recommends[i])
-      .recommend_shadow_left
-        .swiper-button-prev
-      .recommend_shadow_right
-        .swiper-button-next
-  //- new pros recommend end
-  //- video swiper begin
-  .video_recommend_container
-    .center_arrow_down
-    h1.recommend_header
-      | MORE
-      em LINK
-      br
-      |  Video
-    #video_swiper_recommend.video_recommend_swiper_container
-      .swiper-wrapper
-        .swiper-slide
-          .video_box(style="overflow-y: hidden;")
-            //- <span class="video_play_btn"></span>
-            iframe(
-              src='https://www.youtube.com/embed/2Z1QJrK_mZw?list=PLSApfIbLzCfq7UXHBEW_Dak2EnEfjxMzE'
-              frameborder='0'
-              allowfullscreen='allowfullscreen'
-              style="display: initial; height: 100%;width: 100%;"
-            )
-          //- <h5 class="video_title">More and More<br>Link the world</h5>
-        //-
-          <div class="swiper-slide">
-          <div class="video_box" style="background-image: url('images/img/index/img_video.png')">
-          <span class="video_play_btn"></span>
-          </div>
-          <h5 class="video_title">世界上一成不变的东西，只有"任何事物都是在不断变化的"这条真理。</h5>
-          </div>
-          <div class="swiper-slide">
-          <div class="video_box" style="background-image: url('images/img/index/img_video.png')">
-          <span class="video_play_btn"></span>
-          </div>
-          <h5 class="video_title">世界上一成不变的东西，只有"任何事物都是在不断变化的"这条真理。</h5>
-          </div>
-      //- <div class="swiper-pagination"></div>
-      //- <div class="swiper-button-prev"></div>
-      //- <div class="swiper-button-next"></div>
-  //- video swiper end
+  +features()
   //- Footer begin
   footer.container-fluid.footer_container
     #footer_box.footer_box

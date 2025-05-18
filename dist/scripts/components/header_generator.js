@@ -12,6 +12,7 @@ define(['jquery', 'util', 'part/templates', 'cf/site_config', 'i18n/controller',
 
   //生成header头部主导航
   $('#main_nav_box').empty().html(i18n_controller.translator.nodeString(templates.header.main));
+  console.log(i18n_controller.translator.nodeString(templates.header.main));
   navBox.product = $('#nav_products');
   navBox.solution = $('#nav_solutions');
   //事件初始化
@@ -26,15 +27,15 @@ define(['jquery', 'util', 'part/templates', 'cf/site_config', 'i18n/controller',
     var currentLanguage = i18n_controller.getLanguage(),
         clangData = i18n_config[currentLanguage];
     //获取levelMap
-    levelMap = util.extend.Obj(util.extend.Obj({}, clangData.header.solution.classify), clangData.header.product.classify);
+    levelMap = util.extend.Obj(util.extend.Obj({}, clangData.header.solution.classify), clangData.header.product1.classify, clangData.header.product2.classify);
     util.getJSON('/data/product_params.json');
     i18n_controller.translateJSONGetter('products_all', function (data) {
 
-      for (var type in data) {
-        navigationData.nav_products.push({
-          list: generateNavList(data[type], type, 'product')
-        });
-      }
+      // for (var type in data){
+      //     navigationData.nav_products.push({
+      //         list: generateNavList(data[type],type,'product')
+      //     });
+      // }
       i18n_controller.translateJSONGetter('solutions_all', function (sdata) {
         for (var st in sdata) {
           navigationData.nav_solutions.push({

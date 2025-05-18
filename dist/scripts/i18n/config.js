@@ -11,8 +11,16 @@ define(['cf/site_config'], function (site_config) {
             //页面公共HEADER转换
             header: {
                 index: '首页',
-                product: {
-                    title: '产品',
+                product1: {
+                    title: 'CDN+P2P',
+                    back_btn: '返回',
+                    classify: {
+                        finished: '成品',
+                        unfinished: '半成品'
+                    }
+                },
+                product2: {
+                    title: 'PCDN',
                     back_btn: '返回',
                     classify: {
                         finished: '成品',
@@ -75,8 +83,16 @@ define(['cf/site_config'], function (site_config) {
             route: site_config.routeSource.en,
             header: {
                 index: 'HOME',
-                product: {
-                    title: 'PRODUCT',
+                product1: {
+                    title: 'CDN+P2P',
+                    back_btn: 'Back',
+                    classify: {
+                        finished: 'ODM Product',
+                        unfinished: 'SKD Product'
+                    }
+                },
+                product2: {
+                    title: 'PCDN',
                     back_btn: 'Back',
                     classify: {
                         finished: 'ODM Product',

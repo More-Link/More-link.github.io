@@ -4,26 +4,28 @@
 define(['cf/site_config','cf/file_url','i18n/controller','i18n/config'],
     (site_config,file_url,i18n_controller,i18n_config)=>({
     header: {
-        main: `<li><a i18n-morelink="header.index,route.index.path|href" class="${site_config.inPage(i18n_controller.route().index) ? 'active' : ''}">首页</a></li>
+        main: `
+            <li><a i18n-morelink="header.index,route.index.path|href" class="${site_config.inPage(i18n_controller.route().index) ? 'active' : ''}"></a></li>
             <li>
-                <span i18n-morelink="header.product.title" class="nav_level_tag nav_control nav_product_level_tag ${site_config.inPage(i18n_controller.route().product) || site_config.inPage(i18n_controller.route().product_compare)
-                        ? 'active' : ''}">产品</span>
-                <ul class="nav_in_control nav_level_box nav_products" id="nav_products">
-                    <h2 class="nav_level_box_title"><span i18n-morelink="header.product.back_btn" class="nav_level_back_btn">返回</span>@{header.product.title|morelink}</h2>
-                </ul>
+                <a i18n-morelink="header.product1.title" class="nav_level_tag nav_control nav_product1_level_tag ${site_config.inPage(i18n_controller.route().product1)
+                        ? 'active' : ''}" href="/cdn-p2p"></a>
+            </li>
+            <li>
+                <a i18n-morelink="header.product2.title" class="nav_level_tag nav_control nav_product2_level_tag ${site_config.inPage(i18n_controller.route().product2)
+                        ? 'active' : ''}" href="/pcdn"></a>
             </li>
             <li>
                 <span i18n-morelink="header.solution.title" class="nav_level_tag nav_control nav_solution_level_tag ${site_config.inPage(i18n_controller.route().solution) ? 'active' : ''}"></span>
                 <ul class="nav_in_control nav_level_box nav_solutions" id="nav_solutions">
-                    <h2 class="nav_level_box_title"><span i18n-morelink="header.solution.back_btn" class="nav_level_back_btn">返回</span>@{header.solution.title|morelink}</h2>
-
+                    <h2 class="nav_level_box_title"><span i18n-morelink="header.solution.back_btn" class="nav_level_back_btn"></span>@{header.solution.title|morelink}</h2>
                 </ul>
             </li>
-            <li><a i18n-morelink="header.about,route.about.href|href" class="${site_config.inPage(i18n_controller.route().about) ? 'active' : ''}" href="${i18n_controller.route().about.href}">公司介绍</a></li>
+            <li><a i18n-morelink="header.about,route.about.href|href" class="${site_config.inPage(i18n_controller.route().about) ? 'active' : ''}" href="${i18n_controller.route().about.href}"></a></li>
             <li class="nav_contact"><a i18n-morelink="header.contact,route.contact.href|href" class="${site_config.inPage(i18n_controller.route().contact) ? 'active' : ''}" href="${i18n_controller.route().contact.href}">联系我们</a></li>
             <li class="nav_language">
                 ${i18n_controller.switcherHtml()}
-            </li>`,
+            </li>
+        `,
         product:  `{{#each nav_products}}
                     <li>
                         {{#safe list}}{{/safe}}
@@ -73,7 +75,7 @@ define(['cf/site_config','cf/file_url','i18n/controller','i18n/config'],
                   </nav>
                 </div>
                 <div class="col-xs-4">
-                  <h5 class="column_title" i18n-morelink="header.product.title">产品</h5>
+                  <h5 class="column_title" i18n-morelink="header.product1.title">产品</h5>
                   <ul class="footer_profile_list" id="footer_products">
 
                   </ul>

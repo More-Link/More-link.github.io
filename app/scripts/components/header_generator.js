@@ -30,16 +30,17 @@ define(['jquery','util','part/templates','cf/site_config','i18n/controller','i18
                     {},
                     clangData.header.solution.classify
                 ),
-                clangData.header.product.classify
+                clangData.header.product1.classify,
+                clangData.header.product2.classify
             );
 	    util.getJSON('/data/product_params.json');
         i18n_controller.translateJSONGetter('products_all', function (data) {
 
-            for (var type in data){
-                navigationData.nav_products.push({
-                    list: generateNavList(data[type],type,'product')
-                });
-            }
+            // for (var type in data){
+            //     navigationData.nav_products.push({
+            //         list: generateNavList(data[type],type,'product')
+            //     });
+            // }
             i18n_controller.translateJSONGetter('solutions_all', function (sdata) {
                 for (var st in sdata){
                     navigationData.nav_solutions.push({

@@ -38,21 +38,21 @@
         display: inline-block;
         padding-top: 20px;
         &>a>img{
-          height: 50px;
+          height: 60px;
         }
       }
       @include pad-screen(){
-        padding-top: 30px;
+        padding-top: 20px;
         padding-left: 20px;
         &>a>img{
-          height: 30px;
+          height: 60px;
         }
       }
       @include mobile-screen(){
         padding-top: 10px;
         margin-left: 15px;
         &>a>img{
-          height: 30px;
+          height: 60px;
         }
       }
     }

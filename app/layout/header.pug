@@ -4,7 +4,8 @@ mixin menu
       en: {
         current: 'English',
         home: 'HOME',
-        product: 'PRODUCT',
+        product1: 'CDN+P2P',
+        product2: 'PCDN',
         solution: 'SOLUTION',
         about: 'COMPANY',
         contact: 'CONTACT'
@@ -12,7 +13,8 @@ mixin menu
       cn: {
         current: '中文',
         home: '首页',
-        product: '产品',
+        product1: 'CDN+P2P',
+        product2: 'PCDN',
         solution: '解决方案',
         about: '公司介绍',
         contact: '联系我们'
@@ -33,7 +35,9 @@ mixin menu
         li
           a(href='/')= data.home
         li
-          span.nav_control.nav_level_tag= data.product
+          span.nav_control.nav_level_tag= data.product1
+        li
+          span.nav_control.nav_level_tag= data.product2
         li
           span.nav_control.nav_level_tag= data.solution
         li

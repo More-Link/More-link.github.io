@@ -21,16 +21,23 @@ mixin features()
     .feature
       .card-group
         .card.cdn-p2p
-          .card-content
-            .image-container
-              img(src="images/icon/ic_cdn_p2p.png")
-          .card-footer CDN + P2P
+          a(href="cdn-p2p")
+            .card-content
+              .image-container
+                img(src="images/icon/ic_cdn_p2p.png")
+            .card-footer CDN + P2P
         .card.pcdn
-          a(href="pcdn")
+          a
             .card-content
               .image-container
                 img(src="images/icon/ic_pcdn.png")
             .card-footer PCDN
+        .card.pcdn
+          a
+            .card-content
+              .image-container
+                img(src="images/icon/ic_pcdn.png")
+            .card-footer Wifi Solution
     link(rel="stylesheet" href="styles/feature.css")
 
 block post-content

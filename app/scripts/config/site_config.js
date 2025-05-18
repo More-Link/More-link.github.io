@@ -15,13 +15,21 @@ define(['util'],(util)=>{
                 href: '/index-en.html',//完整的链接
                 path: '/index-en.html'
             },
-            product: {
+            product1: {
                 static: false,
 	            language: 'en',
                 attribute: 'product',
                 hash: '',
-                href: '/product.html',
-                path: '/product.html'
+                href: '/cdn-cdn.html',
+                path: '/cdn-cdn.html'
+            },
+            product2: {
+                static: false,
+	            language: 'en',
+                attribute: 'product',
+                hash: '',
+                href: '/pcdn.html',
+                path: '/pcdn.html'
             },
             product_compare: {
                 static: false,
@@ -66,13 +74,21 @@ define(['util'],(util)=>{
                 href: '/index-cn.html',
                 path: '/index-cn.html'
             },
-            product: {
+            product1: {
                 static: false,
 	            language: 'cn',
                 attribute: 'product',
                 hash: '',
-                href: '/product.html',
-                path: '/product.html'
+                href: '/cdn-cdn.html',
+                path: '/cdn-cdn.html'
+            },
+            product2: {
+                static: false,
+	            language: 'cn',
+                attribute: 'product',
+                hash: '',
+                href: '/pcdn.html',
+                path: '/pcdn.html'
             },
             product_compare: {
                 static: false,

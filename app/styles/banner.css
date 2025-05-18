@@ -1,0 +1,21 @@
+.banner_container:has(#banner_video) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-color: black;
+  height: calc(100vh - 136px);
+}
+@media only screen and (min-width: 768px) and (max-width: 1500px) {
+  .banner_container:has(#banner_video) {
+    height: calc(100vh - 88px);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner_container:has(#banner_video) {
+    height: calc(100vh - 50px);
+  }
+}
+.banner_container:has(#banner_video) video {
+  max-width: 100vw;
+}

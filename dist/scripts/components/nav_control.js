@@ -62,20 +62,20 @@ define(['jquery', 'i18n/controller', 'cf/file_url', 'util'], function ($, i18n_c
                 $this.parent().toggleClass('active');
 
                 i18n_controller.switchLanguage(langTag);
-            }).on('click mouseenter', '.nav_product_level_tag', function () {
-                var switch_slide = laptop_nav_box.find('.switch_slide'),
-                    noEmpSlide = switch_slide.filter(function () {
-                    return $(this).children().length !== 0;
-                }),
-                    getfirst = noEmpSlide.children().first();
-                noEmpSlide.addClass('active').siblings().removeClass('active');
-                laptop_nav_box.find('.switch_title').filter(function () {
-                    return $(this).attr('index') == noEmpSlide.attr('index');
-                }).addClass('active').siblings().removeClass('active');
-                generateShowBox(getfirst);
-                recommend_nav_box.removeClass('active');
-                $('.switch_body .switch_slide:first-child').addClass('active');
-                laptop_nav_box.addClass('active').parent().addClass('active');
+                // }).on('click mouseenter', '.nav_product_level_tag', function () {
+                //     var switch_slide = laptop_nav_box.find('.switch_slide'),
+                //         noEmpSlide = switch_slide.filter(function () {
+                //             return $(this).children().length !== 0;
+                //         }),
+                //         getfirst = noEmpSlide.children().first();
+                //     noEmpSlide.addClass('active').siblings().removeClass('active');
+                //     laptop_nav_box.find('.switch_title').filter(function () {
+                //         return $(this).attr('index') == noEmpSlide.attr('index');
+                //     }).addClass('active').siblings().removeClass('active');
+                //     generateShowBox(getfirst);
+                //     recommend_nav_box.removeClass('active');
+                //     $('.switch_body .switch_slide:first-child').addClass('active');
+                //     laptop_nav_box.addClass('active').parent().addClass('active');
             }).on('click mouseenter', '.nav_solution_level_tag', function () {
                 var switch_slide = recommend_nav_box.find('.switch_slide'),
                     noEmpSlide = switch_slide.filter(function () {

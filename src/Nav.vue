@@ -30,10 +30,8 @@
   </header>
 </template>
 <script lang="ts">
-enum LANG {
-  EN = 'en',
-  CN = 'cn',
-}
+import { LANG } from './constant'
+import { useLanguage, useListMap } from './nav.hook'
 
 const i18nMap = {
   [LANG.CN]: {
@@ -49,31 +47,16 @@ const i18nMap = {
 }
 
 export default {
-  data: () => {
+  setup () {
+    const language = useLanguage()
+    const listMap = useListMap()
     return {
-      language: LANG.EN,
+      language,
+      listMap,
     }
   },
   computed: {
     i18n() { return i18nMap[(this as any).language] },
-    listMap() {
-      return {
-        [LANG.CN]: [
-          { title: '首页', href: '/index-cn.html' },
-          { title: 'CDN+P2P', href: '/cdn-p2p.html' },
-          { title: 'PCDN', href: '' },
-          { title: '解决方案', href: '/solution-list.html' },
-          { title: '公司介绍', href: '/about.html' },
-        ].map((item) => ({ ...item, active: location.pathname === item.href })),
-        [LANG.EN]: [
-          { title: 'HOME', href: '/index-en.html' },
-          { title: 'CDN+P2P', href: '/cdn-p2p.html' },
-          { title: 'PCDN', href: '' },
-          { title: 'SOLUTION', href: '/solution-list.html' },
-          { title: 'COMPANY', href: '/about-en.html' },
-        ].map((item) => ({ ...item, active: location.pathname === item.href })),
-      }
-    },
     languageList () {
       const that = this as any
       return [
@@ -95,42 +78,23 @@ export default {
       return that.listMap[that.language]
     },
   },
-  methods: {
-    refreshLanguage() {
-      const that = this as any
-      const language = localStorage.getItem('language')
-      if (language && that.listMap[language]) return (that.language = language)
-      for (const lang in that.listMap) {
-        if (that.listMap[lang].some((item) => item.active)) {
-          that.language = lang
-          localStorage.setItem('language', lang)
-          return
-        }
-      }
-      var lang = ((navigator as any).browserLanguage || navigator.language).toLowerCase();
-      if (/^zh-/i.test(lang)) {
-        that.language = LANG.CN
-      } else {
-        that.language = LANG.EN
-      }
-      localStorage.setItem('language', that.language)
-    }
-  },
-  mounted() {
-    const that = this as any
-    that.refreshLanguage()
-  }
 }
 
 </script>
 <style scoped>
 .nav_language {
-  height: 88px;
+  height: 136px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1500px) {
+  .nav_language {
+    height: 88px;
+  }
 }
 .nav_language > div:first-child {
   padding: 0px 15px;

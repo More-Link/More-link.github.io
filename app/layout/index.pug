@@ -24,20 +24,32 @@ mixin features()
           a(href="cdn-p2p")
             .card-content
               .image-container
-                img(src="images/icon/ic_cdn_p2p.png")
-            .card-footer CDN + P2P
+                video(autoplay height="100%" muted loop)
+                  source(src="MVI_7780.mp4" type="video/mp4")
+            .card-footer
+              p CDN + P2P
+              div
+                small.description More-link CDN+P2P improves content delivery for live and on demand video streams, using decentralized acceleration technologies to reduce CDN costs for streaming platforms by more than 50%-70%rd.pcdn
         .card.pcdn
           a
             .card-content
               .image-container
-                img(src="images/icon/ic_pcdn.png")
-            .card-footer PCDN
+                video(autoplay height="100%" muted loop)
+                  source(src="MVI_7799.mp4" type="video/mp4")
+            .card-footer
+              p PCDN
+              div
+                small.description Utilize the idle bandwidth and storage resources of existing gateway devices to provide efficient, low-cost, and secure content distribution services, users can also received corresponding rewards based on their contributions
         .card.pcdn
-          a
+          a(href="solution-list")
             .card-content
               .image-container
-                img(src="images/icon/ic_pcdn.png")
-            .card-footer Wifi Solution
+                video(autoplay height="100%" muted loop)
+                  source(src="MVI_7781.mp4" type="video/mp4")
+            .card-footer
+              p Wi-Fi Solution
+              div
+                small.description More than 15 years of R&D experiences in wire & wireless routers, from chipset solutions for complete products, from PCB layout to software development, from "PandoraBox OS" to today's "DreamBox OS"
     link(rel="stylesheet" href="styles/feature.css")
 
 block post-content

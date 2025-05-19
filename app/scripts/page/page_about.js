@@ -4,7 +4,7 @@
  */
 
 
-define(['jquery','util','part/templates','cf/site_config','i18n/controller','i18n/config','part/nav_control'],
+define(['jquery','util','part/templates','cf/site_config','i18n/controller','i18n/config'],
   ($,util,templates,site_config,i18n_controller,i18n_config,nav_controller)=> {
 
     //提交
@@ -21,26 +21,5 @@ define(['jquery','util','part/templates','cf/site_config','i18n/controller','i18
       setTimeout(function(){
         msgBox.removeClass('active');
       },2000);
-    });
-
-    //滑动
-    function isAbout(){
-      var flag=true;
-      if(location.href.indexOf('contact_us')>-1){
-        scrollTo();
-      }
-    }
-
-    function scrollTo(){
-      var contactBox=$('.contact_container'),
-        body=$('body'),
-        offsetHeight=contactBox.offset().top;
-      body.animate({'scrollTop':offsetHeight-50});
-      // body.scrollTop(offsetHeight);
-    }
-    isAbout();
-
-    $('.nav_contact').on('click',function(){
-      scrollTo();
     });
   })

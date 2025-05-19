@@ -1,0 +1,66 @@
+extends ./layout/index
+
+block title
+  title MORELINK Official Site
+
+block content
+  -
+    var LANG = 'en-us';
+    var recommends = [
+      {
+        href: '/product.html?type=&id=c1',
+        img: '/images/img/index/img_product_c1_cop.png',
+        title: "MLN-C1",
+        summery: "Mobile（Pocket）-WiFi Router"
+      },{
+        href: '/product.html?type=&id=m2',
+        img: '/images/img/index/img_product_m2_cop.png',
+        title: "MLN-M2",
+        summery: "1000Mbps Wired & Wireless High-Power Router"
+      },{
+        href: '/product.html?type=&id=w3',
+        img: '/images/img/index/img_product_w3_cop.png',
+        title: "MLN-W3",
+        summery: "High Cost Performance Dual-Band Router"
+      },{
+        href: '/product.html?type=&id=c1',
+        img: '/images/img/index/img_product_c1.png',
+        title: "PBR-C1",
+        summery: "Mobile（Pocket）-WiFi Router"
+      }, {
+        href: '/product.html?type=&id=m1',
+        img: '/images/img/index/img_product_m1.png',
+        title: "PBR-M1",
+        summery: "1000Mbps Wired&Wireless Router with multiple ports"
+      }, {
+        href: '/product.html?type=&id=m2',
+        img: '/images/img/index/img_product_m2.png',
+        title: "PBR-M2",
+        summery: "1000Mbps Wired&Wireless High-Power Router"
+      }, {
+        href: '/product.html?type=&id=w1',
+        img: '/images/img/index/img_product_w1.png',
+        title: "PBR-W1",
+        summery: "High Cost Performance Router"
+      }
+    ];
+  //- new pros recommend begin
+  .pros_recommend_container
+    h1.recommend_header NEW PRODUCTS
+    #pro_swiper_recommend.pro_recommend_swiper_container
+      .swiper-wrapper
+        - for (var i = 0; i < recommends.length; i++)
+          +recommend_item(recommends[i])
+      .recommend_shadow_left
+        .swiper-button-prev
+      .recommend_shadow_right
+        .swiper-button-next
+  //- new pros recommend end
+  //- Footer begin
+  footer.container-fluid.footer_container
+    #footer_box.footer_box
+  //- Footer end
+  //- build:js scripts/plugins.js
+  //- endbuild
+  //- build:js scripts/main.js
+  //- endbuild

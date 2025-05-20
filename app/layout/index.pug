@@ -12,7 +12,7 @@ mixin recommend_item(obj)
     a.check_more.no_arrow&attributes(hrefAttributes)= more_title
 
 mixin banner_video_loop()
-  video#banner_video(autoplay height="100%" muted loop)
+  video#banner_video(autoplay height="100%" muted loop playsinline)
     source(src="ray-logo-1080p.mp4" type="video/mp4")
   link(rel="stylesheet" href="styles/banner.css")
 
@@ -24,7 +24,7 @@ mixin features()
           a(href="cdn-p2p")
             .card-content
               .image-container
-                video(autoplay height="100%" muted loop)
+                video(autoplay height="100%" muted loop playsinline)
                   source(src="MVI_7780.mp4" type="video/mp4")
             .card-footer
               p CDN + P2P
@@ -34,7 +34,7 @@ mixin features()
           a
             .card-content
               .image-container
-                video(autoplay height="100%" muted loop)
+                video(autoplay height="100%" muted loop playsinline)
                   source(src="MVI_7799.mp4" type="video/mp4")
             .card-footer
               p PCDN
@@ -44,7 +44,7 @@ mixin features()
           a(href="solution-list")
             .card-content
               .image-container
-                video(autoplay height="100%" muted loop)
+                video(autoplay height="100%" muted loop playsinline)
                   source(src="MVI_7781.mp4" type="video/mp4")
             .card-footer
               p Wi-Fi Solution
@@ -54,3 +54,11 @@ mixin features()
 
 block post-content
   script(src="scripts/page/page_index.js")
+  script.
+    const videoElements = document.document.getElementsByTagName('video')
+    for (const videoElement of videoElements) {
+      videoElement.controls = false
+      videoElement.addEventListener('play', function() {
+        this.controls = false
+      })
+    }

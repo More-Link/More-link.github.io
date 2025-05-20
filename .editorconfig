@@ -1,6 +1,6 @@
 root = true
 
-[*.{js,ts,vue,pug,scss,html,json}]
+[*.{js,ts,vue,pug,scss,html,json,yaml,yml,toml}]
 insert_final_newline = true
 indent_style = space
 indent_size = 2

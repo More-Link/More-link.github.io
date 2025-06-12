@@ -1,0 +1,6 @@
+@mixin header-height-mixin {
+  --header-height: 60px;
+  @screen sm {
+    --header-height: 88px;
+  }
+}

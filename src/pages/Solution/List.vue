@@ -117,7 +117,7 @@ const jump = (id: PLATFORM) => {
 
 .container {
   @include common.header-height-mixin;
-  --banner-height: calc(100vh - var(--header-height));
+  --banner-height: calc(100dvh - var(--header-height));
   --uno: 'h-[var(--banner-height)]';
   .product {
     --uno: 'flex-col-nowrap gap-[20px]';

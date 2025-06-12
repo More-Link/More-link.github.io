@@ -15,7 +15,7 @@ import LoopVideo from '../../../components/LoopVideo.vue';
 
 .banner_container {
   @include common.header-height-mixin;
-  --banner-height: calc(100vh - var(--header-height));
+  --banner-height: calc(100dvh - var(--header-height));
   --uno: 'flex justify-center items-center bg-black h-[var(--banner-height)]';
 
   video {

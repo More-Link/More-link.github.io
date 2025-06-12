@@ -186,9 +186,7 @@ const navList = computed(() => {
   }
 }
 .nav_side {
-  @include common.header-height-mixin;
-  --banner-height: calc(100vh - var(--header-height));
-  --uno: 'w-screen h-[var(--banner-height)] bg-active';
+  --uno: 'w-screen bg-active';
   @screen sm {
     --uno: 'hidden';
   }

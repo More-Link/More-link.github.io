@@ -34,7 +34,7 @@ import Content from '../../components/Content.vue'
 import Text from '../../components/Text.vue';
 import ListItem from '../../components/ListItem.vue';
 import { LANG } from '../../scripts/constant';
-import useI18nJSON from '../../scripts/useI18nJSON';
+import useI18nJSONAsync from '../../scripts/useI18nJSONAsync';
 import member0 from './images/img_member_CTO.jpg'
 import member1 from './images/img_member_CEO.jpg'
 import member2 from './images/img_member_Senior-Software-Engineer-0.jpg'
@@ -45,9 +45,10 @@ import member5 from './images/img_member_Senior-Software-Engineer-1.jpg'
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
+  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
 }
 
-const i18nJson = useI18nJSON(i18nMap)
+const i18nJson = useI18nJSONAsync(i18nMap)
 
 const members = computed(() => [
   { name: 'Lintel', job: unref(i18nJson).about.CEO, imgUrl: member0 },

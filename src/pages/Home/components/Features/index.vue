@@ -32,14 +32,15 @@ import { computed, unref } from 'vue';
 import LoopVideo from '../../../../components/LoopVideo.vue';
 import { LANG } from '../../../../scripts/constant';
 import { useRouter } from 'vue-router';
-import useI18nJSON from '../../../../scripts/useI18nJSON';
+import useI18nJSONAsync from '../../../../scripts/useI18nJSONAsync';
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
+  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
 }
 
-const i18nJson = useI18nJSON(i18nMap)
+const i18nJson = useI18nJSONAsync(i18nMap)
 
 const router = useRouter()
 const featuresRef = computed(() => [
@@ -93,9 +94,9 @@ const featuresRef = computed(() => [
     }
   }
   .card-footer {
-    --uno: 'pt-[10px] pb-[15px] text-center min-h-[200px] font-semibold';
+    --uno: 'pt-[10px] pb-[15px] px-[15px] text-center min-h-[200px] font-semibold';
     .description {
-      --uno: 'text-[12px] color-gray';
+      --uno-apply: text-[12px] color-gray text-left;
     }
   }
 }

@@ -37,14 +37,13 @@ import Content from '../../components/Content.vue'
 import Text from '../../components/Text.vue'
 import ListItem from '../../components/ListItem.vue'
 import { LANG } from '../../scripts/constant'
-import useI18nJSON from '../../scripts/useI18nJSON'
+import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
 }
 
-const i18nJson = useI18nJSON(i18nMap)
+const i18nJson = useI18nJSONAsync(i18nMap)
 
 </script>
 <style lang="scss" scoped>

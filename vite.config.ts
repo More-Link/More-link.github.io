@@ -24,7 +24,13 @@ export default defineConfig({
       input: pagePathMap,
       output: {
         manualChunks: {
-          'vue': ['vue', '@vueuse/core', 'vue-router'],
+          vueChunk: ['vue', '@vueuse/core', 'vue-router'],
+          i18nChunk: [
+            'es-toolkit/compat',
+            path.join(__dirname, 'src/scripts/useI18n.ts'),
+            path.join(__dirname, 'src/scripts/useI18nJSON.ts'),
+            path.join(__dirname, 'src/scripts/useI18nJSONAsync.ts'),
+          ],
         },
       },
     },

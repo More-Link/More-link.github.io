@@ -14,15 +14,17 @@
         {{obj.title}}
       </div>
       <div class="language_container group">
-        <div class="language_label">{{i18nJson.Language}}</div>
+        <div class="language_label">{{i18n.$t(['Language'])}}</div>
         <div class="language_options">
-          <div class="language_current">{{i18nJson[languageRef]}}</div>
+          <div class="language_current">{{i18n.$t(languageRef)}}</div>
           <div class="language_group">
             <div
               v-for="languageItem of languageList"
               class="language"
-              :class="languageItem.classes" @click="() => languageItem.click()"
-            ></div>
+              :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
+            >
+              {{ i18n.$t([`${languageItem.value}_shore`]) }}
+            </div>
           </div>
         </div>
       </div>
@@ -45,8 +47,10 @@
       <div
         v-for="languageItem of languageList"
         class="language"
-        :class="languageItem.classes" @click="() => languageItem.click()"
-      ></div>
+        :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
+      >
+        {{ i18n.$t([`${languageItem.value}_shore`]) }}
+      </div>
     </div>
   </div>
 </template>
@@ -58,24 +62,35 @@ import { computed, unref, useTemplateRef } from 'vue'
 import { onClickOutside, useToggle } from '@vueuse/core'
 import { useRouter } from 'vue-router'
 import useLanguage from '../scripts/useLanguage'
-import useI18nJSON from '../scripts/useI18nJSON'
+import useI18n from '../scripts/useI18n'
+
+const commonI18nMap = {
+  [LANG.ZH_CN]: '简体中文',
+  [LANG.ZH_HK]: '繁體中文',
+  [LANG.EN_US]: 'English',
+  [[LANG.ZH_CN, 'shore'].join('_')]: '简',
+  [[LANG.ZH_HK, 'shore'].join('_')]: '繁',
+  [[LANG.EN_US, 'shore'].join('_')]: 'EN',
+}
 
 const i18nMap = {
   [LANG.ZH_CN]: {
     Language: '当前语言',
-    [LANG.ZH_CN]: '中文',
-    [LANG.EN_US]: 'English',
+    ...commonI18nMap,
+  },
+  [LANG.ZH_HK]: {
+    Language: '當前語言',
+    ...commonI18nMap,
   },
   [LANG.EN_US]: {
     Language: 'LANGUAGE',
-    [LANG.ZH_CN]: '中文',
-    [LANG.EN_US]: 'English',
+    ...commonI18nMap,
   },
 }
 
 const languageRef = useLanguage()
 const listMapRef = useListMap()
-const i18nJson = useI18nJSON(i18nMap)
+const i18n = useI18n(i18nMap)
 
 const [isOpen, toggle] = useToggle(false)
 const target = useTemplateRef<HTMLElement>('target')
@@ -83,11 +98,11 @@ onClickOutside(target, () => toggle(false))
 
 const languageList = computed(() => {
   return [
-    { value: LANG.ZH_CN, classes: [`lang-${LANG.ZH_CN}`, 'i-flag-cn-4x3'] },
-    { value: LANG.EN_US, classes: [`lang-${LANG.EN_US}`, 'i-flag-us-4x3'] },
+    { value: LANG.ZH_CN },
+    { value: LANG.ZH_HK },
+    { value: LANG.EN_US },
   ].map((item) => ({
     ...item,
-    classes: [...item.classes, item.value !== unref(languageRef) ? 'grayscale-90' : undefined].filter(Boolean),
     click: () => {
       languageRef.value = item.value
       toggle(false)
@@ -169,7 +184,7 @@ const navList = computed(() => {
       --uno: 'bg-active rounded-l-md h-[30px] w-[100px] leading-[30px] text-center';
     }
     .language_options {
-      --uno: 'bg-white rounded-r-md color-black h-[30px] w-[75px] leading-[30px] text-center';
+      --uno: 'bg-white rounded-r-md color-black px-[5px] h-[30px] min-w-[75px] leading-[30px] text-center duration-500';
     }
     &:hover .language_current {
       --uno: 'hidden';
@@ -181,9 +196,15 @@ const navList = computed(() => {
       --uno: 'flex';
     }
     .language {
-      --uno: 'cursor-pointer';
+      --uno: 'bg-gray h-[22px] leading-[22px] min-w-[22px] rounded-sm text-[12px]';
+      &.active {
+        --uno: 'bg-active';
+      }
     }
   }
+}
+.language {
+  --uno: 'cursor-pointer text-center color-white';
 }
 .nav_side {
   --uno: 'w-screen bg-active';
@@ -207,7 +228,10 @@ const navList = computed(() => {
     --uno: 'py-[20px] flex-row-nowrap justify-center gap-10 items-center h-full';
   }
   .language {
-    --uno: 'size-10 cursor-pointer';
+    --uno: 'size-10 bg-hover leading-10';
+    &:not(.active) {
+      --uno-apply: color-gray;
+    }
   }
 }
 </style>

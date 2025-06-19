@@ -13,6 +13,13 @@ export const useListMap = () => {
       { title: '解决方案', name: ROUTER_NAME.SOLUTION },
       { title: '公司介绍', name: ROUTER_NAME.ABOUT },
     ].map((item) => ({ ...item, active: item.name === router.currentRoute.value.name })),
+    [LANG.ZH_HK]: [
+      { title: '首頁', name: ROUTER_NAME.HOME },
+      { title: 'CDN+P2P', name: ROUTER_NAME.CDN_P2P },
+      { title: 'PCDN', name: ROUTER_NAME.PCDN },
+      { title: '解決方案', name: ROUTER_NAME.SOLUTION },
+      { title: '公司介紹', name: ROUTER_NAME.ABOUT },
+    ].map((item) => ({ ...item, active: item.name === router.currentRoute.value.name })),
     [LANG.EN_US]: [
       { title: 'HOME', name: ROUTER_NAME.HOME },
       { title: 'CDN+P2P', name: ROUTER_NAME.CDN_P2P },

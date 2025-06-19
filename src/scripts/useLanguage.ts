@@ -14,7 +14,11 @@ const useLanguage = () => {
     
       const browserLang = ((navigator as any).browserLanguage || navigator.language).toLowerCase();
       if (/^zh-/i.test(browserLang)) {
-        return LANG.ZH_CN
+        if ([LANG.ZH_HK, LANG.ZH_MO, LANG.ZH_TW].includes(browserLang)) {
+          return LANG.ZH_HK
+        } else {
+          return LANG.ZH_CN
+        }
       } else {
         return LANG.EN_US
       }

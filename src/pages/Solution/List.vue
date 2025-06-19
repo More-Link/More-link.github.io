@@ -31,7 +31,7 @@ import img4 from './images/img_product_m1.png'
 import img5 from './images/img_product_m2.png'
 import img6 from './images/img_product_w3.png'
 import img7 from './images/img_product_w1.png'
-import useI18nJSON from '../../scripts/useI18nJSON'
+import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
 import { LANG } from '../../scripts/constant'
 import { unref, computed } from 'vue'
 import { PLATFORM } from './constant'
@@ -43,9 +43,10 @@ const router = useRouter()
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
+  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
 }
 
-const i18nJson = useI18nJSON(i18nMap)
+const i18nJson = useI18nJSONAsync(i18nMap)
 
 const list = computed(() => [
   {

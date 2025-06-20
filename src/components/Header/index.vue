@@ -16,14 +16,14 @@
       <div class="language_container group">
         <div class="language_label">{{i18n.$t(['Language'])}}</div>
         <div class="language_options">
-          <div class="language_current">{{i18n.$t(languageRef)}}</div>
+          <div class="language_current">{{i18n.$t([languageRef, 'full'])}}</div>
           <div class="language_group">
             <div
               v-for="languageItem of languageList"
               class="language"
               :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
             >
-              {{ i18n.$t([`${languageItem.value}_shore`]) }}
+              {{ i18n.$t([languageItem.value, 'shore']) }}
             </div>
           </div>
         </div>
@@ -49,28 +49,34 @@
         class="language"
         :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
       >
-        {{ i18n.$t([`${languageItem.value}_shore`]) }}
+        {{ i18n.$t([languageItem.value, 'shore']) }}
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import logoUrl from '../images/icon/icon_logo.png'
-import { LANG } from '../scripts/constant'
-import { useListMap } from './hook'
+import logoUrl from '../../images/icon/icon_logo.png'
+import { LANG } from '../../scripts/constant/Lang'
+import { useListMap } from '../hook'
 import { computed, unref, useTemplateRef } from 'vue'
 import { onClickOutside, useToggle } from '@vueuse/core'
 import { useRouter } from 'vue-router'
-import useLanguage from '../scripts/useLanguage'
-import useI18n from '../scripts/useI18n'
+import useLanguage from '../../scripts/useLanguage'
+import useI18n from '../../scripts/useI18n'
 
 const commonI18nMap = {
-  [LANG.ZH_CN]: '简体中文',
-  [LANG.ZH_HK]: '繁體中文',
-  [LANG.EN_US]: 'English',
-  [[LANG.ZH_CN, 'shore'].join('_')]: '简',
-  [[LANG.ZH_HK, 'shore'].join('_')]: '繁',
-  [[LANG.EN_US, 'shore'].join('_')]: 'EN',
+  [LANG.ZH_CN]: {
+    full: '简体中文',
+    shore: '简',
+  },
+  [LANG.ZH_HK]: {
+    full: '繁體中文',
+    shore: '繁',
+  },
+  [LANG.EN_US]: {
+    full: 'English',
+    shore: 'EN',
+  },
 }
 
 const i18nMap = {
@@ -97,11 +103,11 @@ const target = useTemplateRef<HTMLElement>('target')
 onClickOutside(target, () => toggle(false))
 
 const languageList = computed(() => {
-  return [
+  return ([
     { value: LANG.ZH_CN },
     { value: LANG.ZH_HK },
     { value: LANG.EN_US },
-  ].map((item) => ({
+  ] as const).map((item) => ({
     ...item,
     click: () => {
       languageRef.value = item.value
@@ -126,7 +132,7 @@ const navList = computed(() => {
 }
 </style>
 <style scoped lang="scss">
-@use '../styles/common.scss' as common;
+@use '../../styles/common.scss' as common;
 
 .nav_item {
   --uno: 'text-[14px] cursor-pointer text-center';

@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { LANG } from '../scripts/constant'
+import { LANG } from '../scripts/constant/Lang'
 import { ROUTER_NAME } from '../scripts/router'
 import { useRouter } from 'vue-router'
 

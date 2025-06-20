@@ -27,7 +27,8 @@
     "sass-embedded": "^1.89.1",
     "typescript": "^5.8.3",
     "unplugin-vue": "^6.2.0",
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
+    "yn": "^5.0.0"
   },
   "eslintConfig": {
     "env": {
@@ -47,6 +48,7 @@
     "@vueuse/core": "^13.3.0",
     "es-toolkit": "^1.39.3",
     "hls.js": "^1.6.5",
+    "ts-pattern": "^5.7.1",
     "unocss": "^66.1.3",
     "vue": "^3.5.16",
     "vue-router": "^4.5.1"

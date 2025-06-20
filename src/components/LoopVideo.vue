@@ -2,31 +2,26 @@
   <video muted playsinline ref="el"></video>
 </template>
 <script setup lang="ts">
-import { useEventListener } from '@vueuse/core';
-import { onMounted, ref, unref, useTemplateRef } from 'vue';
+import { useEventListener, watchImmediate } from '@vueuse/core';
+import { computed, ref, toRefs, unref, useTemplateRef } from 'vue';
 import Hls from 'hls.js';
 import useMatchResolution from '../scripts/useMatchResolution';
-import { STATIC_URL } from '../scripts/constant';
+import useStaticDomain from '../scripts/useStaticDomain';
 
-const { startTime, resolutions, videoKey } = defineProps({
-  videoKey: {
-    type: String,
-    required: true,
+const FALLBACK_DOMAIN = 'https://static.more-link.com.hk'
+
+const props = withDefaults(
+  defineProps<{ videoKey: string, resolutions: number[], backTime?: number }>(),
+  {
+    backTime: 0,
+    resolutions: () => [],
   },
-  resolutions: {
-    type: Array<Number>,
-    default: () => [],
-    required: true,
-  },
-  startTime: {
-    type: Number,
-    default: 0,
-  },
-})
+) 
+const { backTime, resolutions, videoKey } = toRefs(props)
 
 const el = useTemplateRef<HTMLVideoElement>('el')
-const resolution = useMatchResolution(resolutions as number[])
 
+// #region Video Playback Control
 const timeoutRef = ref<NodeJS.Timeout>()
 useEventListener(el, 'timeupdate', () => {
   const video = el.value
@@ -39,35 +34,56 @@ useEventListener(el, 'timeupdate', () => {
   }
   if (!timeoutRef.value && diffDuration <= limit) {
     timeoutRef.value = setTimeout(() => {
-      video.currentTime = startTime;
+      video.currentTime = unref(backTime);
       timeoutRef.value = undefined
     }, diffDuration * 1000 - 100)
     return
   }
 })
+// #endregion Video Playback Control
 
-onMounted(() => {
+// #region Video Play Control
+const staticDomainRef = useStaticDomain()
+const resolution = useMatchResolution(resolutions)
+const videoTypeRef = computed(() => {
   const video = el.value as HTMLVideoElement
-  const level = (resolutions as number[]).indexOf(unref(resolution))
-  const { 1: basename, 2: suffix } = videoKey.match(/^(.+)\.([^.]+)$/) as RegExpMatchArray
-  if (Hls.isSupported()) {
-    const hls = new Hls()
-    const url = `${STATIC_URL}/${basename}/playlist.m3u8`
-    hls.loadSource(url)
-    hls.attachMedia(video)
-    hls.nextLevel = level
-  } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    const url = `${STATIC_URL}/${basename}/v${level}/playlist.m3u8`
-    video.src = url
+  if (Hls.isSupported()) return 'hls'
+  if (video.canPlayType('application/vnd.apple.mpegurl')) return 'apple'
+  return 'raw'
+})
+const videoLevelRef = computed(() => {
+  return unref(resolutions).indexOf(unref(resolution))
+})
+
+watchImmediate(staticDomainRef, () => {
+  const video = el.value as HTMLVideoElement
+  const videoType = unref(videoTypeRef)
+  const videoLevel = unref(videoLevelRef)
+  const staticDomain = unref(staticDomainRef)
+  if (staticDomain === undefined) return
+  const { 1: basename, 2: suffix } = unref(videoKey).match(/^(.+)\.([^.]+)$/) as RegExpMatchArray
+  if (staticDomain === undefined) return
+  if (staticDomain) {
+    if (videoType === 'hls') {
+      const hls = new Hls()
+      const url = `${staticDomain}/${basename}/playlist.m3u8`
+      hls.loadSource(url)
+      hls.attachMedia(video)
+      hls.nextLevel = videoLevel
+    } else if (videoType === 'apple') {
+      const url = `${staticDomain}/${basename}/v${videoLevel}/playlist.m3u8`
+      video.src = url
+    }
   } else {
-    const url = `${STATIC_URL}/${basename}/${basename}@${resolution}.${suffix}`
+    const url = `${FALLBACK_DOMAIN}/${basename}/${basename}@${resolution}.${suffix}`
     video.src = url
   }
   video.play()
 })
+// #endregion Video Play Control
 </script>
 <style lang="scss" scoped>
 video {
-  --uno: 'size-full';
+  --uno-apply: size-full;
 }
 </style>

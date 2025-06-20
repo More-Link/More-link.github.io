@@ -3,20 +3,20 @@
     <div class="footer_container">
       <div class="contact-us">
         <div class="information">
-          <div class="title">{{ i18nJson.footer.title }}</div>
-          <div class="subtitle">{{ i18nJson.footer.subtitle }}</div>
+          <div class="title">{{ $t(['footer', 'title']) }}</div>
+          <div class="subtitle">{{ $t(['footer', 'subtitle']) }}</div>
           <div class="info">
-            <div class="label">{{ i18nJson.footer.emailLabel }}:</div>
-            <div class="description">{{ i18nJson.footer.email }}</div>
+            <div class="label">{{ $t(['footer', 'emailLabel']) }}:</div>
+            <div class="description">{{ $t(['footer', 'email']) }}</div>
           </div>
           <div class="info">
-            <div class="label">{{ i18nJson.footer.addressLabel }}:</div>
-            <div class="description">{{ i18nJson.footer.address }}</div>
+            <div class="label">{{ $t(['footer', 'addressLabel']) }}:</div>
+            <div class="description">{{ $t(['footer', 'address']) }}</div>
           </div>
         </div>
         <div class="mobile_actions">
           <img :src="qrCodeUrl" />
-          <div>{{ i18nJson.footer.scanCode }}</div>
+          <div>{{ $t(['footer', 'scanCode']) }}</div>
         </div>
       </div>
       <div class="copyright">
@@ -27,15 +27,15 @@
 </template>
 <script setup lang="ts">
 import qrCodeUrl from './images/img_qrcode.jpg'
-import { LANG } from '../../scripts/constant';
-import useI18nJSONAsync from '../../scripts/useI18nJSONAsync';
+import { LANG } from '../../scripts/constant/Lang';
+import useI18nAsync from '../../scripts/useI18nAsync';
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
   [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
 }
-const i18nJson = useI18nJSONAsync(i18nMap)
+const { $t } = useI18nAsync(i18nMap)
 </script>
 <style lang="scss" scoped>
 .footer {

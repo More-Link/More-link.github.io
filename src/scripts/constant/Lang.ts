@@ -1,5 +1,3 @@
-export const STATIC_URL = 'https://static.more-link.com.hk'
-
 export enum LANG {
   EN_US = 'en-us',
   ZH_CN = 'zh-cn',
@@ -7,3 +5,5 @@ export enum LANG {
   ZH_MO = 'zh-mo',
   ZH_TW = 'zh-tw',
 }
+
+export default LANG;

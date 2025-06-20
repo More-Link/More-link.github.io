@@ -33,7 +33,7 @@ import ContentLayout from '../../components/ContentLayout.vue'
 import Content from '../../components/Content.vue'
 import Text from '../../components/Text.vue';
 import ListItem from '../../components/ListItem.vue';
-import { LANG } from '../../scripts/constant';
+import { LANG } from '../../scripts/constant/Lang';
 import useI18nJSONAsync from '../../scripts/useI18nJSONAsync';
 import member0 from './images/img_member_CTO.jpg'
 import member1 from './images/img_member_CEO.jpg'

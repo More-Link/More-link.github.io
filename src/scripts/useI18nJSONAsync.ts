@@ -1,7 +1,7 @@
 import { computedAsync } from "@vueuse/core"
 import useLanguage from "./useLanguage"
 import { unref } from "vue"
-import { LANG } from "./constant"
+import { LANG } from "./constant/Lang"
 
 const useI18nJSONAsync = <V extends Record<string, any> = Record<string, any>>(json: Partial<Record<LANG, () => Promise<{ default: V }>>>) => {
   const language = useLanguage()

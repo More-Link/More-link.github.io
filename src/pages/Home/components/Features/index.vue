@@ -30,9 +30,9 @@
 <script setup lang="ts">
 import { computed, unref } from 'vue';
 import LoopVideo from '../../../../components/LoopVideo.vue';
-import { LANG } from '../../../../scripts/constant';
+import { LANG } from '../../../../scripts/constant/Lang';
 import { useRouter } from 'vue-router';
-import useI18nJSONAsync from '../../../../scripts/useI18nJSONAsync';
+import useI18nAsync from '../../../../scripts/useI18nAsync';
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
@@ -40,7 +40,7 @@ const i18nMap = {
   [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
 }
 
-const i18nJson = useI18nJSONAsync(i18nMap)
+const { $t } = useI18nAsync(i18nMap)
 
 const router = useRouter()
 const featuresRef = computed(() => [
@@ -49,52 +49,52 @@ const featuresRef = computed(() => [
     href: '',
     videoKey: 'MVI_7780.mp4',
     videoResolutions: [300],
-    ...unref(i18nJson)['cdn-p2p'],
+    ...$t(['cdn-p2p']),
   },
   {
     key: 'pcdn',
     href: '',
     videoKey: 'MVI_7799.mp4',
     videoResolutions: [300],
-    ...unref(i18nJson)['pcdn'],
+    ...$t(['pcdn']),
   },
   {
     key: 'wifi-solution',
     href: '',
     videoKey: 'MVI_7781.mp4',
     videoResolutions: [300],
-    ...unref(i18nJson)['wifi-solution'],
+    ...$t(['wifi-solution']),
   },
 ].map((item) => ({ ...item, jump: () => item.href && router.push(item.href) })))
 </script>
 <style lang="scss" scoped>
 .feature {
-  --uno: 'w-screen h-screen bg-black';
+  --uno-apply: w-screen h-screen bg-black;
   .card-group {
-    --uno: 'flex justify-start items-center mx-auto h-full px-[60px] gap-[60px]';
+    --uno-apply: flex justify-start items-center mx-auto h-full px-[60px] gap-[60px];
     @screen sm {
-      --uno: 'justify-center gap-[40px] px-0';
+      --uno-apply: justify-center gap-[40px] px-0;
     }
     @screen lt-lg {
-      --uno: 'overflow-scroll';
+      --uno-apply: overflow-scroll;
     }
   }
   .card {
-    --uno: 'mb-[40px] bg-white cursor-pointer';
+    --uno-apply: mb-[40px] bg-white cursor-pointer;
     @screen sm {
-      --uno: 'mx-[0] w-[300px]';
+      --uno-apply: mx-[0] w-[300px];
     }
   }
   .card-content {
     .image-container {
-      --uno: 'flex justify-center items-center w-[calc(100vw-120px)] h-[190px] overflow-hidden bg-black';
+      --uno-apply: flex justify-center items-center w-[calc(100vw-120px)] h-[190px] overflow-hidden bg-black;
       @screen sm {
-        --uno: 'w-[300px]';
+        --uno-apply: w-[300px];
       }
     }
   }
   .card-footer {
-    --uno: 'pt-[10px] pb-[15px] px-[15px] text-center min-h-[200px] font-semibold';
+    --uno-apply: pt-[10px] pb-[15px] px-[15px] text-center min-h-[200px] font-semibold;
     .description {
       --uno-apply: text-[12px] color-gray text-left;
     }

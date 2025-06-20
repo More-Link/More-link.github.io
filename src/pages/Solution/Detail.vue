@@ -30,7 +30,7 @@
 import ContentLayout from '../../components/ContentLayout.vue'
 import ListItem from '../../components/ListItem.vue'
 import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
-import { LANG } from '../../scripts/constant'
+import { LANG } from '../../scripts/constant/Lang'
 import { useRoute } from 'vue-router'
 import Content from '../../components/Content.vue'
 import { useTitle } from '@vueuse/core'

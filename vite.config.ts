@@ -48,7 +48,7 @@ const appendExternalModules = (rollupOption: Required<BuildEnvironmentOptions>['
         externalModules.push(key)
       }
       const listMap = Object.entries(output.manualChunks as Record<string, string[]> ?? {})
-      output.manualChunks = Object.fromEntries(listMap.map(([chunkName, paths]) => [chunkName, lodash.remove(paths, key)]))
+      output.manualChunks = Object.fromEntries(listMap.map(([chunkName, paths]) => [chunkName, lodash.pull(paths, key)]))
     })
     return output
   })

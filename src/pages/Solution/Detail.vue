@@ -46,14 +46,14 @@ const i18nMap = {
 
 const i18nJson = useI18nJSONAsync(i18nMap)
 const i18n = computed(() => {
-  const id = route.query.id as string
+  const id = route.params.id as string
   return i18nJson.value[id]
 })
 
 const title = useTitle()
 
 onMounted(() => {
-  const id = route.query.id as string
+  const id = route.params.id as string
   title.value = [id, title.value].join(' | ')
 })
 

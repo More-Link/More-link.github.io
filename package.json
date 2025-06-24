@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "vite build",
-    "start": "cd dist && npx browser-sync start --server 'dist' --files 'dist/**/*' --single"
+    "start": "npx browser-sync start --server 'dist' --files 'dist/**/*' --single"
   },
   "engines": {
     "node": ">=22"
@@ -28,6 +28,7 @@
     "typescript": "^5.8.3",
     "unplugin-vue": "^6.2.0",
     "vite": "^6.3.5",
+    "vite-plugin-virtual-mpa": "^1.12.1",
     "yn": "^5.0.0"
   },
   "eslintConfig": {

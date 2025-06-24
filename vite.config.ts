@@ -1,24 +1,37 @@
 import path from 'path'
 import yn from 'yn'
-import { globSync } from 'glob'
 import { BuildEnvironmentOptions, defineConfig } from 'vite'
 import VuePlugin from 'unplugin-vue/vite'
 import UnoCSSPlugin from 'unocss/vite'
 import { presetAttributify, presetIcons, presetWind3, transformerDirectives, transformerVariantGroup } from 'unocss'
 import lodash from 'es-toolkit/compat'
+import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
+// @ts-ignore
 import pkgInfo from './package.json'
+import { PLATFORM } from './src/pages/Solution/constant'
 
 const isCI = yn(process.env.CI, { default: false })
 const appPath = path.resolve(__dirname, 'src')
 const outPath = path.resolve(__dirname, 'dist')
-const pagePaths = globSync('./*.html', { cwd: appPath, absolute: true })
 
-const pagePathMap = Object.fromEntries(
-  pagePaths.map((p) => [
-    p.includes('pages') ? path.basename(path.dirname(p)) : path.basename(p, '.html'),
-    p,
-  ])
-)
+const pages = [
+  ...[
+    'index',
+    'home',
+    'cdn_p2p',
+    'pcdn',
+    'solution',
+    'about',
+  ],
+  ...[
+    'index-en',
+    'index-cn',
+  ],
+  ...Object.keys(PLATFORM)
+    .map((platform) => ({ name: platform, filename: `solution/${platform}.html` })),
+]
+  .map((item) => typeof item === 'string' ? { name: item } : item)
+  .map((item) => ({ ...item, entry: path.resolve(__dirname, 'src/scripts/index.ts') }))
 
 const genLayoutChunk = (languages: string[]) => {
   return Object.fromEntries(languages.map((lang) => {
@@ -63,7 +76,6 @@ export default defineConfig({
   build: {
     outDir: outPath,
     rollupOptions: appendExternalModules({
-      input: pagePathMap,
       output: {
         manualChunks: {
           'hls-chunk': ['hls.js'],
@@ -83,6 +95,10 @@ export default defineConfig({
     }),
   },
   plugins: [
+    createMpaPlugin({
+      template: path.resolve(__dirname, 'src/index.html') as any,
+      pages: pages as any[],
+    }) as any,
     VuePlugin({
       isProduction: true,
     }),

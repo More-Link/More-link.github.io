@@ -101,7 +101,7 @@ const list = computed(() => [
 
 
 const jump = (id: PLATFORM) => {
-  router.push({ name: ROUTER_NAME.SOLUTION, query: { id } })
+  router.push({ name: ROUTER_NAME.SOLUTION_DETAIL, params: { id } })
 }
 </script>
 <style lang="scss" scoped>
@@ -109,40 +109,40 @@ const jump = (id: PLATFORM) => {
 @use '../../styles/content.scss';
 
 .body {
-  --uno: 'bg-[#11191c]';
+  --uno-apply: bg-[#11191c];
 }
 
 .section_title {
-  --uno: 'color-white text-[40px] border-0 border-b border-solid border-gray mb-0';
+  --uno-apply: color-white text-[40px] border-0 border-b border-solid border-gray mb-0;
 }
 
 .container {
   @include common.header-height-mixin;
   --banner-height: calc(100dvh - var(--header-height));
-  --uno: 'h-[var(--banner-height)]';
+  --uno-apply: h-[var(--banner-height)];
   .product {
-    --uno: 'flex-col-nowrap gap-[20px]';
+    --uno-apply: flex-col-nowrap gap-[20px];
     img {
-      --uno: 'w-[200px]';
+      --uno-apply: w-[200px];
     }
     .label, .description {
-      --uno: 'color-white text-center text-[12px]';
+      --uno-apply: color-white text-center text-[12px];
     }
     .description {
-      --uno: 'text-[10px]';
+      --uno-apply: text-[10px];
     }
     .detail_button {
-      --uno: 'text-active border-1 border-solid text-[8px] p-[5px] text-center w-[60px] m-auto cursor-pointer';
+      --uno-apply: text-active border-1 border-solid text-[8px] p-[5px] text-center w-[60px] m-auto cursor-pointer;
       &:hover {
-        --uno: 'text-hover';
+        --uno-apply: text-hover;
       }
     }
     &:not(.active) {
       .label, .description {
-        --uno: 'color-gray text-[10px]';
+        --uno-apply: color-gray text-[10px];
       }
       .detail_button {
-        --uno: 'hidden';
+        --uno-apply: hidden;
       }
     }
   }

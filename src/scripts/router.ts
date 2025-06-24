@@ -5,6 +5,7 @@ export enum ROUTER_NAME {
   CDN_P2P = 'cdn_p2p',
   PCDN = 'pcdn',
   SOLUTION = 'solution',
+  SOLUTION_DETAIL = 'solution_detail',
   ABOUT = 'about',
 }
 
@@ -13,6 +14,7 @@ const routes = [
   { path: '/cdn_p2p', name: ROUTER_NAME.CDN_P2P, component: () => import('../pages/CdnP2P/index.vue') },
   { path: '/pcdn', name: ROUTER_NAME.PCDN, component: () => import('../pages/Pcdn.vue') },
   { path: '/solution', name: ROUTER_NAME.SOLUTION, component: () => import('../pages/Solution/index.vue') },
+  { path: '/solution/:id', name: ROUTER_NAME.SOLUTION_DETAIL, component: () => import('../pages/Solution/index.vue') },
   { path: '/about', name: ROUTER_NAME.ABOUT, component: () => import('../pages/About/index.vue') },
 ]
 

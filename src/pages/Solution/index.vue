@@ -12,7 +12,7 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const isDetail = computed(() => {
-  if (route.query.id && Object.values(PLATFORM).includes(route.query.id as PLATFORM)) {
+  if (route.params.id && Object.values(PLATFORM).includes(route.params.id as PLATFORM)) {
     return true
   }
   return false

@@ -51,8 +51,8 @@ const i18nMap = {
 const i18nJson = useI18nJSONAsync(i18nMap)
 
 const members = computed(() => [
-  { name: 'Lintel', job: unref(i18nJson).about.CEO, imgUrl: member0 },
-  { name: 'Ray', job: unref(i18nJson).about.CTO, imgUrl: member1 },
+  { name: 'Lintel', job: unref(i18nJson).about.CTO, imgUrl: member0 },
+  { name: 'KC. Ray', job: unref(i18nJson).about.CEO, imgUrl: member1 },
   { name: 'Shawn Luo', job: unref(i18nJson).about.Software, imgUrl: member2 },
   { name: 'Jason Wong', job: unref(i18nJson).about.Hareware, imgUrl: member3 },
   { name: 'Arylo Yeung', job: unref(i18nJson).about.FullStack, imgUrl: member4 },

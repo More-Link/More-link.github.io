@@ -69,14 +69,11 @@ const featuresRef = computed(() => [
 </script>
 <style lang="scss" scoped>
 .feature {
-  --uno-apply: w-screen h-screen bg-black;
+  --uno-apply: w-screen min-h-dvh bg-black;
   .card-group {
-    --uno-apply: flex justify-start items-center mx-auto h-full px-[60px] gap-[60px];
+    --uno-apply: flex flex-col justify-start items-center mx-auto h-full px-[60px] gap-[60px];
     @screen sm {
-      --uno-apply: justify-center gap-[40px] px-0;
-    }
-    @screen lt-lg {
-      --uno-apply: overflow-scroll;
+      --uno-apply: flex-row justify-center gap-[40px] px-0;
     }
   }
   .card {

@@ -14,16 +14,16 @@
         {{obj.title}}
       </div>
       <div class="language_container group">
-        <div class="language_label">{{i18n.$t(['Language'])}}</div>
+        <div class="language_label">{{$t(['Language'])}}</div>
         <div class="language_options">
-          <div class="language_current">{{i18n.$t([languageRef, 'full'])}}</div>
+          <div class="language_current">{{$langT([languageRef, 'full'])}}</div>
           <div class="language_group">
             <div
               v-for="languageItem of languageList"
               class="language"
               :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
             >
-              {{ i18n.$t([languageItem.value, 'shore']) }}
+              {{ $langT([languageItem.value, 'shore']) }}
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
         class="language"
         :class="{ active: languageItem.value === languageRef }" @click="() => languageItem.click()"
       >
-        {{ i18n.$t([languageItem.value, 'shore']) }}
+        {{ $langT([languageItem.value, 'shore']) }}
       </div>
     </div>
   </div>
@@ -63,6 +63,7 @@ import { onClickOutside, useToggle } from '@vueuse/core'
 import { useRouter } from 'vue-router'
 import useLanguage from '../../scripts/useLanguage'
 import useI18n from '../../scripts/useI18n'
+import useI18nAsync from '../../scripts/useI18nAsync'
 
 const commonI18nMap = {
   [LANG.ZH_CN]: {
@@ -79,24 +80,17 @@ const commonI18nMap = {
   },
 }
 
+const { $t: $langT } = useI18n(Object.fromEntries(Object.values(LANG).map((lang) => [lang, commonI18nMap])))
+
 const i18nMap = {
-  [LANG.ZH_CN]: {
-    Language: '当前语言',
-    ...commonI18nMap,
-  },
-  [LANG.ZH_HK]: {
-    Language: '當前語言',
-    ...commonI18nMap,
-  },
-  [LANG.EN_US]: {
-    Language: 'LANGUAGE',
-    ...commonI18nMap,
-  },
+  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
+  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
+  [LANG.EN_US]: () => import('./i18n/en-us'),
 }
 
 const languageRef = useLanguage()
 const listMapRef = useListMap()
-const i18n = useI18n(i18nMap)
+const { $t } = useI18nAsync(i18nMap)
 
 const [isOpen, toggle] = useToggle(false)
 const target = useTemplateRef<HTMLElement>('target')

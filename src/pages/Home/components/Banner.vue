@@ -9,7 +9,7 @@
       <div class="demo">
         <a href="/demo.html" target="_blank">
           <div>
-            Try Demo
+            {{ $t(['tryDemo']) }}
           </div>
         </a>
       </div>
@@ -21,6 +21,23 @@
 </template>
 <script setup lang="ts">
 import LoopVideo from '../../../components/LoopVideo.vue';
+import { LANG } from '../../../scripts/constant/Lang';
+import useI18n from '../../../scripts/useI18n';
+
+const i18nMap = {
+  [LANG.EN_US]: {
+    tryDemo: 'Try Demo',
+  },
+  [LANG.ZH_CN]: {
+    tryDemo: '试用演示',
+  },
+  [LANG.ZH_HK]: {
+    tryDemo: '試用演示',
+  },
+}
+
+const { $t } = useI18n(i18nMap)
+
 </script>
 <style lang="scss" scoped>
 @use '../../../styles/common.scss' as common;

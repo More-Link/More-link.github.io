@@ -73,7 +73,7 @@ onMounted(() => {
 }
 
 .section {
-  --uno: 'odd:bg-[#11191c] even:bg-[#323131] min-h-[200px] py-[26px] overflow-hidden';
+  --uno: 'odd:bg-odd even:bg-even min-h-[200px] py-[26px] overflow-hidden';
 }
 
 .specification .section_content {

@@ -76,6 +76,7 @@ export default defineConfig({
   build: {
     outDir: outPath,
     rollupOptions: appendExternalModules({
+      input: path.resolve(__dirname, 'src/demo.html'),
       output: {
         manualChunks: {
           'hls-chunk': ['hls.js'],
@@ -119,6 +120,8 @@ export default defineConfig({
         'flex-col-wrap': 'flex flex-col flex-wrap',
         'bg-active': 'bg-orange-500',
         'bg-hover': 'bg-orange-500/95',
+        'bg-odd': 'bg-[#11191c]',
+        'bg-even': 'bg-[#323131]',
         'text-active': 'text-orange-500',
         'text-hover': 'text-orange-100',
       },

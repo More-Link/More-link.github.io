@@ -69,11 +69,11 @@ const featuresRef = computed(() => [
 </script>
 <style lang="scss" scoped>
 .feature {
-  --uno-apply: w-screen min-h-dvh bg-black;
+  --uno-apply: w-screen min-h-dvh bg-black flex items-center justify-center;
   .card-group {
     --uno-apply: flex flex-col justify-start items-center mx-auto h-full px-[60px] gap-[60px];
     @screen sm {
-      --uno-apply: flex-row justify-center gap-[40px] px-0;
+      --uno-apply: flex-row justify-center gap-[80px] px-0;
     }
   }
   .card {

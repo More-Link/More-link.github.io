@@ -84,6 +84,6 @@ watchImmediate(staticDomainRef, () => {
 </script>
 <style lang="scss" scoped>
 video {
-  --uno-apply: size-full;
+  --uno-apply: size-full z-[0];
 }
 </style>

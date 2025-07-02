@@ -33,6 +33,7 @@ import LoopVideo from '../../../../components/LoopVideo.vue';
 import { LANG } from '../../../../scripts/constant/Lang';
 import { useRouter } from 'vue-router';
 import useI18nAsync from '../../../../scripts/useI18nAsync';
+import { ROUTER_NAME } from '../../../../scripts/router';
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
@@ -46,21 +47,21 @@ const router = useRouter()
 const featuresRef = computed(() => [
   {
     key: 'cdn-p2p',
-    href: '',
+    href: ROUTER_NAME.CDN_P2P,
     videoKey: 'MVI_7780.mp4',
     videoResolutions: [300],
     ...$t(['cdn-p2p']),
   },
   {
     key: 'pcdn',
-    href: '',
+    href: ROUTER_NAME.PCDN,
     videoKey: 'MVI_7799.mp4',
     videoResolutions: [300],
     ...$t(['pcdn']),
   },
   {
     key: 'wifi-solution',
-    href: '',
+    href: ROUTER_NAME.SOLUTION,
     videoKey: 'MVI_7781.mp4',
     videoResolutions: [300],
     ...$t(['wifi-solution']),

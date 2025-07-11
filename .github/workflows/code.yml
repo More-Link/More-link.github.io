@@ -1,7 +1,6 @@
 name: Source Code
 on:
   push:
-    - master
   schedule:
     - cron: '0 18 * * 0,1,3,5,6'
 

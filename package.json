@@ -22,12 +22,14 @@
   },
   "devDependencies": {
     "browser-sync": "^2.2.1",
+    "cheerio": "^1.1.0",
     "glob": "^11.0.2",
     "gulp": "^3.9.1",
     "sass-embedded": "^1.89.1",
     "typescript": "^5.8.3",
     "unplugin-vue": "^6.2.0",
     "vite": "^6.3.5",
+    "vite-plugin-pug": "^0.4.1",
     "vite-plugin-virtual-mpa": "^1.12.1",
     "yn": "^5.0.0"
   },

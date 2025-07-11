@@ -101,7 +101,9 @@ const getDemoLinks = async () => {
 
 export default defineConfig(async () => {
   const { links, scripts } = await getDemoLinks()
-  console.log(links, scripts)
+  console.info('links', links)
+  console.info('scripts', scripts)
+
   return {
     root: appPath,
     build: {

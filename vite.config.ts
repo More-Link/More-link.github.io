@@ -1,4 +1,7 @@
 import path from 'path'
+import fs from 'fs';
+import { pipeline } from 'stream';
+import { promisify } from 'util'
 import yn from 'yn'
 import { BuildEnvironmentOptions, defineConfig } from 'vite'
 import VuePlugin from 'unplugin-vue/vite'
@@ -8,6 +11,7 @@ import lodash from 'es-toolkit/compat'
 import { createMpaPlugin } from 'vite-plugin-virtual-mpa'
 import PugPlugin from 'vite-plugin-pug'
 import * as cheerio from 'cheerio'
+import fetch from 'node-fetch'
 // @ts-ignore
 import pkgInfo from './package.json'
 import { PLATFORM } from './src/pages/Solution/constant'
@@ -15,6 +19,8 @@ import { PLATFORM } from './src/pages/Solution/constant'
 const isCI = yn(process.env.CI, { default: false })
 const appPath = path.resolve(__dirname, 'src')
 const outPath = path.resolve(__dirname, 'dist')
+
+const streamPipeline = promisify(pipeline);
 
 const pages = [
   ...[
@@ -75,11 +81,11 @@ const appendExternalModules = (rollupOption: Required<BuildEnvironmentOptions>['
 
 const getDemoLinks = async () => {
   const targetDomain = 'https://demo.swarmcloud.net'
-  const parseUrl = (urlPath?: string) => {
+  const realUrl = (urlPath?: string) => {
     if (!urlPath) return ''
     const url = new URL(urlPath, targetDomain)
     url.protocol
-    return url.href.replace(url.protocol, '')
+    return url.href
   }
   const $ = await cheerio.fromURL(targetDomain)
 
@@ -92,12 +98,38 @@ const getDemoLinks = async () => {
       if (/^(\w+:)?\/\//.test(href)) return false
       return true
     })
-    .map((_, el) => ({ href: parseUrl($(el).attr('href')), ref: $(el).prop('rel'), as: $(el).attr('as') }))
+    .map((_, el) => ({
+      href: realUrl($(el).attr('href')), rel: $(el).prop('rel'), as: $(el).attr('as')
+    }))
   const scripts = $('body > script[src]')
-    .map((_, el) => ({ src: parseUrl($(el).attr('src')) }))
+    .map((_, el) => ({ src: realUrl($(el).attr('src')) }))
 
-  return { links: Array.from(links), scripts: Array.from(scripts) }
+  return {
+    links: await downloadExtFiles(Array.from(links), 'href'),
+    scripts: await downloadExtFiles(Array.from(scripts), 'src'),
+  }
 }
+
+async function downloadExtFiles <T>(list: T[], key: keyof T & string) {
+  for (let linkObj of list) {
+    const url = linkObj[key] as string
+    const targetFilepath = path.resolve(outPath, 'assets/demo/', path.basename(url))
+    const relativeTargetFilepath = path.relative(outPath, targetFilepath)
+    console.info(`Download ${url} to ${relativeTargetFilepath} ...`)
+    const response = await fetch(url)
+    console.info(`Download ${url} to ${relativeTargetFilepath} ... Done`)
+    fs.mkdirSync(path.dirname(targetFilepath), { recursive: true })
+    await streamPipeline(
+      response.body as any,
+      fs.createWriteStream(targetFilepath),
+    )
+    linkObj = Object.assign(linkObj, {
+      [`raw${lodash.upperFirst(key)}`]: url,
+      [key]: relativeTargetFilepath,
+    })
+  }
+  return list
+}``
 
 export default defineConfig(async () => {
   const { links, scripts } = await getDemoLinks()

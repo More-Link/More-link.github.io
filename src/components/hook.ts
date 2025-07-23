@@ -27,5 +27,12 @@ export const useListMap = () => {
       { title: 'SOLUTION', name: ROUTER_NAME.SOLUTION },
       { title: 'COMPANY', name: ROUTER_NAME.ABOUT },
     ].map((item) => ({ ...item, active: item.name === router.currentRoute.value.name })),
+    [LANG.JA_JP]: [
+      { title: 'ホーム', name: ROUTER_NAME.HOME },
+      { title: 'CDN+P2P', name: ROUTER_NAME.CDN_P2P },
+      { title: 'PCDN', name: ROUTER_NAME.PCDN },
+      { title: 'ソリューション', name: ROUTER_NAME.SOLUTION },
+      { title: '会社概要', name: ROUTER_NAME.ABOUT },
+    ].map((item) => ({ ...item, active: item.name === router.currentRoute.value.name })),
   }))
 }

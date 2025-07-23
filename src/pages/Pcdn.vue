@@ -28,6 +28,9 @@ const { $t } = useI18n({
   [LANG.ZH_HK]: {
     coming_soon: '敬請期待...',
   },
+  [LANG.JA_JP]: {
+    coming_soon: '近日公開予定...',
+  },
 })
 
 </script>

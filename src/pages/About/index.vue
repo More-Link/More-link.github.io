@@ -38,7 +38,7 @@ import useI18nJSONAsync from '../../scripts/useI18nJSONAsync';
 import member0 from './images/img_member_CTO.jpg'
 import member1 from './images/img_member_CEO.jpg'
 import member2 from './images/img_member_Senior-Software-Engineer-0.jpg'
-import member3 from './images/img_member_Senior-Hareware-Engineer.jpg'
+import member3 from './images/img_member_Senior-Hardware-Engineer.jpg'
 import member4 from './images/img_member_Full-Stack-Supervisor.jpg'
 import member5 from './images/img_member_Senior-Software-Engineer-1.jpg'
 
@@ -46,6 +46,7 @@ const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
   [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
+  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const i18nJson = useI18nJSONAsync(i18nMap)
@@ -54,7 +55,7 @@ const members = computed(() => [
   { name: 'Lintel', job: unref(i18nJson).about.CTO, imgUrl: member0 },
   { name: 'KC. Ray', job: unref(i18nJson).about.CEO, imgUrl: member1 },
   { name: 'Shawn Luo', job: unref(i18nJson).about.Software, imgUrl: member2 },
-  { name: 'Jason Wong', job: unref(i18nJson).about.Hareware, imgUrl: member3 },
+  { name: 'Jason Wong', job: unref(i18nJson).about.Hardware, imgUrl: member3 },
   { name: 'Arylo Yeung', job: unref(i18nJson).about.FullStack, imgUrl: member4 },
   { name: 'Vic', job: unref(i18nJson).about.Software, imgUrl: member5 },
 ])

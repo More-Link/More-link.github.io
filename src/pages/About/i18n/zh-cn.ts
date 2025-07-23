@@ -17,7 +17,7 @@ export default {
     CTO: '首席技术官',
     CEO: '首席执行官',
     Software: '资深软件工程师',
-    Hareware: '资深硬件工程师',
+    Hardware: '资深硬件工程师',
     FullStack: '资深全栈工程师',
   },
 } as const

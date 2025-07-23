@@ -28,7 +28,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, unref } from 'vue';
+import { computed } from 'vue';
 import LoopVideo from '../../../../components/LoopVideo.vue';
 import { LANG } from '../../../../scripts/constant/Lang';
 import { useRouter } from 'vue-router';
@@ -39,6 +39,7 @@ const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
   [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
+  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const { $t } = useI18nAsync(i18nMap)

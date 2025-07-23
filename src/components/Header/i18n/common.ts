@@ -13,4 +13,8 @@ export const commonI18nMap = {
     full: 'English',
     shore: 'EN',
   },
-}
+  [LANG.JA_JP]: {
+    full: '日本語',
+    shore: 'JA',
+  },
+} as const

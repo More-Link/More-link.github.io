@@ -64,21 +64,7 @@ import { useRouter } from 'vue-router'
 import useLanguage from '../../scripts/useLanguage'
 import useI18n from '../../scripts/useI18n'
 import useI18nAsync from '../../scripts/useI18nAsync'
-
-const commonI18nMap = {
-  [LANG.ZH_CN]: {
-    full: '简体中文',
-    shore: '简',
-  },
-  [LANG.ZH_HK]: {
-    full: '繁體中文',
-    shore: '繁',
-  },
-  [LANG.EN_US]: {
-    full: 'English',
-    shore: 'EN',
-  },
-}
+import { commonI18nMap } from './i18n/common'
 
 const { $t: $langT } = useI18n(Object.fromEntries(Object.values(LANG).map((lang) => [lang, commonI18nMap])))
 
@@ -86,6 +72,7 @@ const i18nMap = {
   [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
   [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
   [LANG.EN_US]: () => import('./i18n/en-us'),
+  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const languageRef = useLanguage()
@@ -101,6 +88,7 @@ const languageList = computed(() => {
     { value: LANG.ZH_CN },
     { value: LANG.ZH_HK },
     { value: LANG.EN_US },
+    { value: LANG.JA_JP },
   ] as const).map((item) => ({
     ...item,
     click: () => {

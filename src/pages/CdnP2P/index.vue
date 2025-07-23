@@ -41,6 +41,7 @@ import useI18nAsync from '../../scripts/useI18nAsync'
 
 const i18nMap = {
   [LANG.EN_US]: () => import('./i18n/en-us'),
+  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const { $t } = useI18nAsync(i18nMap)

@@ -17,7 +17,7 @@ export default {
     CTO: 'CTO',
     CEO: 'CEO',
     Software: 'Senior Software Engineer',
-    Hareware: 'Senior Hareware Engineer',
+    Hardware: 'Senior Hardware Engineer',
     FullStack: 'Full-Stack Supervisor',
   },
 } as const

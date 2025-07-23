@@ -4,6 +4,7 @@ export enum LANG {
   ZH_HK = 'zh-hk',
   ZH_MO = 'zh-mo',
   ZH_TW = 'zh-tw',
+  JA_JP = 'ja-jp',
 }
 
 export default LANG;

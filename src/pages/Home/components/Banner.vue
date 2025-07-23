@@ -34,6 +34,9 @@ const i18nMap = {
   [LANG.ZH_HK]: {
     tryDemo: '試用演示',
   },
+  [LANG.JA_JP]: {
+    tryDemo: 'デモを試す',
+  },
 }
 
 const { $t } = useI18n(i18nMap)

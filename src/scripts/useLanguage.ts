@@ -3,7 +3,7 @@ import { LANG } from "./constant/Lang"
 import { computed, unref } from "vue"
 import { match, P } from "ts-pattern"
 
-type SUPPORTED_LANG = LANG.ZH_HK | LANG.ZH_CN | LANG.EN_US
+export type SUPPORTED_LANG = LANG.ZH_HK | LANG.ZH_CN | LANG.EN_US | LANG.JA_JP
 
 const useCurrentLanguageState = createGlobalState(() => useLocalStorage<SUPPORTED_LANG | undefined>('language', undefined))
 
@@ -13,7 +13,13 @@ const useLanguage = () => {
     set: (val: SUPPORTED_LANG) => currentLanguage.value = val,
     get: () => {
       const language = unref(currentLanguage)
-      if (language && Object.values([LANG.ZH_HK, LANG.ZH_CN, LANG.EN_US]).includes(language)) return language
+      const supportedLangs = [
+        LANG.ZH_HK,
+        LANG.ZH_CN,
+        LANG.EN_US,
+        LANG.JA_JP,
+      ]
+      if (language && Object.values(supportedLangs).includes(language)) return language
     
       const browserLang: string | undefined= ((navigator as any).browserLanguage || navigator.language).toLowerCase();
       return match(browserLang)
@@ -27,6 +33,7 @@ const useLanguage = () => {
         .with(P.string.startsWith('zh-hant'), () => LANG.ZH_HK)
         .with(P.string.startsWith('zh-hans'), () => LANG.ZH_CN)
         .with(P.string.startsWith('zh-'), () => LANG.ZH_CN)
+        .with(P.union(LANG.JA_JP, 'ja', P.string.startsWith('ja-')), () => LANG.JA_JP)
         // #endregion language prefix
         .otherwise(() => LANG.EN_US)
     },

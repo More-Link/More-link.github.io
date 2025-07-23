@@ -42,6 +42,7 @@ import SUPPORTED_LANG from '../../scripts/constant/SupportedLang'
 const i18nMap = {
   [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
   [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.KO_KR]: () => import('./i18n/ko-kr'),
 }
 
 const { $t } = useI18nAsync(i18nMap)

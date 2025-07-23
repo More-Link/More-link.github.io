@@ -45,4 +45,15 @@ export const commonI18nMap = {
       about: '会社概要',
     },
   },
+  [SUPPORTED_LANG.KO_KR]: {
+    full: '한국어',
+    shore: 'KR',
+    nav: {
+      home: '홈',
+      cdn_p2p: 'CDN+P2P',
+      pcdn: 'PCDN',
+      solution: '솔루션',
+      about: '회사소개',
+    },
+  },
 } as const

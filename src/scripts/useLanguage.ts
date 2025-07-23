@@ -26,6 +26,9 @@ const useLanguage = () => {
         // Japanese
         .with(P.union(LANG.JA_JP, LANG.JA), () => SUPPORTED_LANG.JA_JP)
         .with(P.union(P.string.startsWith(`${LANG.JA}-`)), () => SUPPORTED_LANG.JA_JP)
+        // Korean
+        .with(P.union(LANG.KO_KR, LANG.KO_KP, LANG.KO_CN, LANG.KO, LANG.KOR), () => SUPPORTED_LANG.KO_KR)
+        .with(P.union(P.string.startsWith(`${LANG.KO}-`)), () => SUPPORTED_LANG.KO_KR)
         // English
         .with(P.union(LANG.EN_US), () => SUPPORTED_LANG.EN_US)
         .otherwise(() => SUPPORTED_LANG.EN_US)

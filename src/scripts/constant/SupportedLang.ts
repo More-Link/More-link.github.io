@@ -5,6 +5,7 @@ export enum SUPPORTED_LANG {
   ZH_HANS = LANG.ZH_HANS,
   EN_US = LANG.EN_US,
   JA_JP = LANG.JA_JP,
+  KO_KR = LANG.KO_KR,
 }
 
 export const supportedLangs = Object.values(SUPPORTED_LANG)

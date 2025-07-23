@@ -28,8 +28,13 @@ const { $t } = useI18n({
   [SUPPORTED_LANG.ZH_HANT]: {
     coming_soon: '敬請期待...',
   },
+  // 由 Deepseek 繁体中文翻译成日语
   [SUPPORTED_LANG.JA_JP]: {
     coming_soon: '近日公開予定...',
+  },
+  // 由 Deepseek 繁体中文翻译成韩语
+  [SUPPORTED_LANG.KO_KR]: {
+    coming_soon: '곧 출시 예정...',
   },
 })
 

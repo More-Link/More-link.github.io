@@ -73,6 +73,7 @@ const i18nMap = {
   [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
   [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
   [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.KO_KR]: () => import('./i18n/ko-kr'),
 }
 
 const languageRef = useLanguage()

@@ -35,6 +35,7 @@ const i18nMap = {
   [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
   [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
   [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.KO_KR]: () => import('./i18n/ko-kr'),
 }
 const { $t } = useI18nAsync(i18nMap)
 </script>

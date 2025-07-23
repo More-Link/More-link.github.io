@@ -9,6 +9,11 @@ export enum LANG {
   ZH = 'zh',
   JA_JP = 'ja-jp',
   JA = 'ja',
+  KO_KR = 'ko-kr',
+  KO_KP = 'ko-kp',
+  KO_CN = 'ko-cn',
+  KOR = 'kor',
+  KO = 'ko',
 }
 
 export default LANG

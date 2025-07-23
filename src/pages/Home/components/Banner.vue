@@ -34,8 +34,13 @@ const i18nMap = {
   [SUPPORTED_LANG.ZH_HANT]: {
     tryDemo: '試用演示',
   },
+  // 由 Deepseek 繁体中文翻译成日语
   [SUPPORTED_LANG.JA_JP]: {
     tryDemo: 'デモを試す',
+  },
+  // 由 Deepseek 繁体中文翻译成韩语
+  [SUPPORTED_LANG.KO_KR]: {
+    tryDemo: '데모 시험',
   },
 }
 

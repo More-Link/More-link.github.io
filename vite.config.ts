@@ -1,8 +1,9 @@
 import path from 'path'
-import fs from 'fs';
-import { pipeline } from 'stream';
+import fs from 'fs'
+import { pipeline } from 'stream'
 import { promisify } from 'util'
 import yn from 'yn'
+import { globSync } from 'glob'
 import { BuildEnvironmentOptions, defineConfig } from 'vite'
 import VuePlugin from 'unplugin-vue/vite'
 import UnoCSSPlugin from 'unocss/vite'
@@ -15,6 +16,7 @@ import fetch from 'node-fetch'
 // @ts-ignore
 import pkgInfo from './package.json'
 import { PLATFORM } from './src/pages/Solution/constant'
+import { supportedLangs} from './src/scripts/constant/SupportedLang'
 
 const isCI = yn(process.env.CI, { default: false })
 const appPath = path.resolve(__dirname, 'src')
@@ -41,15 +43,18 @@ const pages = [
   .map((item) => typeof item === 'string' ? { name: item } : item)
   .map((item) => ({ ...item, entry: path.resolve(__dirname, 'src/scripts/index.ts') }))
 
-const genLayoutChunk = (languages: string[]) => {
-  return Object.fromEntries(languages.map((lang) => {
-    const key = `Layout-i18n-${lodash.kebabCase(lodash.toLower(lang))}-chunk`
-    const value = [
-      path.join(__dirname, `src/components/Header/i18n/${lang}.ts`),
-      path.join(__dirname, `src/components/Footer/i18n/${lang}.ts`),
-    ]
-    return [key, value]
-  }))
+const genLayoutChunk = () => {
+  const i18nFilePaths = globSync('src/components/{Header,Footer}/i18n/*.*.ts', { cwd: __dirname })
+  const i18nFilePathMap = lodash.groupBy(i18nFilePaths, (filepath) => filepath.split('.').reverse()[1])
+  return Object.fromEntries(
+    supportedLangs
+      .filter((lang) => i18nFilePathMap[lang])
+      .map((lang) => {
+        const key = `Layout-i18n-${lodash.kebabCase(lodash.toLower(lang))}-chunk`
+        const value = i18nFilePathMap[lang].map((p) => path.join(__dirname, p))
+        return [key, value]
+      })
+)
 }
 
 const getModuleVersion = (moduleName: string) => {
@@ -152,7 +157,7 @@ export default defineConfig(async () => {
               path.join(__dirname, 'src/scripts/useI18nJSON.ts'),
               path.join(__dirname, 'src/scripts/useI18nJSONAsync.ts'),
             ],
-            ...genLayoutChunk(['zh-hant', 'zh-hans', 'en-us', 'ja-jp']),
+            ...genLayoutChunk(),
           },
           paths: {
             'hls.js': isCI ? `https://fastly.jsdelivr.net/npm/hls.js@${getModuleVersion('hls.js')}/dist/hls.mjs` : '',

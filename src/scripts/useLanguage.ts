@@ -2,8 +2,7 @@ import { createGlobalState, useLocalStorage } from "@vueuse/core"
 import { LANG } from "./constant/Lang"
 import { computed, unref } from "vue"
 import { match, P } from "ts-pattern"
-
-export type SUPPORTED_LANG = LANG.ZH_HK | LANG.ZH_CN | LANG.EN_US | LANG.JA_JP
+import SUPPORTED_LANG, { supportedLangs } from "./constant/SupportedLang"
 
 const useCurrentLanguageState = createGlobalState(() => useLocalStorage<SUPPORTED_LANG | undefined>('language', undefined))
 
@@ -13,29 +12,23 @@ const useLanguage = () => {
     set: (val: SUPPORTED_LANG) => currentLanguage.value = val,
     get: () => {
       const language = unref(currentLanguage)
-      const supportedLangs = [
-        LANG.ZH_HK,
-        LANG.ZH_CN,
-        LANG.EN_US,
-        LANG.JA_JP,
-      ]
-      if (language && Object.values(supportedLangs).includes(language)) return language
-    
+      if (language && supportedLangs.includes(language)) return language
+
       const browserLang: string | undefined= ((navigator as any).browserLanguage || navigator.language).toLowerCase();
       return match(browserLang)
         .returnType<SUPPORTED_LANG>()
-        // #region constant check
-        .with(P.union(LANG.ZH_HK, LANG.ZH_MO, LANG.ZH_TW), () => LANG.ZH_HK)
-        .with(LANG.ZH_CN, () => LANG.ZH_CN)
-        .with(LANG.EN_US, () => LANG.EN_US)
-        // #endregion constant check
-        // #region language prefix
-        .with(P.string.startsWith('zh-hant'), () => LANG.ZH_HK)
-        .with(P.string.startsWith('zh-hans'), () => LANG.ZH_CN)
-        .with(P.string.startsWith('zh-'), () => LANG.ZH_CN)
-        .with(P.union(LANG.JA_JP, 'ja', P.string.startsWith('ja-')), () => LANG.JA_JP)
-        // #endregion language prefix
-        .otherwise(() => LANG.EN_US)
+        // Traditional Chinese
+        .with(P.union(LANG.ZH_HANT, LANG.ZH_HK, LANG.ZH_MO, LANG.ZH_TW), () => SUPPORTED_LANG.ZH_HANT)
+        .with(P.union(P.string.startsWith(`${LANG.ZH_HANT}-`)), () => SUPPORTED_LANG.ZH_HANT)
+        // Simplified Chinese
+        .with(P.union(LANG.ZH_HANS, LANG.ZH_CN, LANG.ZH), () => SUPPORTED_LANG.ZH_HANS)
+        .with(P.union(P.string.startsWith(`${LANG.ZH_HANS}-`), P.string.startsWith(`${LANG.ZH}-`)), () => SUPPORTED_LANG.ZH_HANS)
+        // Japanese
+        .with(P.union(LANG.JA_JP, LANG.JA), () => SUPPORTED_LANG.JA_JP)
+        .with(P.union(P.string.startsWith(`${LANG.JA}-`)), () => SUPPORTED_LANG.JA_JP)
+        // English
+        .with(P.union(LANG.EN_US), () => SUPPORTED_LANG.EN_US)
+        .otherwise(() => SUPPORTED_LANG.EN_US)
     },
   })
 }

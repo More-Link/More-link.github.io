@@ -20,21 +20,21 @@
   </div>
 </template>
 <script setup lang="ts">
-import LoopVideo from '../../../components/LoopVideo.vue';
-import { LANG } from '../../../scripts/constant/Lang';
-import useI18n from '../../../scripts/useI18n';
+import LoopVideo from '../../../components/LoopVideo.vue'
+import SUPPORTED_LANG from '../../../scripts/constant/SupportedLang'
+import useI18n from '../../../scripts/useI18n'
 
 const i18nMap = {
-  [LANG.EN_US]: {
+  [SUPPORTED_LANG.EN_US]: {
     tryDemo: 'Try Demo',
   },
-  [LANG.ZH_CN]: {
+  [SUPPORTED_LANG.ZH_HANS]: {
     tryDemo: '试用演示',
   },
-  [LANG.ZH_HK]: {
+  [SUPPORTED_LANG.ZH_HANT]: {
     tryDemo: '試用演示',
   },
-  [LANG.JA_JP]: {
+  [SUPPORTED_LANG.JA_JP]: {
     tryDemo: 'デモを試す',
   },
 }

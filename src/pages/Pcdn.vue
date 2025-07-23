@@ -15,20 +15,20 @@
 <script lang="ts" setup>
 import ContentLayout from '../components/ContentLayout.vue'
 import Content from '../components/Content.vue'
-import { LANG } from '../scripts/constant/Lang'
 import useI18n from '../scripts/useI18n'
+import SUPPORTED_LANG from '../scripts/constant/SupportedLang'
 
 const { $t } = useI18n({
-  [LANG.EN_US]: {
+  [SUPPORTED_LANG.EN_US]: {
     coming_soon: 'Coming Soon...',
   },
-  [LANG.ZH_CN]: {
+  [SUPPORTED_LANG.ZH_HANS]: {
     coming_soon: '敬请期待...',
   },
-  [LANG.ZH_HK]: {
+  [SUPPORTED_LANG.ZH_HANT]: {
     coming_soon: '敬請期待...',
   },
-  [LANG.JA_JP]: {
+  [SUPPORTED_LANG.JA_JP]: {
     coming_soon: '近日公開予定...',
   },
 })

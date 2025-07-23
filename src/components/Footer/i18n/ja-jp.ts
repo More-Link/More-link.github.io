@@ -1,8 +1,8 @@
 // 由 Deepseek 繁体中文翻译日语
 export default {
   footer: {
-    title: '中国エリア',
-    subtitle: 'ビジネス提携',
+    title: 'お問い合わせ',
+    subtitle: '業務提携',
     emailLabel: '業務提携のお問い合わせ',
     email: 'ray@more-link.com.hk',
     addressLabel: '会社住所',

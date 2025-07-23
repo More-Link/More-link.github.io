@@ -7,7 +7,7 @@
       <div class="section_title">{{ $t(['cdn_p2p', 'section0', 'title']) }}</div>
       <Text v-for="item of $t(['cdn_p2p', 'section0', 'list'])">{{ item }}</Text>
       <img src="./images/001.png" class="max-h-[200px]" />
-      
+
       <div class="section_title">{{ $t(['cdn_p2p', 'section1', 'title']) }}</div>
       <Text v-for="item of $t(['cdn_p2p', 'section1', 'list'])">{{ item }}</Text>
       <img src="./images/002.png" class="max-h-[325px]" />
@@ -36,12 +36,12 @@ import ContentLayout from '../../components/ContentLayout.vue'
 import Content from '../../components/Content.vue'
 import Text from '../../components/Text.vue'
 import ListItem from '../../components/ListItem.vue'
-import { LANG } from '../../scripts/constant/Lang'
 import useI18nAsync from '../../scripts/useI18nAsync'
+import SUPPORTED_LANG from '../../scripts/constant/SupportedLang'
 
 const i18nMap = {
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const { $t } = useI18nAsync(i18nMap)

@@ -28,25 +28,25 @@
   </ContentLayout>
 </template>
 <script lang="ts" setup>
-import { computed, unref } from 'vue';
+import { computed, unref } from 'vue'
 import ContentLayout from '../../components/ContentLayout.vue'
 import Content from '../../components/Content.vue'
-import Text from '../../components/Text.vue';
-import ListItem from '../../components/ListItem.vue';
-import { LANG } from '../../scripts/constant/Lang';
-import useI18nJSONAsync from '../../scripts/useI18nJSONAsync';
+import Text from '../../components/Text.vue'
+import ListItem from '../../components/ListItem.vue'
+import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
 import member0 from './images/img_member_CTO.jpg'
 import member1 from './images/img_member_CEO.jpg'
 import member2 from './images/img_member_Senior-Software-Engineer-0.jpg'
 import member3 from './images/img_member_Senior-Hardware-Engineer.jpg'
 import member4 from './images/img_member_Full-Stack-Supervisor.jpg'
 import member5 from './images/img_member_Senior-Software-Engineer-1.jpg'
+import SUPPORTED_LANG from '../../scripts/constant/SupportedLang'
 
 const i18nMap = {
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
-  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
-  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
+  [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
+  [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const i18nJson = useI18nJSONAsync(i18nMap)

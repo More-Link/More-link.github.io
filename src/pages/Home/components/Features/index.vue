@@ -28,18 +28,18 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
-import LoopVideo from '../../../../components/LoopVideo.vue';
-import { LANG } from '../../../../scripts/constant/Lang';
-import { useRouter } from 'vue-router';
-import useI18nAsync from '../../../../scripts/useI18nAsync';
-import { ROUTER_NAME } from '../../../../scripts/router';
+import { computed } from 'vue'
+import LoopVideo from '../../../../components/LoopVideo.vue'
+import { useRouter } from 'vue-router'
+import useI18nAsync from '../../../../scripts/useI18nAsync'
+import { ROUTER_NAME } from '../../../../scripts/router'
+import SUPPORTED_LANG from '../../../../scripts/constant/SupportedLang'
 
 const i18nMap = {
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
-  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
-  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
+  [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
+  [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const { $t } = useI18nAsync(i18nMap)

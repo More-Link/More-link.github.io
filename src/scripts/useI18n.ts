@@ -1,7 +1,7 @@
 import { get } from 'es-toolkit/compat'
-import { LANG } from "./constant/Lang";
-import { MaybeRefOrGetter, unref } from 'vue';
+import { unref } from 'vue';
 import useI18nJSON from './useI18nJSON';
+import SUPPORTED_LANG from './constant/SupportedLang';
 
 type IsEmptyKeys<Keys extends any[], K = Keys[0]> = undefined extends K ? true : false
 type ValuePath<O extends object, Keys extends any[]> = IsEmptyKeys<Keys> extends true
@@ -14,7 +14,7 @@ type ValuePath<O extends object, Keys extends any[]> = IsEmptyKeys<Keys> extends
       : never
     : never
 
-export default function useI18n <V extends Record<string, any>>(json: Partial<Record<LANG, V>>) {
+export default function useI18n <V extends Record<string, any>>(json: Partial<Record<SUPPORTED_LANG, V>>) {
   const i18nJson = useI18nJSON(json)
   return {
     $t<

@@ -32,18 +32,18 @@ import img5 from './images/img_product_m2.png'
 import img6 from './images/img_product_w3.png'
 import img7 from './images/img_product_w1.png'
 import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
-import { LANG } from '../../scripts/constant/Lang'
 import { unref, computed } from 'vue'
 import { PLATFORM } from './constant'
 import { useRouter } from 'vue-router'
 import { ROUTER_NAME } from '../../scripts/router'
+import SUPPORTED_LANG from '../../scripts/constant/SupportedLang'
 
 const router = useRouter()
 
 const i18nMap = {
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
-  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
+  [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
 }
 
 const i18nJson = useI18nJSONAsync(i18nMap)

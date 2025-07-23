@@ -17,7 +17,7 @@ export default {
     CTO: '首席技術官',
     CEO: '首席執行官',
     Software: '資深軟件工程師',
-    Hareware: '資深硬件工程師',
+    Hardware: '資深硬件工程師',
     FullStack: '資深全棧工程師',
   },
 } as const

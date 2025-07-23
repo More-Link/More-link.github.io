@@ -56,8 +56,6 @@
 </template>
 <script lang="ts" setup>
 import logoUrl from '../../images/icon/icon_logo.png'
-import { LANG } from '../../scripts/constant/Lang'
-import { useListMap } from '../hook'
 import { computed, unref, useTemplateRef } from 'vue'
 import { onClickOutside, useToggle } from '@vueuse/core'
 import { useRouter } from 'vue-router'
@@ -65,18 +63,31 @@ import useLanguage from '../../scripts/useLanguage'
 import useI18n from '../../scripts/useI18n'
 import useI18nAsync from '../../scripts/useI18nAsync'
 import { commonI18nMap } from './i18n/common'
+import SUPPORTED_LANG, { supportedLangs } from '../../scripts/constant/SupportedLang'
+import { ROUTER_NAME } from '../../scripts/router'
 
-const { $t: $langT } = useI18n(Object.fromEntries(Object.values(LANG).map((lang) => [lang, commonI18nMap])))
+const { $t: $langT } = useI18n(Object.fromEntries(supportedLangs.map((lang) => [lang, commonI18nMap])))
 
 const i18nMap = {
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
-  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.JA_JP]: () => import('./i18n/ja-jp'),
+  [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
+  [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.JA_JP]: () => import('./i18n/ja-jp'),
 }
 
 const languageRef = useLanguage()
-const listMapRef = useListMap()
+const router = useRouter()
+const listMapRef = computed(() => {
+  const lang = unref(languageRef)
+  return [
+    { title: $langT([lang, 'nav', 'home']), name: ROUTER_NAME.HOME },
+    { title: $langT([lang, 'nav', 'cdn_p2p']), name: ROUTER_NAME.CDN_P2P },
+    { title: $langT([lang, 'nav', 'pcdn']), name: ROUTER_NAME.PCDN },
+    { title: $langT([lang, 'nav', 'solution']), name: ROUTER_NAME.SOLUTION },
+    { title: $langT([lang, 'nav', 'about']), name: ROUTER_NAME.ABOUT },
+  ].map((item) => ({ ...item, active: item.name === router.currentRoute.value.name }))
+})
+
 const { $t } = useI18nAsync(i18nMap)
 
 const [isOpen, toggle] = useToggle(false)
@@ -84,22 +95,17 @@ const target = useTemplateRef<HTMLElement>('target')
 onClickOutside(target, () => toggle(false))
 
 const languageList = computed(() => {
-  return ([
-    { value: LANG.ZH_CN },
-    { value: LANG.ZH_HK },
-    { value: LANG.EN_US },
-    { value: LANG.JA_JP },
-  ] as const).map((item) => ({
-    ...item,
-    click: () => {
-      languageRef.value = item.value
-      toggle(false)
-    },
-  }))
+  return supportedLangs
+    .map((lang) => ({
+      value: lang,
+      click: () => {
+        languageRef.value = lang
+        toggle(false)
+      },
+    }))
 })
-const router = useRouter()
 const navList = computed(() => {
-  const list = unref(listMapRef)[unref(languageRef)]
+  const list = unref(listMapRef)
   return list.map((item) => ({
     ...item,
     jump () {

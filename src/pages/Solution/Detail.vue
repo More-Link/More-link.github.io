@@ -30,18 +30,18 @@
 import ContentLayout from '../../components/ContentLayout.vue'
 import ListItem from '../../components/ListItem.vue'
 import useI18nJSONAsync from '../../scripts/useI18nJSONAsync'
-import { LANG } from '../../scripts/constant/Lang'
 import { useRoute } from 'vue-router'
 import Content from '../../components/Content.vue'
 import { useTitle } from '@vueuse/core'
 import { onMounted, computed } from 'vue'
+import SUPPORTED_LANG from '../../scripts/constant/SupportedLang'
 
 const route = useRoute()
 
 const i18nMap = {
-  [LANG.EN_US]: () => import('./i18n/en-us'),
-  [LANG.ZH_CN]: () => import('./i18n/zh-cn'),
-  [LANG.ZH_HK]: () => import('./i18n/zh-hk'),
+  [SUPPORTED_LANG.EN_US]: () => import('./i18n/en-us'),
+  [SUPPORTED_LANG.ZH_HANS]: () => import('./i18n/zh-hans'),
+  [SUPPORTED_LANG.ZH_HANT]: () => import('./i18n/zh-hant'),
 }
 
 const i18nJson = useI18nJSONAsync(i18nMap)

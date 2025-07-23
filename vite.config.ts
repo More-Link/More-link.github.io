@@ -129,7 +129,7 @@ async function downloadExtFiles <T>(list: T[], key: keyof T & string) {
     })
   }
   return list
-}``
+}
 
 export default defineConfig(async () => {
   const { links, scripts } = await getDemoLinks()
@@ -152,7 +152,7 @@ export default defineConfig(async () => {
               path.join(__dirname, 'src/scripts/useI18nJSON.ts'),
               path.join(__dirname, 'src/scripts/useI18nJSONAsync.ts'),
             ],
-            ...genLayoutChunk(['zh-cn', 'en-us', 'zh-hk']),
+            ...genLayoutChunk(['zh-hant', 'zh-hans', 'en-us', 'ja-jp']),
           },
           paths: {
             'hls.js': isCI ? `https://fastly.jsdelivr.net/npm/hls.js@${getModuleVersion('hls.js')}/dist/hls.mjs` : '',
